@@ -25,7 +25,7 @@
   color: #FFF;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: auto;
   padding: 1em 1em;
   position: relative;
   overflow: hidden;
@@ -79,7 +79,7 @@
 .fancy-hover--twitter:hover { background-color: #00acee; }
 .fancy-hover--instagram:hover { 
     background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
-    animation: gradient 2s ease infinite;
+    animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
 .fancy-hover--linkedin:hover { background: #0e76a8; }
@@ -94,7 +94,7 @@ html { height: 100%; display: flex; overflow: hidden; }
 body { 
     max-width: 90%; 
     margin: auto; 
-    background: #181828; 
+    background: #181828;
 }
 
 body:before {
