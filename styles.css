@@ -1,95 +1,85 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --px: 0;
+  --py: 0;
 }
 
-body {
-    background-color: solid white;
+
+.fancy-hover {
+  background: #242424;
+  background: rgba(36,36,36,0.9);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1em 1em;
+  position: relative;
+  overflow: hidden;
+  border-bottom: solid 1px #333;
+  z-index: 2;
+  transition: background-color 0.2s linear;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-header {
-    background: #24272e;
-    padding: 20px;
+
+.fancy-hover:before,
+.fancy-hover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 0.1s linear;
 }
 
-header > h1 {
-    color: rgb(238, 108, 34);
-    text-align: center;
+.fancy-hover:before {
+  width: 160px;
+  height: 120px;
+  background: radial-gradient(circle at center, #FFF 0%, transparent 60%); 
+  opacity: 0;
+  mix-blend-mode: screen;
+  transform: translate( 
+    calc( var(--px) * 1px ),
+    calc( var(--py) * 1px ) 
+  ) translate(-50%, -50%);
+  
 }
 
-.new-game {
-   text-align: left;
+.fancy-hover:after {
+  background: inherit;
+  margin: 2px;
+  top: 0; right: 0; bottom: 0; left: 0;
+  opacity: 0;
+  transition-delay: 0.05s;
 }
 
-.newGame {
-    color: red;
-}
 
-.newGame:hover {
-    cursor: pointer;
-    color: rgb(114, 5, 5);
-}
+.fancy-hover:hover { background-color: rgba(56,56,56,0.9); }
+.fancy-hover:hover:before { opacity: 0.6; }
+.fancy-hover:hover:after { opacity: 0.85; transition-delay: 0s; }
 
-.giveUp {
-   text-align: left;
-}
+/* ////////////////////////////////////////////////////////////////////////// */
 
-.given {
-    color: red;
-}
+.fancy-hover--blue:hover { background-color: #24455E; }
 
-.given:hover {
-    cursor: pointer;
-    color: rgb(114, 5, 5);
-}
+/* ////////////////////////////////////////////////////////////////////////// */
 
-.hangman {
-    margin: 30px 0;
-    text-align: left;
-}
+.menu { overflow: hidden; border: solid 1px #444444; width: 15em; border-radius: 3px; opacity: 0.958; }
+.menu :last-child { margin-bottom: 0; }
+.fa { width: 1.25em; margin-right: 0.5em; font-size: 1.25em; text-align: center; }
+html { height: 100%; display: flex; overflow: hidden; }
+body { max-width: 90%; margin: auto; background: #000; }
 
-.hang {
-    margin: 0 0px;
-    padding: 10px;
-    display: inline-block;
-    position: relative;
-}
-
-.letter-dashes {
-    margin: 20px auto;
-    /* border: 3px rgb(238, 108, 34); */
-    border-radius: 4px;
-    text-align: center;
-    width: 500px;
-    color: #24272e;
-    font-size: 46px;
-    padding: 5px 10px;
-    position: relative;
-}
-
-.choices {
-    margin: 5px 0;
-    text-align: center;
-}
-
-.choice {
-    margin: 0 5px;
-    /* padding: 10px; */
-    border: 2px solid white;
-    color: rgb(238, 108, 34);
-    display: inline-block;
-    transition: all 0.3s;
-}
-
-.choice:hover {
-    cursor: pointer;
-    background: #24272e;
-}
-
-.result {
-    text-align: center;
-    color: #24272e;
-    font-size: large;
-    font-weight: bold;
+body:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url(https://unsplash.it/600/600?image=992); /* */
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  opacity: 0.9;
+  margin: -7px;
+  filter: blur(6px);
 }
