@@ -80,7 +80,9 @@ h1 {
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-.fancy-hover--blue:hover { background-color: #24455E; }
+.fancy-hover--facebook:hover { background-color: #24455E; }
+.fancy-hover--twitter:hover {background-color: #00acee;}
+.fancy-hover--instagram:hover {background-color: ;}
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
