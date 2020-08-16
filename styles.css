@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: solid white;
+}
+
+header {
+    background: #24272e;
+    padding: 20px;
+}
+
+header > h1 {
+    color: rgb(238, 108, 34);
+    text-align: center;
+}
+
+.new-game {
+   text-align: left;
+}
+
+.newGame {
+    color: red;
+}
+
+.newGame:hover {
+    cursor: pointer;
+    color: rgb(114, 5, 5);
+}
+
+.giveUp {
+   text-align: left;
+}
+
+.given {
+    color: red;
+}
+
+.given:hover {
+    cursor: pointer;
+    color: rgb(114, 5, 5);
+}
+
+.hangman {
+    margin: 30px 0;
+    text-align: left;
+}
+
+.hang {
+    margin: 0 0px;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.letter-dashes {
+    margin: 20px auto;
+    /* border: 3px rgb(238, 108, 34); */
+    border-radius: 4px;
+    text-align: center;
+    width: 500px;
+    color: #24272e;
+    font-size: 46px;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.choices {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.choice {
+    margin: 0 5px;
+    /* padding: 10px; */
+    border: 2px solid white;
+    color: rgb(238, 108, 34);
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: #24272e;
+}
+
+.result {
+    text-align: center;
+    color: #24272e;
+    font-size: large;
+    font-weight: bold;
+}
