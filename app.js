@@ -315,6 +315,20 @@ function changeImage(wrongGuess) {
     // console.log(hangImage_src)
 }
 
+function quitGame() {
+    let wordArray2 = Array.from(word)
+    let outputs = ""
+    for (let l = 0; l < wordArray2.length; l++) {
+        if (alphabet.includes(wordArray2[l])) {
+            outputs += wordArray2[l] + " "
+        }
+    }
+    dashes_span.innerHTML = outputs
+    endGameBool = true
+    alphabet.forEach(letter => document.getElementById(letter).innerHTML = "_ ")
+    result_p.innerHTML = ":( You gave up! Play again!".fontcolor("red")
+}
+
 
 function endGame() {
     let wordArray2 = Array.from(word)
@@ -327,7 +341,7 @@ function endGame() {
     dashes_span.innerHTML = outputs
     endGameBool = true
     alphabet.forEach(letter => document.getElementById(letter).innerHTML = "_ ")
-    result_p.innerHTML = "You're a quitter! Try again though."
+    result_p.innerHTML = "You ran out of guesses! Play again!".fontcolor("red")
 }
 
 
@@ -350,7 +364,6 @@ function game(userChoice) {
                 changeImage(wrongGuess, userChoice)
             }
             else if (guessesLeft === 0) {
-                result_p.innerHTML = "You ran out of guesses! Play again!".fontcolor("red")
                 endGame()
                 hangImage_src.src = "images/end.png"
             }
@@ -399,7 +412,7 @@ function main() {
             game(letter)
         }))
         giveUp_span.addEventListener('click', function () {
-            endGame()
+            quitGame()
         })
     }
 }
