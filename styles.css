@@ -3,10 +3,6 @@
   --py: 0;
 }
 
-html, body {
-  overflow: hidden;
-}
-
 .fancy-hover {
   background: #242424;
   background: rgba(36,36,36,0.9);
@@ -81,7 +77,11 @@ html, body {
 
 .fancy-hover--facebook:hover { background-color: #3b5998; }
 .fancy-hover--twitter:hover { background-color: #00acee; }
-.fancy-hover--instagram:hover { background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d); }
+.fancy-hover--instagram:hover { 
+    background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
+    animation: gradient 2s ease infinite;
+    background-size: 200% 200%;
+}
 .fancy-hover--linkedin:hover { background: #0e76a8; }
 .fancy-hover--github:hover { background: #211F1F; }
 
@@ -102,18 +102,18 @@ body:before {
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #0d580d, #03883f, aquamarine, #61f70a);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite; */
-    background: #181828;
-    /* background-position: center center; */
+    animation: gradient 10s ease infinite;
+    /* background: #181828; */
+    background-position: center center;
     z-index: -1;
     opacity: 0.9;
     margin: -7px;
-    /* filter: blur(6px); */
+    filter: blur(6px);
 }
 
-/* @keyframes gradient {
+@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -123,20 +123,9 @@ body:before {
 	100% {
 		background-position: 0% 50%;
 	}
-} */
-
-html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input {
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
 }
 
-.starsec{
+/* .starsec{
     content: " ";
     position: absolute;
     width: 3px;
@@ -187,4 +176,4 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
     100% {
         transform: translateY(-2000px);
     }
-}
+} */
