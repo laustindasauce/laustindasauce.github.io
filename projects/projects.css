@@ -112,12 +112,16 @@ header > h1 {
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-.fancy-hover--facebook:hover { 
-    background: linear-gradient(-45deg, #ff7f42, black, #ffdd42);
-    animation: gradient 8s ease infinite;
-    background-size: 200% 200%;
+.fancy-hover--python:hover { 
+    background: linear-gradient(-45deg, #4b8bbe, #306998, #ffe873, #ffd43b, #646464);
+    animation: gradient 6s ease infinite;
+    /* background-size: 200% 200%; */
 }
-.fancy-hover--twitter:hover { background-color: #00acee; }
+.fancy-hover--java:hover { 
+  background-color: linear-gradient(-45deg, #f0db4f, #323330); 
+  /* animation: gradient 6s ease infinite; */
+  /* background-size: 200% 200%; */
+}
 .fancy-hover--instagram:hover { 
     background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
     animation: gradient 5s ease infinite;
