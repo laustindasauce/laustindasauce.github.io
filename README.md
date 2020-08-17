@@ -7,3 +7,6 @@ My Webapp
 
 ### Fancy Hover
 * [Shaw](https://codepen.io/shshaw/pen/MoxrPV)
+
+### 404 Page
+* [Kumar Kuila](https://codepen.io/uiswarup/pen/XWdXGGV)
