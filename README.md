@@ -17,6 +17,7 @@ My Webapp
 ## Social Links
 * Open in new tab since there isn't a link back to home page
 * Removed Facebook since I don't really use Facebook
+* Should seperate Linkedin & Twitter since they are similar in color
 
 ## Sources
 ### Animated Background
