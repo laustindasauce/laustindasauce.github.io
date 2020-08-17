@@ -12,6 +12,18 @@ body {
   width: 90vw;
   margin: 0 auto;
 }
+.home-page {
+   text-align: left;
+}
+
+.homePage {
+    color: rgb(68, 82, 95);
+}
+
+.homePage:hover {
+    cursor: pointer;
+    color: rgb(34, 31, 31);
+}
 #bottom-container {
   display: flex;
   align-items: center;
