@@ -26,12 +26,6 @@
   opacity:0.5;
 }
 
-header {
-    /* background: white; */
-    padding: 20px;
-}
-
-
 header > h1 {
     color: #24272e;
     text-align: center;
