@@ -48,7 +48,7 @@
   color: #FFF;
   display: flex;
   align-items: center;
-  cursor: auto;
+  cursor: pointer;
   margin: 0 auto;
   padding: 1em 1em;
   position: relative;
@@ -112,8 +112,13 @@
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
+.fancy-hover--games:hover { 
+    background: linear-gradient(-45deg,  rgb(238, 108, 34), rgb(114, 5, 5), red, #03283a);
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
 .fancy-hover--linkedin:hover { background: #0e76a8; }
-.fancy-hover--github:hover { background: #211F1F; }
+.fancy-hover--github:hover { background: black; }
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
