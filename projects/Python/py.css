@@ -62,7 +62,6 @@ header > h1 {
   align-items: center;
   cursor: pointer;
   margin: 0 auto;
-  /* height: 50em; */
   padding: 1em 1em;
   position: relative;
   overflow: hidden;
@@ -148,9 +147,8 @@ header > h1 {
   border: transparent; 
   text-align: center;
   width: 15em; 
-  /* height: 50em; */
   border-radius: 3px;
-  margin-top: 50px;
+  margin-top: 70px;
   opacity: 0.958; 
   margin: 0 auto;
 }
@@ -164,7 +162,7 @@ body {
     background: #181828;
     /* padding: 0; */
     /* margin: 0; */
-    font-size: 20px;
+    font-size: 16px;
     /* line-height: 1; */
 } 
 

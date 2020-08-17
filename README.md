@@ -25,3 +25,6 @@ My Webapp
 
 ### Fancy Hover
 * [Shaw](https://codepen.io/shshaw/pen/MoxrPV)
+
+### Rock Paper Scissors 
+* [freecodecamp](https://www.youtube.com/watch?v=jaVNP3nIAv0&t=871s)

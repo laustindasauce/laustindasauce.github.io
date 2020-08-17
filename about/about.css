@@ -6,11 +6,11 @@
 /***********************************/
 p {
     color: #000;
-    /* animation:colorchange 25s infinite alternate; */
+    animation:colorchange 40s infinite alternate;
 }
 h1 {
-    color: #000;
-    /* animation:colorchange 18s infinite alternate; */
+    color: rgb(5, 219, 5);
+    /* animation:colorchange 8s infinite alternate; */
 }
 
 @keyframes colorchange {
