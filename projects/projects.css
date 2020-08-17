@@ -94,7 +94,6 @@ header > h1 {
     calc( var(--px) * 1px ),
     calc( var(--py) * 1px ) 
   ) translate(-50%, -50%);
-  
 }
 
 .fancy-hover:after {
