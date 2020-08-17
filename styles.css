@@ -107,6 +107,11 @@
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
+.fancy-hover--about:hover { 
+    background: linear-gradient(-45deg, #009688, #00acee, #147e40, #0e76a8, #4ff326);
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
 .fancy-hover--linkedin:hover { background: #0e76a8; }
 .fancy-hover--github:hover { background: #211F1F; }
 
