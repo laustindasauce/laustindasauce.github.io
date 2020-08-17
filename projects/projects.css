@@ -94,7 +94,6 @@ header > h1 {
     calc( var(--px) * 1px ),
     calc( var(--py) * 1px ) 
   ) translate(-50%, -50%);
-  
 }
 
 .fancy-hover:after {
@@ -114,31 +113,34 @@ header > h1 {
 
 .fancy-hover--python:hover { 
     background: linear-gradient(-45deg, #4b8bbe, #306998, #ffe873, #ffd43b, #646464);
-    animation: gradient 6s ease infinite;
+    /* animation: gradient 6s ease infinite; */
     /* background-size: 200% 200%; */
 }
-.fancy-hover--java:hover { 
-  background-color: linear-gradient(-45deg, #f0db4f, #323330); 
-  /* animation: gradient 6s ease infinite; */
-  /* background-size: 200% 200%; */
+.fancy-hover--javasc:hover { 
+  background: linear-gradient(-20deg, #f0db4f, #323330);
+    /* animation: gradient 6s ease infinite; */
+    /* background-size: 200% 200%; */
 }
-.fancy-hover--instagram:hover { 
-    background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
+.fancy-hover--docker:hover { 
+    background: linear-gradient(-45deg, #0db7ed, #384d54);
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
-.fancy-hover--about:hover { 
+.fancy-hover--db:hover { 
+    background: linear-gradient(-45deg, #d82c20, #a41e11, #7a0c00, #ffffff, #636466);
+    /* animation: gradient 5s ease infinite; */
+    /* background-size: 200% 200%; */
+}
+.fancy-hover--go:hover { 
+    background: #29beb0
+    /* animation: gradient 5s ease infinite;
+    background-size: 200% 200%; */
+}
+.fancy-hover--home:hover { 
     background: linear-gradient(-45deg, #009688, #00acee, #147e40, #0e76a8, #4ff326);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
+    /* animation: gradient 5s ease infinite;
+    background-size: 200% 200%; */
 }
-.fancy-hover--games:hover { 
-    background: linear-gradient(-45deg,  rgb(238, 108, 34), rgb(114, 5, 5), red, #03283a);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--linkedin:hover { background: #0e76a8; }
-.fancy-hover--github:hover { background: black; }
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
