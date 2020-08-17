@@ -100,7 +100,11 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-.fancy-hover--facebook:hover { background-color: #3b5998; }
+.fancy-hover--facebook:hover { 
+    background: linear-gradient(-45deg, #ff7f42, black, #ffdd42);
+    animation: gradient 8s ease infinite;
+    background-size: 200% 200%;
+}
 .fancy-hover--twitter:hover { background-color: #00acee; }
 .fancy-hover--instagram:hover { 
     background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
