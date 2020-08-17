@@ -2,8 +2,8 @@
 My Webapp
 
 ## Sources
-### Gradient Background
-* [Manuel Pinto](https://codepen.io/P1N2O/pen/pyBNzX)
+### Star Background
+* [Kumar Kuila](https://codepen.io/uiswarup/pen/XWdXGGV)
 
 ### Fancy Hover
 * [Shaw](https://codepen.io/shshaw/pen/MoxrPV)
