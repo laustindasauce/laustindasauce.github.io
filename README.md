@@ -18,6 +18,9 @@ My Webapp
 * Open in new tab since there isn't a link back to home page
 * Removed Facebook since I don't really use Facebook
 
+## To-Do
+* Consolidate the CSS files into one
+
 ## Sources
 ### Animated Background
 * Not currently using this since I couldn't get it to work with a header
