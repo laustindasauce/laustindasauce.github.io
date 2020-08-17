@@ -5,11 +5,70 @@
 			/* 1. BODY */
 /***********************************/
 p {
-    color: white;
+    color: #000;
+    animation:colorchange 25s infinite alternate;
 }
 h1 {
-    color: white;
+    color: #000;
+    animation:colorchange 18s infinite alternate;
 }
+
+@keyframes colorchange {
+    0% {
+    
+    color: rgba(132, 132, 245, 0.733);
+    }
+    
+    10% {
+    
+    color: #8e44ad;
+    }
+    
+    20% {
+    
+    color: #1abc9c;
+    }
+    
+    30% {
+    
+    color: #d35400;
+    }
+    
+    40% {
+    
+    color: rgb(238, 255, 0);
+    }
+    
+    50% {
+    
+    color: #3af03a;
+    }
+    
+    60% {
+    
+    color: rgb(89, 0, 255);
+    }
+    
+    70% {
+    
+    color: #2980b9;
+    }
+    80% {
+    
+    color: #f1c40f;
+    }
+    
+    90% {
+    
+    color: #2980b9;
+    }
+    
+    100% {
+    
+    color: pink;
+    }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -257,7 +316,7 @@ button {
   vertical-align: top;
   margin: 0 15px;
   border: 1px solid #181828;
-  color: #181828;
+  animation:coloralt 4s infinite alternate;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -267,18 +326,36 @@ button {
   overflow: hidden;
 }
 
+@keyframes coloralt {
+    0% {
+        color: rgba(245, 3, 233, 0.733);
+    }
+    33% {
+        color: #06fdf1;
+    }
+    66% {
+        color: #fbff08;
+    }
+    100% {
+        color: #11dd22;
+    }
+    
+}
+
 .e-nav__link:before {
-  content: '';
-  height: 200px;
-  background: #212121;
-  position: absolute;
-  top: 70px;
-  right: 70px;
-  width: 260px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  -webkit-transform: rotate(50deg);
-          transform: rotate(50deg);
+    content: '';
+    height: 200px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradient 3s infinite;
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    width: 260px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
 }
 
 .e-nav__link:after {
@@ -303,6 +380,18 @@ button {
 
 .e-nav__link:nth-child(2):hover:after {
   color: #fff;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 /* 2.1. END Section Error */
 
