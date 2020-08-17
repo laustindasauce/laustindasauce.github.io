@@ -26,6 +26,18 @@
   opacity:0.5;
 }
 
+header {
+    /* background: white; */
+    padding: 20px;
+}
+
+
+header > h1 {
+    color: #24272e;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
 .fancy-hover {
   background: #242424;
   background: rgba(36,36,36,0.9);
