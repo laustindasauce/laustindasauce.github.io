@@ -1,5 +1,5 @@
 
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 /***********************************
 			/* 1. BODY */
@@ -33,6 +33,7 @@
   display: flex;
   align-items: center;
   cursor: auto;
+  margin: 0 auto;
   padding: 1em 1em;
   position: relative;
   overflow: hidden;
@@ -40,6 +41,7 @@
   z-index: 2;
   transition: background-color 0.2s linear;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* left: 50%; */
 }
 
 
@@ -95,27 +97,38 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 
 .menu { 
+  min-height: auto;
+  position: relative;
+  padding: 240px;
   overflow: hidden; 
-  border: solid 1px #444444; 
+  border: transparent; 
+  text-align: center;
   width: 15em; 
-  border-radius: 3px; 
+  border-radius: 3px;
+  margin-top: 70px;
   opacity: 0.958; 
+  margin: 0 auto;
 }
 .menu :last-child { margin-bottom: 0; }
 .fa { width: 1.25em; margin-right: 0.5em; font-size: 1.25em; text-align: center; }
 html { height: 100%; display: flex; overflow: hidden; }
+
 body { 
     max-width: 90%; 
-    margin: auto; 
+    /* margin: auto;  */
     background: #181828;
-}
+    /* padding: 0; */
+    /* margin: 0; */
+    font-size: 16px;
+    /* line-height: 1; */
+} 
 
-body:before {
-    content: '';
+body:before { 
+    content: ''; 
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    /* background: #181828; */
+    background: #181828;
     background-position: center center;
     z-index: -1;
     opacity: 0.9;
@@ -138,75 +151,10 @@ body:before {
 /***********************************
 END BODY
 /***********************************/
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-text-size-adjust: none;
-}
-
-/* html, body {
-  height: 100%;
-  overflow: hidden;
-} */
-
-body {
-  padding: 0;
-  margin: 0;
-  background: #181828;
-  font-size: 14px;
-  line-height: 1;
-}
-
-label {
-  cursor: pointer;
-}
-
-a {
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none;
-  color: #000;
-}
-
-input, select, button, textarea {
-  margin: 0;
-  font-size: 100%;
-}
-
-html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input {
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-}
-
-
-.top-header:before {
-    background-image: url(https://1.bp.blogspot.com/-gxsOcYWghHA/Xp_izTh4sFI/AAAAAAAAU8s/y637Fwg99qAuzW9na_NT_uApny8Vce95gCEwYBhgL/s1600/header-footer-gradient-bg.png);
-}
-.top-header:before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-repeat: repeat-x;
-    background-size: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-  opacity:0.5;
-}
-
 
 .starsec{
   content: " ";
-    position: absolute;
+    position: var(--px);
     width: 3px;
     height: 3px;
     background: transparent;
