@@ -20,6 +20,7 @@ body {
   height: 30vh;
   width: 60vw;
   margin: 0 auto;
+  padding: 2px;
 }
 #title-container {
   color: rgb(119, 141, 163);
@@ -37,6 +38,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding: 15px;
 }
 #side-container {
   display: flex;
@@ -48,7 +50,11 @@ body {
 }
 #chart-container {
   height: 50vh;
-  width: 50vw;
+  width: 20vw;
+}
+#explanation {
+  /* max-width: 20px; */
+  text-align: center;
 }
 .control-button {
   width: 150px;
@@ -56,7 +62,7 @@ body {
 }
 #event-log {
   height: 50vh;
-  width: 20vw;
+  width: 25vw;
   border: 1px solid #24272e;
   border-radius: 10px;
   overflow-y: scroll;
@@ -71,7 +77,7 @@ body {
 } */
 #positions {
   height: 22vh;
-  width: 20vw;
+  width: 30vw;
   border: 1px solid #24272e;
   border-radius: 10px;
   margin: 5px;
@@ -96,14 +102,14 @@ body {
 }
 #positions-log {
   height: calc(22vh - 80px);
-  width: 20vw;
+  width: 30vw;
   overflow-y: scroll;
   scrollbar-width: none;
   /* border-left: 1px red solid;
   border-right: 1px red solid; */
 }
 #positions-title {
-  width: 20vw;
+  width: 30vw;
   font-size: 20px;
   border-bottom: 1px black solid;
   display: flex;
@@ -116,7 +122,7 @@ body {
 }
 #orders {
   height: 22vh;
-  width: 20vw;
+  width: 30vw;
   border: 1px #24272e solid;
   border-radius: 10px;
   margin: 5px;
@@ -128,7 +134,7 @@ body {
 }
 #orders-log {
   height: calc(22vh - 80px);
-  width: 20vw;
+  width: 30vw;
   overflow-y: scroll;
   scrollbar-width: none;
 }
@@ -136,7 +142,7 @@ body {
   display: none;
 }
 #order-title {
-  width: 20vw;
+  width: 30vw;
   font-size: 20px;
   border-bottom: 1px black solid;
 
