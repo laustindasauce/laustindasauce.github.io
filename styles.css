@@ -5,6 +5,11 @@
 			/* 1. BODY */
 /***********************************/
 
+:root {
+  --px: 0;
+  --py: 0;
+}
+
 .fancy-hover {
   background: #242424;
   background: rgba(36,36,36,0.9);
@@ -89,7 +94,13 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-.menu { overflow: hidden; border: solid 1px #444444; width: 15em; border-radius: 3px; opacity: 0.958; }
+.menu { 
+  overflow: hidden; 
+  border: solid 1px #444444; 
+  width: 15em; 
+  border-radius: 3px; 
+  opacity: 0.958; 
+}
 .menu :last-child { margin-bottom: 0; }
 .fa { width: 1.25em; margin-right: 0.5em; font-size: 1.25em; text-align: center; }
 html { height: 100%; display: flex; overflow: hidden; }
