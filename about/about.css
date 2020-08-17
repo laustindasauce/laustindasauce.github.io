@@ -28,7 +28,7 @@
 
 header {
     /* background: white; */
-    padding: 20px;
+    padding-top: 20px;
 }
 
 
@@ -44,6 +44,7 @@ header > h1 {
   color: #FFF;
   display: flex;
   align-items: center;
+  text-align: center;
   cursor: pointer;
   padding: 1em 1em;
   position: relative;
@@ -60,6 +61,7 @@ header > h1 {
   color: #FFF;
   display: flex;
   align-items: center;
+  text-align: center;
   cursor: pointer;
   margin: 0 auto;
   padding: 1em 1em;
@@ -122,6 +124,7 @@ header > h1 {
     background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
+    text-align: center;
 }
 .fancy-hover--about:hover { 
     background: linear-gradient(-45deg, #009688, #00acee, #147e40, #0e76a8, #4ff326);
