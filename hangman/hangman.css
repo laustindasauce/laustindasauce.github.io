@@ -30,6 +30,18 @@ header > h1 {
     cursor: pointer;
     color: rgb(114, 5, 5);
 }
+.home-page {
+   text-align: left;
+}
+
+.homePage {
+    color: red;
+}
+
+.homePage:hover {
+    cursor: pointer;
+    color: rgb(114, 5, 5);
+}
 
 .giveUp {
    text-align: left;
