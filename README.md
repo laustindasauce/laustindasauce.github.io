@@ -20,6 +20,7 @@ My Webapp
 
 ## Sources
 ### Animated Background
+* Not currently using this since I couldn't get it to work with a header
 * [Kumar Kuila](https://codepen.io/uiswarup/pen/XWdXGGV)
 
 ### Fancy Hover
