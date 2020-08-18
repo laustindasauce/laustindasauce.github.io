@@ -154,7 +154,7 @@ header > h1 {
 }
 .fancy-hover--go:hover { background: #29beb0 }
 .fancy-hover--godock:hover { 
-    background: linear-gradient(-45deg, #2c998e, #29beb0, #15e7d2, #29beb0;)
+    background: linear-gradient(-45deg, #2c998e, #29beb0, #15e7d2, #29beb0);
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
@@ -188,6 +188,21 @@ header > h1 {
 .fancy-hover--javasc:hover { 
   background: linear-gradient(-20deg, #323330, #f0db4f, #323330, #f0db4f);
     animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--twitbot:hover { 
+  background: linear-gradient(-20deg, #87af37, #f0db4f, #588104, #f0db4f);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--fantasy:hover { 
+  background: linear-gradient(-20deg, #58a2c0, #76428f, #96863e, #58a2c0);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--pacman:hover { 
+  background: linear-gradient(-20deg, #ffff00, #1919a6, #2121de, #dea185, #fd0000, #00ff00);
+    animation: gradient 8s ease infinite;
     background-size: 200% 200%;
 }
 
