@@ -49,15 +49,16 @@ header > h1 {
 }
 
 .fancy-title {
-    background: #242424;
-  background: rgba(36,36,36,0.9);
-  color: #FFF;
+  background: transparent;
+  color: #777b86;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: auto;
   margin: 0 auto;
-  padding: 1em 1em;
+  padding: 2em 2em;
   position: relative;
+  font-size: 22px;
+  font-weight: bold;
   overflow: hidden;
   border-bottom: solid 1px #333;
   z-index: 2;
