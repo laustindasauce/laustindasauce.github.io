@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>In-Browser Trader</title>
+
+    <!-- Local files -->
+    <link rel="stylesheet" type="text/css" href="np.css" />
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div id="bottom-container">
+        <button type="button" class="btn btn-success control-button" onclick="runScript();">
+            Add Backend Project
+        </button>
+        <div id="input-container">
+            <h5 id="input-title">Insert a project! (fmt: language-project)</h5>
+            <input id="backend" type="text" placeholder="ex: Go-RESTful API" />
+            <input id="frontend" type="text" placeholder="ex: HTML-WebApp" />
+        </div>
+        <button type="button" class="btn btn-danger control-button" onclick="killScript();">
+            Add Frontend Project
+        </button>
+    </div>
+</body>

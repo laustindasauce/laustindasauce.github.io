@@ -1,0 +1,33 @@
+#bottom-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 30vh;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.control-button {
+  width: 150px;
+  margin: auto;
+}
+
+#input-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  /* color: solid black; */
+  font-weight: bold;
+  text-align: center;
+}
+
+#backend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+#frontend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
