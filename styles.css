@@ -107,11 +107,15 @@ header > h1 {
 /* ////////////////////////////////////////////////////////////////////////// */
 
 .fancy-hover--facebook:hover { 
-    background: linear-gradient(-45deg, #ff7f42, black, #ffdd42);
-    animation: gradient 8s ease infinite;
+    background: linear-gradient(-45deg, #314266, #3b5998, #2864e4, #3b5998);
+    animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
-.fancy-hover--twitter:hover { background-color: #00acee; }
+.fancy-hover--twitter:hover { 
+  background-color: linear-gradient(-45deg, #327caa, #1DA1F2, #029dfd, #1DA1F2);
+  animation: gradient 5s ease infinite;
+  background-size: 200% 200%;
+}
 .fancy-hover--instagram:hover { 
     background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
     animation: gradient 5s ease infinite;
@@ -209,7 +213,7 @@ header > h1 {
 .fancy-hover--linkedin:hover { background: #0e76a8; }
 .fancy-hover--github:hover { background: black; }
 .fancy-hover--social:hover { background: #ff7f42; }
-.fancy-hover--facebook:hover{ background: #3b5998; }
+/* .fancy-hover--facebook:hover{ background: #3b5998; } */
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
