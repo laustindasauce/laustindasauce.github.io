@@ -20,6 +20,7 @@ My Webapp
 
 ## To-Do
 * Consolidate the CSS files into one
+* Add social media page // exclude Git & Linkedin
 
 ## Sources
 ### Animated Background
