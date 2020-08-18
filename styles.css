@@ -152,10 +152,11 @@ header > h1 {
     /* animation: gradient 5s ease infinite; */
     /* background-size: 200% 200%; */
 }
-.fancy-hover--go:hover { 
-    background: #29beb0
-    /* animation: gradient 5s ease infinite;
-    background-size: 200% 200%; */
+.fancy-hover--go:hover { background: #29beb0 }
+.fancy-hover--godock:hover { 
+    background: linear-gradient(-45deg, #2c998e, #29beb0, #15e7d2, #29beb0;)
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
 }
 
 .fancy-hover--hang:hover { 
