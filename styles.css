@@ -132,6 +132,64 @@ header > h1 {
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
+.fancy-hover--python:hover { 
+    background: linear-gradient(-45deg, #4b8bbe, #306998, #ffe873, #ffd43b, #646464);
+    /* animation: gradient 6s ease infinite; */
+    /* background-size: 200% 200%; */
+}
+.fancy-hover--javascript:hover { 
+  background: linear-gradient(-20deg, #f0db4f, #323330);
+    /* animation: gradient 6s ease infinite; */
+    /* background-size: 200% 200%; */
+}
+.fancy-hover--docker:hover { 
+    background: linear-gradient(-45deg, #0db7ed, #384d54);
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--db:hover { 
+    background: linear-gradient(-45deg, #d82c20, #a41e11, #7a0c00, #ffffff, #636466);
+    /* animation: gradient 5s ease infinite; */
+    /* background-size: 200% 200%; */
+}
+.fancy-hover--go:hover { 
+    background: #29beb0
+    /* animation: gradient 5s ease infinite;
+    background-size: 200% 200%; */
+}
+
+.fancy-hover--hang:hover { 
+    background: linear-gradient(-45deg, #24272e, rgb(238, 108, 34), rgb(114, 5, 5), #ffd43b);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--rps:hover { 
+  background: linear-gradient(-20deg, #FF9800, #f0db4f, #323330, #437f91);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--algo:hover { 
+    background: linear-gradient(-45deg, #242424, #7cfa06, #ffee03, aquamarine, #242424);
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--db:hover { 
+    background: linear-gradient(-45deg, #d82c20, #a41e11, #7a0c00, #ffffff, #636466);
+    /* animation: gradient 5s ease infinite; */
+    /* background-size: 200% 200%; */
+}
+
+.fancy-hover--javadock:hover { 
+    background: linear-gradient(-45deg, #5382a1, #f89820, #5382a1, #f89820);
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--javasc:hover { 
+  background: linear-gradient(-20deg, #323330, #f0db4f, #323330, #f0db4f);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+
 .fancy-hover--linkedin:hover { background: #0e76a8; }
 .fancy-hover--github:hover { background: black; }
 .fancy-hover--social:hover { background: #ff7f42; }
