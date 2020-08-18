@@ -14,8 +14,7 @@ My Webapp
 * Move these to their own page
 
 ## To-Do
-* Consolidate the CSS files into one
-* Add social media page // exclude Git & Linkedin
+### Add a page for project ideas!!
 * Add README to individual folders that we link to
 
 ## Sources
