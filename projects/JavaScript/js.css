@@ -137,6 +137,17 @@ header > h1 {
     animation: gradient 5s ease infinite;
     background-size: 200% 200%;
 }
+.fancy-hover--javadock:hover { 
+    background: linear-gradient(-45deg, #5382a1, #f89820, #5382a1, #f89820);
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
+.fancy-hover--javasc:hover { 
+  background: linear-gradient(-20deg, #323330, #f0db4f, #323330, #f0db4f);
+    animation: gradient 6s ease infinite;
+    background-size: 200% 200%;
+}
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -164,7 +175,7 @@ body {
     background: #181828;
     /* padding: 0; */
     /* margin: 0; */
-    font-size: 20px;
+    font-size: 19px;
     /* line-height: 1; */
 } 
 
