@@ -9,7 +9,7 @@ p {
     animation:colorchange 40s infinite alternate;
 }
 h1 {
-    color: rgb(5, 219, 5);
+    color: #777b86;
     /* animation:colorchange 8s infinite alternate; */
 }
 
