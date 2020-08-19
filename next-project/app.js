@@ -1,35 +1,25 @@
-var Redis = require('ioredis')
-const dotenv = require('dotenv')
-const { write } = require('fs')
-dotenv.config()
-const redisPass = process.env.REDIS
-
 class nextProject {
-    constructor(language, project, password) {
-        this.client = new Redis({
-            port: 6379,          // Redis port
-            host: '10.10.10.1',   // Redis host
-            password: password,
-            db: 3,
-        })
-        
+    constructor(language, project) {
         this.project = language.toUpp
     }
 
     async run() {
-        this.client.smembers("projectss", function (err, result) {
-            if (err) {
-                console.error(err);
-            } else {
-                for (var i = 0; i < result.length; i++) {
-                    $("#positions-log").prepend(
-                        `<div class="position-inst">
-                            <p class="position-fragment">${result[i]}</p>
-                        </div>`
-                    )
+        
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "projects.txt", false);
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
+                    var allText = rawFile.responseText;
+                    var textArray = allText.split("\n")
+                    for (var i = 0; i < textArray.length; i++) {
+                        console.log(textArray[i]);
+                        //Do something
+                    }
                 }
             }
-        });
+        }
+        rawFile.send(null);
     }
 
     async runAdd() {
@@ -50,7 +40,7 @@ class nextProject {
     async remProj() {
         this.client.srem("projectss", this.project)
     }
-    
+
 } // End of nextProject
 
 
@@ -70,7 +60,7 @@ function removeProject() {
     var language = $("#backend").val()
     var project = $("#frontend").val()
     var padssword = $("#password").val()
-    if (password == redisPass){
+    if (password == redisPass) {
         var Rp = new nextProject(language.toUpperCase(), project.toUpperCase(), password)
         Rp.remProj()
     } else { alert("Incorrect Password!") }
@@ -78,7 +68,7 @@ function removeProject() {
 
 // This is to set up our existing projects on reload of site
 function main() {
-    var Mp = new nextProject("some", "value", redisPass)
+    var Mp = new nextProject("some", "value")
     Mp.run()
 }
 
