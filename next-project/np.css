@@ -124,10 +124,10 @@ body{
   border-radius: 10px;
   /* margin: 5px; */
   
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  /* display: flex; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
 }
 #positions {
   height: 40vh;
@@ -148,7 +148,7 @@ body{
   display: flex;
   font-weight: bold;
   flex-direction: row;
-  padding-left: 10px;
+  padding-left: 20px;
   color: lime;
 }
 #positions-log {
@@ -160,7 +160,7 @@ body{
   display: none;
 }
 .position-inst {
-  width: 90vw;
+  width: 100vw;
   height: 40px;
   /* display: flex; */
   /* align-items: center; */

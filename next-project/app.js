@@ -1,3 +1,6 @@
+const fs = require('fs')
+const project_p = document.querySelector(". > p")
+
 class nextProject {
     constructor(project) {
         this.project = project
@@ -7,15 +10,12 @@ class nextProject {
         console.log(this.project)
         $("#positions-log").prepend(
             `<div class="position-inst">
-                <p class="position-fragment">${this.project}</p>
+                <p class="position-fragment"style="color: lime;">${this.project}</p>
             </div>`
         )
     }
 
     async checkDuplicate() {
-        if (this.client.sismember("projectss", this.project)) {
-            return true
-        }
         return false
     }
 
@@ -31,11 +31,10 @@ function addProject() {
     console.log(language)
     var project = $("#frontend").val();
     console.log(project)
-    var password = "password"
-    var Np = new nextProject(language.toUpperCase(), project.toUpperCase(), password)
-    if (Np.checkDuplicate()) {
-        alert("That project is already in my list!")
-    } else { Np.runAdd() }
+    var proj = language + " || " + project
+    // var Np = new nextProject(proj)
+    // Np.runAdd()
+    setProjects(proj)
 }
 
 function removeProject() {
@@ -43,66 +42,49 @@ function removeProject() {
     var project = $("#frontend").val()
     var padssword = $("#password").val()
     if (password == redisPass) {
-        var Rp = new nextProject(language.toUpperCase(), project.toUpperCase(), password)
+        var Rp = new nextProject(language.toUpperCase(), project.toUpperCase())
         Rp.remProj()
     } else { alert("Incorrect Password!") }
 }
 
-function getFiles() {
-    let fileList = []
-    let fileName = ""
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "fileList.txt", false);
-    rawFile.onreadystatechange = function () {
-        if (rawFile.readyState === 4) {
-            if (rawFile.status === 200 || rawFile.status == 0) {
-                var allText = rawFile.responseText;
-                var fileArray = allText.split("\n")
-                for (var i = 0; i < fileArray.length; i++) {
-                    fileName = fileArray[i]
-                    fileList.push(fileName)
-                }
-            }
-        }
-    }
-    rawFile.send(null);
-    readFiles(fileList)
-}
 
 function setProjects(project) {
     $("#positions-log").prepend(
         `<div class="position-inst">
-                <p class="position-fragment">${project}</p>
+                <p class="position-fragment"style="color: lime;">${project}</p>
             </div>`
     )
+    console.log("Added")
 }
 
-function readFiles(fileList) {
-    var Sp = new nextProject("init")
-    var rawFile = new XMLHttpRequest();
+
+function newRead() {
+    var fileList = []
+    var text = fs.readFileSync("project1.txt", "utf-8")
+    console.log(text)
+    var fileArray = text.split("\n")
+    for (var i = 0; i < fileArray.length; i++) {
+        fileName = fileArray[i]
+        setProjects(fileName)
+        // fileList.push(fileName)
+    }
+    // newGet(fileList)
+    // console.log("finished")
+}
+
+function newGet(fileList) {
+    console.log(fileList[i])
+    let text
     for (var i = 0; i < fileList.length; i++) {
-        console.log(fileList[i])
-        rawFile.open("GET", fileList[i], false);
-        rawFile.onreadystatechange = function () {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
-                    var allText = rawFile.responseText;
-                    var fileArray = allText.split("\n")
-                    for (var i = 0; i < fileArray.length; i++) {
-                        Sp = new nextProject(fileArray[i])
-                        Sp.runAdd()
-                    }
-                }
-            }
-        }
-        rawFile.send(null);
+        text = fs.readFileSync(fileList[i], "utf-8")
+        console.log(text)
     }
 }
 
+
 // This is to set up our existing projects on reload of site
 function main() {
-    getFiles()
-
+    newRead()
 }
 
 main()
