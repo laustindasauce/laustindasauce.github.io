@@ -3,6 +3,8 @@ My Webapp
 
 ## Games
 * Could add link to source project within each browser version as well
+### Hangman
+* Added random-words generator with browserify 😍
 
 ## 404 Page
 * Added a wild 404 page with some crazy colors
