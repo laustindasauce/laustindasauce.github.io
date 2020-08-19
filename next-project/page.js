@@ -14,6 +14,7 @@ function addProject() {
     project_val.value = ''
     var proj = language.toUpperCase() + " &emsp; || &emsp; " + project.toUpperCase()
     setProjects(proj)
+    alert("Working on being able to save newly added projects...")
 }
 
 function removeProject() {
@@ -23,9 +24,13 @@ function removeProject() {
     project_val.value = ''
     var padssword = $("#password").val()
     password_val.value = ''
+    var proj = language.toUpperCase() + " &emsp; || &emsp; " + project.toUpperCase()
     if (password == rmPass) {
-        
-    } else { alert("Incorrect Password!") }
+        alert("Working on this function")
+    } else { 
+        var strAlert = proj + "\nCould not be removed since you entered incorrect password."
+        alert("Incorrect Password!") 
+    }
 }
 
 
@@ -74,6 +79,9 @@ function main() {
     newRead()
     add_button.addEventListener('click', function() {
         addProject()
+    })
+    rm_button.addEventListener('click', function () {
+        removeProject()
     })
 }
 
