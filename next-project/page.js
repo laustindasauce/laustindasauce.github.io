@@ -1,22 +1,30 @@
 const fs = require('fs')
 const pr1_p = document.getElementById("pr1")
+const add_button = document.getElementById("add")
+const rm_button = document.getElementById("rm")
+const language_val = document.getElementById("backend")
+const project_val = document.getElementById("frontend")
+const password_val = document.getElementById("password")
+const rmPass = "NotSecureLOL"
 
 function addProject() {
-    var language = $("#backend").val();
-    console.log(language)
-    var project = $("#frontend").val();
-    console.log(project)
-    var proj = language + " || " + project
+    var language = $("#backend").val()
+    language_val.value = ''
+    var project = $("#frontend").val()
+    project_val.value = ''
+    var proj = language.toUpperCase() + " &emsp; || &emsp; " + project.toUpperCase()
     setProjects(proj)
 }
 
 function removeProject() {
     var language = $("#backend").val()
+    language_val.value = ''
     var project = $("#frontend").val()
+    project_val.value = ''
     var padssword = $("#password").val()
+    password_val.value = ''
     if (password == rmPass) {
-        var Rp = new nextProject(language.toUpperCase(), project.toUpperCase())
-        Rp.remProj()
+        
     } else { alert("Incorrect Password!") }
 }
 
@@ -64,6 +72,9 @@ function main() {
     var strPrint = "The password is "
     pr1_p.innerHTML = strPrint.fontcolor("lime")
     newRead()
+    add_button.addEventListener('click', function() {
+        addProject()
+    })
 }
 
 main()
