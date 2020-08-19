@@ -1,8 +1,8 @@
-const fs = require('fs')
-const dotenv = require('dotenv')
-dotenv.config()
-const rmPass = process.env.password
-const pr1_p = document.getElementById("rp1")
+// const fs = require('fs')
+// const dotenv = require('dotenv')
+// dotenv.config()
+// const rmPass = process.env.password
+const pr1_p = document.getElementById("pr1")
 
 function addProject() {
     var language = $("#backend").val();
@@ -61,7 +61,7 @@ function newGet(fileList) {
 // This is to set up our existing projects on reload of site
 function main() {
     // newRead()
-    pr1_p.innerHTML = "Python || This is an example".fontcolor("lime")
+    pr1_p.innerHTML = "Python || This is an example"
 }
 
 main()
