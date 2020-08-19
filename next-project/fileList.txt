@@ -1,3 +1,0 @@
-project1.txt
-project2.txt
-project3.txt

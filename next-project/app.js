@@ -1,30 +1,8 @@
 const fs = require('fs')
-const project_p = document.querySelector(". > p")
-
-class nextProject {
-    constructor(project) {
-        this.project = project
-    }
-
-    async runAdd() {
-        console.log(this.project)
-        $("#positions-log").prepend(
-            `<div class="position-inst">
-                <p class="position-fragment"style="color: lime;">${this.project}</p>
-            </div>`
-        )
-    }
-
-    async checkDuplicate() {
-        return false
-    }
-
-    async remProj() {
-        this.client.srem("projectss", this.project)
-    }
-
-} // End of nextProject
-
+const dotenv = require('dotenv')
+dotenv.config()
+const rmPass = process.env.password
+const pr1_p = document.getElementById("rp1")
 
 function addProject() {
     var language = $("#backend").val();
@@ -41,7 +19,7 @@ function removeProject() {
     var language = $("#backend").val()
     var project = $("#frontend").val()
     var padssword = $("#password").val()
-    if (password == redisPass) {
+    if (password == rmPass) {
         var Rp = new nextProject(language.toUpperCase(), project.toUpperCase())
         Rp.remProj()
     } else { alert("Incorrect Password!") }
