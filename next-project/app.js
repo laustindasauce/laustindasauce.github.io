@@ -17,7 +17,7 @@ class nextProject {
     }
 
     async run() {
-        this.client.smembers("projects", function (err, result) {
+        this.client.smembers("projectss", function (err, result) {
             if (err) {
                 console.error(err);
             } else {
@@ -41,14 +41,14 @@ class nextProject {
     }
 
     async checkDuplicate() {
-        if (this.client.sismember("projects", this.project)) {
+        if (this.client.sismember("projectss", this.project)) {
             return true
         }
         return false
     }
 
     async remProj() {
-        this.client.srem("projects", this.project)
+        this.client.srem("projectss", this.project)
     }
     
 } // End of nextProject
@@ -79,7 +79,7 @@ function removeProject() {
 // This is to set up our existing projects on reload of site
 function main() {
     var Mp = new nextProject("some", "value", redisPass)
-    Mp.Run()
+    Mp.run()
 }
 
 main()
