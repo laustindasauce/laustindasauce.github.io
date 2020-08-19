@@ -1,0 +1,181 @@
+/* Experimenting with typing animation  */
+h1{
+  color: solid rgb(21, 185, 21); 
+  font-family: "Courier";
+  font-size: 40px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  width: 30em;
+  animation: type 6s steps(60, end); 
+}
+span{
+  animation: blink 1s infinite;
+}
+@keyframes type{ 
+  from { width: 0; } 
+} 
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+/* Done experimenting */
+
+body{
+    background-image: url("https://i2.wp.com/onaircode.com/wp-content/uploads/2017/11/Constellation.jpg?resize=908%2C535&ssl=1");
+}
+
+#bottom-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 30vh;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+#input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#password-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.control-button {
+  width: 150px;
+  margin: auto;
+}
+
+#input-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  /* color: solid black; */
+  font-weight: bold;
+  text-align: center;
+  color: solid rgb(21, 185, 21);
+}
+
+#backend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#frontend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#password {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* <!-- This is extra to mess with.. I like everything above here <----> */
+
+#data-container {
+    display: block;
+    width: 33%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 50vh;
+  width: 90vw;
+  margin: 0 auto;
+  /* text-align: center; */
+}
+/* #side-container {
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 20vw;
+} */
+#title-container {
+  color: rgb(21, 185, 21);
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+#orders {
+  height: 5vh;
+  width: 90vw;
+  border: 1px solid rgb(49, 121, 49);
+  border-top-width: 5px;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 0;
+  border-radius: 10px;
+  /* margin: 5px; */
+  
+  /* display: flex; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+#positions {
+  height: 40vh;
+  width: 90vw;
+  border: 1px solid rgb(49, 121, 49);
+  border-radius: 10px;
+  border-width: 5px;
+  margin-top: 0;
+  /* margin-bottom: 5px; */
+  
+  display: flex;
+  font-size: 20px;
+  color: solid rgb(21, 185, 21);
+}
+#positions-title {
+  width: 90vw;
+  font-size: 15px;
+  display: flex;
+  font-weight: bold;
+  flex-direction: row;
+  padding-left: 20px;
+  color: lime;
+}
+#positions-log {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  color: solid lime;
+}
+#positions-log::-webkit-scrollbar {
+  display: none;
+}
+.position-inst {
+  width: 100vw;
+  height: 40px;
+  /* display: flex; */
+  /* align-items: center; */
+  flex-direction: row;
+  /* justify-content: center; */
+  color: solid lime;
+  /* margin: 10px; */
+}
+.position-fragment {
+  margin: 5px;
+  width: 87vw;
+}
+
+.position-var {
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 2vw;
+}
