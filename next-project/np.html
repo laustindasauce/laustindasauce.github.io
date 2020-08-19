@@ -2,7 +2,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>In-Browser Trader</title>
+    <title>Project Planner</title>
+
+    <!-- Bootstrap files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Local files -->
     <link rel="stylesheet" type="text/css" href="np.css" />
@@ -12,17 +16,38 @@
 </head>
 
 <body>
+    <div id="title-container">
+        <h1>Project Ideas<a :) </a></a><span>|</span></h1>
+    </div>
+    <!-- <div id="explanation">
+        <h5 style="margin: 5px; font-weight: bold; color: rgb(21, 185, 21);">Proposed Projects</h5>
+    </div> -->
+    <div id="data-container">
+        <div id="positions">
+            <div id="positions-title">
+                <p class="position-fragment">LANGUAGE</p>
+                <p class="position-ignore">This is space</p>
+                <p class="position-fragment">PROJECT</p>
+            </div>
+            <div id="positions-log">
+                
+            </div>
+        </div>
+    </div>
     <div id="bottom-container">
-        <button type="button" class="btn btn-success control-button" onclick="runScript();">
-            Add Backend Project
+        <button type="button" class="btn btn-success control-button" onclick="addProject();">
+            Add Project
         </button>
         <div id="input-container">
-            <h5 id="input-title">Insert a project! (fmt: language-project)</h5>
-            <input id="backend" type="text" placeholder="ex: Go-RESTful API" />
-            <input id="frontend" type="text" placeholder="ex: HTML-WebApp" />
+            <h5 id="input-title" style="margin: 5px; font-weight: bold; color: rgb(21, 185, 21);">Insert a language and project idea!</h5>
+            <input id="backend" type="text" placeholder="Program Language" />
+            <input id="frontend" type="text" placeholder="Project Description" />
+            <div id="password-container">
+                <input id="password" type="text" placeholder="Password *IF removing*" />
+            </div>
         </div>
-        <button type="button" class="btn btn-danger control-button" onclick="killScript();">
-            Add Frontend Project
+        <button type="button" class="btn btn-danger control-button" onclick="removeProject();">
+            Remove Project
         </button>
     </div>
 </body>
