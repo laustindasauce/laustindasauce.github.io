@@ -1,28 +1,10 @@
 class nextProject {
-    constructor(language, project) {
-        this.project = language.toUpp
-    }
-
-    async run() {
-        
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", "projects.txt", false);
-        rawFile.onreadystatechange = function () {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
-                    var allText = rawFile.responseText;
-                    var textArray = allText.split("\n")
-                    for (var i = 0; i < textArray.length; i++) {
-                        console.log(textArray[i]);
-                        //Do something
-                    }
-                }
-            }
-        }
-        rawFile.send(null);
+    constructor(project) {
+        this.project = project
     }
 
     async runAdd() {
+        console.log(this.project)
         $("#positions-log").prepend(
             `<div class="position-inst">
                 <p class="position-fragment">${this.project}</p>
@@ -66,10 +48,61 @@ function removeProject() {
     } else { alert("Incorrect Password!") }
 }
 
+function getFiles() {
+    let fileList = []
+    let fileName = ""
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "fileList.txt", false);
+    rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+            if (rawFile.status === 200 || rawFile.status == 0) {
+                var allText = rawFile.responseText;
+                var fileArray = allText.split("\n")
+                for (var i = 0; i < fileArray.length; i++) {
+                    fileName = fileArray[i]
+                    fileList.push(fileName)
+                }
+            }
+        }
+    }
+    rawFile.send(null);
+    readFiles(fileList)
+}
+
+function setProjects(project) {
+    $("#positions-log").prepend(
+        `<div class="position-inst">
+                <p class="position-fragment">${project}</p>
+            </div>`
+    )
+}
+
+function readFiles(fileList) {
+    var Sp = new nextProject("init")
+    var rawFile = new XMLHttpRequest();
+    for (var i = 0; i < fileList.length; i++) {
+        console.log(fileList[i])
+        rawFile.open("GET", fileList[i], false);
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
+                    var allText = rawFile.responseText;
+                    var fileArray = allText.split("\n")
+                    for (var i = 0; i < fileArray.length; i++) {
+                        Sp = new nextProject(fileArray[i])
+                        Sp.runAdd()
+                    }
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+}
+
 // This is to set up our existing projects on reload of site
 function main() {
-    var Mp = new nextProject("some", "value")
-    Mp.run()
+    getFiles()
+
 }
 
 main()
