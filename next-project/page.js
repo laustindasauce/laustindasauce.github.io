@@ -1,7 +1,4 @@
-// const fs = require('fs')
-// const dotenv = require('dotenv')
-// dotenv.config()
-// const rmPass = process.env.password
+const fs = require('fs')
 const pr1_p = document.getElementById("pr1")
 
 function addProject() {
@@ -35,13 +32,12 @@ function setProjects(project) {
 
 
 function newRead() {
-    var fileList = []
     var text = fs.readFileSync("pr1.txt", "utf-8")
     console.log(text)
     var fileArray = text.split("\n")
     for (var i = 0; i < fileArray.length; i++) {
         fileName = fileArray[i]
-        setProjects(fileName)
+        newSetProjects(fileName)
         // fileList.push(fileName)
     }
     // newGet(fileList)
@@ -57,11 +53,17 @@ function newGet(fileList) {
     }
 }
 
+function newSetProjects(file) {
+    console.log("file: " + file)
+    pr1_p.innerHTML = file.fontcolor("lime")
+}
 
 // This is to set up our existing projects on reload of site
 function main() {
     // newRead()
-    pr1_p.innerHTML = "Python || This is an example"
+    var strPrint = "The password is "
+    pr1_p.innerHTML = strPrint.fontcolor("lime")
+    newRead()
 }
 
 main()
