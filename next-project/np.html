@@ -1,80 +1,63 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Project Planner</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Project Planner</title>
+        <!-- Bootstrap files -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
-    <!-- Bootstrap files -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        <!-- Local files -->
+        <link rel="stylesheet" type="text/css" href="np.css" />
 
-    <!-- Local files -->
-    <link rel="stylesheet" type="text/css" href="np.css" />
-
-    <!-- Script -->
-    <script src="bundle.js"></script>
-    <div id="title-container">
-        <h1>Project Ideas :)<span>|</span></h1>
-    </div>
-</head>
-
-<body>
-    <div id="data-container">
-        <div id="orders">
-            <div id="positions-title">
-                <p class="position-fragment">LANGUAGE &emsp; || &emsp; PROJECT</p>
-            </div>
+        <!-- Script -->
+        <div id="title-container">
+            <h1>Project Ideas :)<span>|</span></h1>
         </div>
-        <div id="positions">
-            <div id="positions-log">
-                <div class="position-inst">
-                    <p class="position-fragment"style="color: lime;"id="pr1"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr1"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr2"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr3"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr4"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr5"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr6"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr7"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr8"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr9"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr11"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr12"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr13"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr14"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr15"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr16"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr17"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr18"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr19"></p>
-                    <p class="position-fragment" style="color: lime;" id="pr20"></p>
+    </head>
+
+    <body>
+        <div id="data-container">
+            <div id="orders">
+                <div id="positions-title">
+                    <p class="position-fragment">LANGUAGE &emsp; || &emsp; PROJECT</p>
+                </div>
+            </div>
+            <div id="positions">
+                <div id="positions-log">
+                    <div class="position-inst">
+                        <div class="position-fragment">
+                            <span id="pr1">Hello there this is a really long message i i i i i i i i i i i i i i i i i i i i i i i  i i i i i i i i i i i i i i i i i i i</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="bottom-container">
-        <button type="button" class="btn btn-success control-button" onclick="addProject();">
-            Add Project
-        </button>
-        <div id="input-container">
-            <h5 id="input-title" style="margin: 5px; font-weight: bold; font-size: 14px; color: rgb(21, 185, 21);">Insert a language and project idea!</h5>
-            <input id="backend" type="text" placeholder="Program Language" />
-            <input id="frontend" type="text" placeholder="Project Description" />
-            <div id="password-container">
-                <input id="password" type="text" placeholder="Password *IF removing*" />
+        <div id="bottom-container">
+            <button type="button" class="btn btn-success control-button" onclick="addProject();">
+                Add Project
+            </button>
+            <div id="input-container">
+                <h5 id="input-title" style="margin: 5px; font-weight: bold; font-size: 14px; color: rgb(21, 185, 21);">Insert a language and project idea!</h5>
+                <input id="backend" type="text" placeholder="Program Language" />
+                <input id="frontend" type="text" placeholder="Project Description" />
+                <div id="password-container">
+                    <input id="password" type="text" placeholder="Password *IF removing*" />
+                </div>
             </div>
+            <button type="button" class="btn btn-danger control-button" onclick="removeProject();">
+                Remove Project
+            </button>
         </div>
-        <button type="button" class="btn btn-danger control-button" onclick="removeProject();">
-            Remove Project
-        </button>
-    </div>
-</body>
+        <script src="bundle.js"></script>
+    </body>
+</html>

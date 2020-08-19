@@ -10,8 +10,6 @@ function addProject() {
     var project = $("#frontend").val();
     console.log(project)
     var proj = language + " || " + project
-    // var Np = new nextProject(proj)
-    // Np.runAdd()
     setProjects(proj)
 }
 
@@ -38,7 +36,7 @@ function setProjects(project) {
 
 function newRead() {
     var fileList = []
-    var text = fs.readFileSync("project1.txt", "utf-8")
+    var text = fs.readFileSync("pr1.txt", "utf-8")
     console.log(text)
     var fileArray = text.split("\n")
     for (var i = 0; i < fileArray.length; i++) {
@@ -62,7 +60,8 @@ function newGet(fileList) {
 
 // This is to set up our existing projects on reload of site
 function main() {
-    newRead()
+    // newRead()
+    pr1_p.innerHTML = "Python || This is an example".fontcolor("lime")
 }
 
 main()
