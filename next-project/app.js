@@ -1,47 +1,57 @@
-// var Redis = require('ioredis')
-// const dotenv = require('dotenv')
-// const { write } = require('fs')
-// dotenv.config()
-// const redisPass = process.env.REDIS
+var Redis = require('ioredis')
+const dotenv = require('dotenv')
+const { write } = require('fs')
+dotenv.config()
+const redisPass = process.env.REDIS
 
 class nextProject {
-    constructor(language, project) {
-        // this.client = new Redis({
-        //     port: 6379,          // Redis port
-        //     host: '10.10.10.1',   // Redis host
-        //     password: password,
-        //     db: 3,
-        // })
+    constructor(language, project, password) {
+        this.client = new Redis({
+            port: 6379,          // Redis port
+            host: '10.10.10.1',   // Redis host
+            password: password,
+            db: 3,
+        })
         
-        this.language = language
-        this.project = project
+        this.project = language.toUpp
     }
-    // async run() {
-    //     client.get('language').then(function (result) {
-    //         writeToEventLog(result);
-    //     });
-    // }
-    async updatePositions() {
+
+    async run() {
+        this.client.smembers("projects", function (err, result) {
+            if (err) {
+                console.error(err);
+            } else {
+                for (var i = 0; i < result.length; i++) {
+                    $("#positions-log").prepend(
+                        `<div class="position-inst">
+                            <p class="position-fragment">${result[i]}</p>
+                        </div>`
+                    )
+                }
+            }
+        });
+    }
+
+    async runAdd() {
         $("#positions-log").prepend(
             `<div class="position-inst">
-                <p class="position-fragment">${this.language}</p>
                 <p class="position-fragment">${this.project}</p>
             </div>`
         )
-        console.log("project" + this.project)
     }
+
+    async checkDuplicate() {
+        if (this.client.sismember("projects", this.project)) {
+            return true
+        }
+        return false
+    }
+
+    async remProj() {
+        this.client.srem("projects", this.project)
+    }
+    
 } // End of nextProject
-
-
-function updatePositions(project, language) {
-    $("#positions-log").prepend(
-        `<div class="position-inst">
-                <p class="position-fragment">${language}</p>
-                <p class="position-fragment">${project}</p>
-            </div>`
-    )
-    console.log("project: " + project)
-}
 
 
 function addProject() {
@@ -49,18 +59,27 @@ function addProject() {
     console.log(language)
     var project = $("#frontend").val();
     console.log(project)
-    // var Np = new nextProject(language, project, redisPass)
-    updatePositions(project, language)
+    var password = "password"
+    var Np = new nextProject(language.toUpperCase(), project.toUpperCase(), password)
+    if (Np.checkDuplicate()) {
+        alert("That project is already in my list!")
+    } else { Np.runAdd() }
 }
 
 function removeProject() {
     var language = $("#backend").val()
     var project = $("#frontend").val()
     var padssword = $("#password").val()
-    var Rp = new nextProject(language, project, password)
-    Rp.run()
+    if (password == redisPass){
+        var Rp = new nextProject(language.toUpperCase(), project.toUpperCase(), password)
+        Rp.remProj()
+    } else { alert("Incorrect Password!") }
 }
 
-function writeToEventLog(text) {
-    $("#event-log").prepend(`<p class="event-fragment">${text}</p>`);
+// This is to set up our existing projects on reload of site
+function main() {
+    var Mp = new nextProject("some", "value", redisPass)
+    Mp.Run()
 }
+
+main()
