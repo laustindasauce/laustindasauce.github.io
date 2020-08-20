@@ -15,6 +15,11 @@ My Webapp
 * Removed Facebook since I don't really use Facebook
 * Move these to their own page
 
+## New Projects
+* Cool idea but tough to implement
+* Rattled my brain on how to persist the data but so far no luck
+* Currently using browserify and fs
+
 ## To-Do
 ### Add a page for project ideas!!
 * Add README to individual folders that we link to
@@ -29,3 +34,6 @@ My Webapp
 
 ### Rock Paper Scissors 
 * [freecodecamp](https://www.youtube.com/watch?v=jaVNP3nIAv0&t=871s)
+
+### New Project
+* [fs/browserify/brfs](https://github.com/browserify/brfs)
