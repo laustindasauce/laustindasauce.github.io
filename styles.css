@@ -57,7 +57,7 @@ header > h1 {
   margin: 0 auto;
   padding: 2em 2em;
   position: relative;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
   overflow: hidden;
   border-color: transparent;
@@ -107,123 +107,10 @@ header > h1 {
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-.fancy-hover--facebook:hover { 
-    background: linear-gradient(-45deg, #314266, #3b5998, #2864e4, #3b5998);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--twitter:hover { 
-    background: linear-gradient(-45deg, #327caa, #1DA1F2, #02d7fd, #1DA1F2);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--instagram:hover { 
-    background: linear-gradient(-45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #fd1d1d);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--about:hover { 
-    background: linear-gradient(-45deg, #009688, #00acee, #147e40, #0e76a8, #4ff326);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--games:hover { 
-    background: linear-gradient(-45deg,  rgb(238, 108, 34), rgb(114, 5, 5), red, #03283a);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--home:hover { 
-    background: linear-gradient(-45deg, #009688, #00acee, #147e40, #0e76a8, #4ff326);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--python:hover { 
-    background: linear-gradient(-45deg, #4b8bbe, #306998, #ffe873, #ffd43b, #646464);
-    /* animation: gradient 6s ease infinite; */
-    /* background-size: 200% 200%; */
-}
-.fancy-hover--javascript:hover { 
-  background: linear-gradient(-20deg, #f0db4f, #323330);
-    /* animation: gradient 6s ease infinite; */
-    /* background-size: 200% 200%; */
-}
-.fancy-hover--docker:hover { 
-    background: linear-gradient(-45deg, #0db7ed, #384d54);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--db:hover { 
-    background: linear-gradient(-45deg, #d82c20, #a41e11, #7a0c00, #ffffff, #636466);
-    /* animation: gradient 5s ease infinite; */
-    /* background-size: 200% 200%; */
-}
-.fancy-hover--go:hover { background: #29beb0 }
-.fancy-hover--godock:hover { 
-    background: linear-gradient(-45deg, #2c998e, #29beb0, #15e7d2, #29beb0);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-
-.fancy-hover--hang:hover { 
-    background: linear-gradient(-45deg, #24272e, rgb(238, 108, 34), rgb(114, 5, 5), #ffd43b);
-    animation: gradient 6s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--rps:hover { 
-  background: linear-gradient(-20deg, #FF9800, #f0db4f, #323330, #437f91);
-    animation: gradient 6s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--algo:hover { 
-    background: linear-gradient(-45deg, #242424, #7cfa06, #ffee03, aquamarine, #242424);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--db:hover { 
-    background: linear-gradient(-45deg, #d82c20, #a41e11, #7a0c00, #ffffff, #636466);
-    /* animation: gradient 5s ease infinite; */
-    /* background-size: 200% 200%; */
-}
-
-.fancy-hover--javadock:hover { 
-    background: linear-gradient(-45deg, #5382a1, #f89820, #5382a1, #f89820);
-    animation: gradient 5s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--java:hover { 
-    background: linear-gradient(-45deg, #5382a1, #f89820, #5382a1);
-    /* animation: gradient 5s ease infinite; */
-    background-size: 200% 200%;
-}
-.fancy-hover--javasc:hover { 
-  background: linear-gradient(-20deg, #323330, #f0db4f, #323330, #f0db4f);
-    animation: gradient 6s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--twitbot:hover { 
-  background: linear-gradient(-20deg, #87af37, #f0db4f, #588104, #f0db4f);
-    animation: gradient 6s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--fantasy:hover { 
-  background: linear-gradient(-20deg, #58a2c0, #76428f, #96863e, #58a2c0);
-    animation: gradient 6s ease infinite;
-    background-size: 200% 200%;
-}
-.fancy-hover--pacman:hover { 
-  background: linear-gradient(-20deg, #ffff00, #1919a6, #2121de, #dea185, #fd0000, #00ff00);
-    animation: gradient 8s ease infinite;
-    background-size: 200% 200%;
-}
-
-.fancy-hover--linkedin:hover { background: #0e76a8; }
-.fancy-hover--github:hover { background: black; }
-.fancy-hover--social:hover { background: #ff7f42; }
-/* .fancy-hover--facebook:hover{ background: #3b5998; } */
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-.menu { overflow: hidden; border: solid 1px #444444; width: 15em; border-radius: 3px; opacity: 0.958; }
+.menu { overflow: hidden; border: transparent; width: 15em; border-radius: 3px; opacity: 0.958; }
 .menu :last-child { margin-bottom: 0; }
 .fa { width: 1.25em; margin-right: 0.5em; font-size: 1.25em; text-align: center; }
 html { height: 100%; display: flex; overflow: hidden; }
