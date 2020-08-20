@@ -1,6 +1,5 @@
 /* Experimenting with typing animation  */
 h1{
-  color: solid rgb(21, 185, 21); 
   font-family: "Courier";
   font-size: 40px;
   margin: 10px 0 0 10px;
@@ -30,7 +29,7 @@ span{
 .homePage {
   cursor: pointer;
   padding-left: 2vh;
-  color: rgb(7, 136, 7);
+  color: rgb(238, 110, 5);
 }
 
 body { max-width: 90%; margin: auto; background: #000; }
@@ -63,6 +62,7 @@ body:before {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 400px;
 }
 
 #password-container {
@@ -72,9 +72,8 @@ body:before {
   justify-content: center;
 }
 
-.control-button {
+.btn {
   width: 150px;
-  margin: auto;
 }
 
 #input-title {
@@ -83,21 +82,24 @@ body:before {
   /* color: solid black; */
   font-weight: bold;
   text-align: center;
-  color: solid rgb(21, 185, 21);
+  color: solid rgb(238, 110, 5);
 }
 
 #backend {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 300px;
 }
 #frontend {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 300px;
 }
 
 #password {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 300px;
 }
 
 /* <!-- This is extra to mess with.. I like everything above here <----> */
@@ -120,7 +122,7 @@ body:before {
   width: 20vw;
 } */
 #title-container {
-  color: rgb(21, 185, 21);
+  color: rgb(238, 110, 5);
   /* font-style: oblique; */
   display: flex;
   align-items: center;
@@ -149,7 +151,7 @@ body:before {
 #positions {
   height: 40vh;
   width: 90vw;
-  border: 1px solid rgb(49, 121, 49);
+  border: 1px solid rgb(88, 65, 46);
   border-radius: 10px;
   border-width: 5px;
   margin-top: 0;
@@ -157,7 +159,7 @@ body:before {
   
   display: flex;
   font-size: 20px;
-  color: solid rgb(21, 185, 21);
+  color: solid rgb(238, 110, 5);
 }
 #positions-title {
   width: 90vw;
@@ -166,7 +168,7 @@ body:before {
   font-weight: bold;
   flex-direction: row;
   padding-left: 20px;
-  color: lime;
+  color: rgb(238, 110, 5);
 }
 #positions-log {
   overflow-y: scroll;

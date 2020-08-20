@@ -103,7 +103,7 @@ function toCamelCase(inputArray) {
 
 function newSetProjects(file, num) {
     pID = "pr" + num.toString()
-    document.getElementById(pID).innerHTML = file.fontcolor("lime")
+    document.getElementById(pID).innerHTML = file.fontcolor("white")
 }
 
 function checkWhitespace(s) {
