@@ -8,11 +8,10 @@ const project_val = document.getElementById("frontend")
 const password_val = document.getElementById("password")
 const rmPass = "NotSecureLOL"
 const languages = ["PYTHON", "JAVASCRIPT", "GO", "GOLANG", "C++", "C", "C#", "HTML", "CSS", "PHP", "RUBY", "R", "DJANGO", "JAVA", "PERL", "COBOL", "BASIC", "SQL", "SAS"]
-var projNum = 1
+var projNum = 0
 var pID = ""
 
 function addProject() {
-    projNum += 1
     if (projNum > 5){
         alert("The project list is full!")
         return
@@ -30,15 +29,16 @@ function addProject() {
         return
     }
     var project = $("#frontend").val()
-    project = toCamelCaseString(project)
     if (!project){
         alert(`Please give me a description for the project I should write in ${language}`)
         return
     }
+    project = toCamelCaseString(project)
     language_val.value = ''
     project_val.value = ''
     var proj = language + " &emsp; || &emsp; " + project
-    newSetProjects(proj)
+    projNum += 1
+    newSetProjects(proj, projNum)
     alert("Working on being able to save newly added projects...")
 }
 
@@ -61,11 +61,11 @@ function removeProject() {
 }
 
 function newRead() {
-    var text = "PYTHON &emsp; || &emsp; Example Project Description"
+    var text = "LANGUAGE &emsp; || &emsp; Example Project Description"
     var fileArray = text.split("\n")
     for (var i = 0; i < fileArray.length; i++) {
         fileName = fileArray[i]
-        newSetProjects(fileName)
+        newSetProjects(fileName, 1)
     }
 }
 
@@ -101,8 +101,8 @@ function toCamelCase(inputArray) {
     return result;
 }
 
-function newSetProjects(file) {
-    pID = "pr" + projNum.toString()
+function newSetProjects(file, num) {
+    pID = "pr" + num.toString()
     document.getElementById(pID).innerHTML = file.fontcolor("lime")
 }
 

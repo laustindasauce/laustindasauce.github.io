@@ -33,10 +33,21 @@ span{
   color: rgb(7, 136, 7);
 }
 
-body{
-    background-image: url("https://i2.wp.com/onaircode.com/wp-content/uploads/2017/11/Constellation.jpg?resize=908%2C535&ssl=1");
-}
+body { max-width: 90%; margin: auto; background: #000; }
 
+body:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url(https://unsplash.it/600/600?image=992); /* */
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  opacity: 0.9;
+  margin: -7px;
+  filter: blur(6px);
+}
 #bottom-container {
   display: flex;
   align-items: center;
@@ -178,6 +189,7 @@ body{
 .position-fragment {
   margin: 5px;
   width: 87vw;
+  padding-left: 20px;
 }
 
 .position-var {

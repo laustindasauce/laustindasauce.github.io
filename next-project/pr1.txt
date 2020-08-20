@@ -1,1 +1,1 @@
-PYTHON &emsp; || &emsp; Example Project Description
+LANGUAGE &emsp; || &emsp; Example Project Description
