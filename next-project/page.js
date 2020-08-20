@@ -22,27 +22,17 @@ function removeProject() {
     language_val.value = ''
     var project = $("#frontend").val()
     project_val.value = ''
-    var padssword = $("#password").val()
+    var passwordText = password_val.value
+    console.log(passwordText)
     password_val.value = ''
     var proj = language.toUpperCase() + " &emsp; || &emsp; " + project.toUpperCase()
-    if (password == rmPass) {
-        alert("Working on this function")
+    if (passwordText == rmPass) {
+        alert("How'd you get my password! Working on this function")
     } else { 
         var strAlert = proj + "\nCould not be removed since you entered incorrect password."
-        alert("Incorrect Password!") 
+        alert(strAlert) 
     }
 }
-
-
-function setProjects(project) {
-    $("#positions-log").prepend(
-        `<div class="position-inst">
-                <p class="position-fragment"style="color: lime;">${project}</p>
-            </div>`
-    )
-    console.log("Added")
-}
-
 
 function newRead() {
     var text = fs.readFileSync("pr1.txt", "utf-8")
@@ -51,10 +41,7 @@ function newRead() {
     for (var i = 0; i < fileArray.length; i++) {
         fileName = fileArray[i]
         newSetProjects(fileName)
-        // fileList.push(fileName)
     }
-    // newGet(fileList)
-    // console.log("finished")
 }
 
 function newGet(fileList) {
@@ -73,9 +60,6 @@ function newSetProjects(file) {
 
 // This is to set up our existing projects on reload of site
 function main() {
-    // newRead()
-    var strPrint = "The password is "
-    pr1_p.innerHTML = strPrint.fontcolor("lime")
     newRead()
     add_button.addEventListener('click', function() {
         addProject()
