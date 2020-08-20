@@ -27,6 +27,10 @@ span{
 
 /* Done experimenting */
 
+.homePage {
+  cursor: pointer;
+}
+
 body{
     background-image: url("https://i2.wp.com/onaircode.com/wp-content/uploads/2017/11/Constellation.jpg?resize=908%2C535&ssl=1");
 }
