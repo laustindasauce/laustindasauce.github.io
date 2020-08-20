@@ -29,6 +29,8 @@ span{
 
 .homePage {
   cursor: pointer;
+  padding-left: 2vh;
+  color: rgb(7, 136, 7);
 }
 
 body{
