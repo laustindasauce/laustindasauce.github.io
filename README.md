@@ -37,3 +37,4 @@ My Webapp
 
 ### New Project
 * [fs/browserify/brfs](https://github.com/browserify/brfs)
+* $ browserify -t brfs page.js > bundle.js

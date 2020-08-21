@@ -1,4 +1,5 @@
-const fs = require('fs')
+// const fs = require('fs')
+const axios = require('axios')
 // const pr1_p = document.getElementById("pr1")
 const add_button = document.getElementById("add")
 const rm_button = document.getElementById("rm")
@@ -10,6 +11,21 @@ const languages = ["PYTHON", "JAVASCRIPT", "GO", "GOLANG", "C++", "C", "C#", "HT
 var projNum = 0
 var pID = ""
 
+const BASE_URL = '#############';
+
+const getTodos = async () => {
+    try {
+        const res = await axios.get(`${BASE_URL}/articles`);
+
+        const todos = res.data;
+
+        console.log(`GET: Here's the list of todos`, todos);
+
+        return todos;
+    } catch (e) {
+        console.error(e);
+    }
+};
 function addProject() {
     if (projNum > 5){
         alert("The project list is full!")
@@ -115,9 +131,9 @@ function inLanguageArray(a) {
 
 // This is to set up our existing projects on reload of site
 function main() {
-    newRead()
+    // newRead()
     add_button.addEventListener('click', function() {
-        addProject()
+        getTodos()
     })
     rm_button.addEventListener('click', function () {
         removeProject()
