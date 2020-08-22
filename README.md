@@ -38,3 +38,4 @@ My Webapp
 ### New Project
 * [fs/browserify/brfs](https://github.com/browserify/brfs)
 * $ browserify -t brfs page.js > bundle.js
+* backend run on Go ~ right now locally but could move this to AWS cloud

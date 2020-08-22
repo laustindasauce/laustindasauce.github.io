@@ -10,24 +10,64 @@ const rmPass = "NotSecureLOL"
 const languages = ["PYTHON", "JAVASCRIPT", "GO", "GOLANG", "C++", "C", "C#", "HTML", "CSS", "PHP", "RUBY", "R", "DJANGO", "JAVA", "PERL", "COBOL", "BASIC", "SQL", "SAS"]
 var projNum = 0
 var pID = ""
+var postData = new Object()
+let jsonData
 
-const BASE_URL = '#############';
+const BASE_URL = 'myLocalRouterIP'
 
-const getTodos = async () => {
+const getProjects = async () => {
     try {
-        const res = await axios.get(`${BASE_URL}/articles`);
+        const res = await axios.get(`${BASE_URL}/projects`);
 
-        const todos = res.data;
+        const projects = res.data;
+        let language = []
+        let description = []
 
-        console.log(`GET: Here's the list of todos`, todos);
+        console.log(`GET: Here's the list of projects`, projects);
+        
+        if (projects === null) {
+            initDisplay()
+            return
+        }
 
-        return todos;
+        for (i = 0; i < projects.length; i ++) {
+            if (i % 2 === 0) {
+                language.push(projects[i])
+            } else {
+                description.push(projects[i])
+            }
+        }
+        for (i = 0; i < language.length; i++) {
+            newRead(language[i], description[i])
+        }
+
+        return
     } catch (e) {
         console.error(e);
     }
 };
+
+const postProjects = async () => {
+    try {
+        axios({
+          url: `${BASE_URL}/projects`,
+          method: 'post',
+          data: jsonData,
+        })
+          .then(function (response) {
+            // your action after success
+            console.log(response)
+          })
+          .catch(function (error) {
+            // your action on error success
+            console.log(error)
+          })
+    } catch (e) {
+        console.error(e)
+    }
+}
 function addProject() {
-    if (projNum > 5){
+    if (projNum > 14){
         alert("The project list is full!")
         return
     }
@@ -54,6 +94,11 @@ function addProject() {
     var proj = language + " &emsp; || &emsp; " + project
     projNum += 1
     newSetProjects(proj, projNum)
+    postData.language = language
+    postData.description = project
+    jsonData = JSON.stringify(postData)
+    console.log(jsonData)
+    postProjects()
     alert("Working on being able to save newly added projects...")
 }
 
@@ -75,20 +120,10 @@ function removeProject() {
     }
 }
 
-function newRead() {
-    var text = fs.readFileSync("pr1.txt", "utf-8")
-    var fileArray = text.split("\n")
-    for (var i = 0; i < fileArray.length; i++) {
-        fileName = fileArray[i]
-        newSetProjects(fileName, 1)
-    }
-}
-
-function newGet(fileList) {
-    let text
-    for (var i = 0; i < fileList.length; i++) {
-        text = fs.readFileSync(fileList[i], "utf-8")
-    }
+function newRead(language, project) {
+    projNum += 1
+    fullProject = language + ' &emsp; || &emsp; ' + project
+    newSetProjects(fullProject, projNum)
 }
 
 
@@ -100,8 +135,8 @@ function toCamelCaseString(input) {
 
 // convert string to words
 function toWords(input) {
-    var regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
-    return input.match(regex);
+    let regex = input.trim().split('\\s+')
+    return regex;
 }
 
 function toCamelCase(inputArray) {
@@ -114,6 +149,11 @@ function toCamelCase(inputArray) {
         result += tempStr + " ";
     }
     return result;
+}
+
+function initDisplay() {
+    fullProject = 'LANGUAGE &emsp; || &emsp; Project Description'
+    newSetProjects(fullProject, 1)
 }
 
 function newSetProjects(file, num) {
@@ -131,9 +171,9 @@ function inLanguageArray(a) {
 
 // This is to set up our existing projects on reload of site
 function main() {
-    // newRead()
+    getProjects()
     add_button.addEventListener('click', function() {
-        getTodos()
+        addProject()
     })
     rm_button.addEventListener('click', function () {
         removeProject()
