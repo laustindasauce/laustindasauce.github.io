@@ -19,6 +19,7 @@ My Webapp
 * Cool idea but tough to implement
 * Rattled my brain on how to persist the data but so far no luck
 * Currently using browserify and fs
+* Check my backend branch for updated version of this page
 
 ## To-Do
 ### Add a page for project ideas!!
