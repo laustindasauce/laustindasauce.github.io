@@ -42,7 +42,6 @@ function addProject() {
 }
 
 function removeProject() {
-    getVals()
     var language = $("#backend").val().toUpperCase()
     language_val.value = ''
     var project = $("#frontend").val()
