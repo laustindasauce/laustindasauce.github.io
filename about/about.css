@@ -4,6 +4,7 @@ body {
   background: #b9b0aa;
   font-size: 14px;
   line-height: 1;
+  /* filter: blur(6px); */
 }
 
 h1 {
