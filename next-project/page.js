@@ -99,7 +99,7 @@ function addProject() {
     jsonData = JSON.stringify(postData)
     console.log(jsonData)
     postProjects()
-    alert("Working on being able to save newly added projects...")
+    // alert("Working on being able to save newly added projects...")
 }
 
 function removeProject() {
