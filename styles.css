@@ -215,6 +215,11 @@ header > h1 {
     animation: gradient 8s ease infinite;
     background-size: 200% 200%;
 }
+.fancy-hover--np:hover { 
+  background: linear-gradient(-45deg, rgb(238, 110, 5), #1919a6, rgb(88, 65, 46), rgb(18, 139, 160));
+    animation: gradient 8s ease infinite;
+    background-size: 200% 200%;
+}
 
 .fancy-hover--linkedin:hover { background: #0e76a8; }
 .fancy-hover--github:hover { background: black; }
