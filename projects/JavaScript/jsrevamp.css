@@ -22,5 +22,9 @@ body {
 
 .project:hover {
     cursor: pointer;
-    background: red;
+    background: #0b0b0f;
+}
+
+.btn {
+  width: 100px;
 }
