@@ -13,7 +13,7 @@ body {
 
 .project {
     border: 4px solid white;
-    /* border-radius: 50%; */
+    border-radius: 15px;
     margin: 0 20px;
     padding: 10px;
     display: inline-block;
