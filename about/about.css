@@ -135,7 +135,63 @@ a, a:active, a:hover {
     color: #1a1a25;
   /* margin-bottom: 5px; */
 }
+#bottom-container {
+  display: flex;
+  align-items: left;
+  flex-direction: row;
+  justify-content: left;
+  height: 40vh;
+  width: 80vw;
+  margin: 0 auto;
+}
 
+#input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#password-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  width: 30vh;
+}
+
+#input-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  /* color: solid black; */
+  font-weight: bold;
+  text-align: center;
+  color: solid rgb(238, 110, 5);
+}
+
+#backend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30vh;
+  height: 2rem;
+}
+#frontend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30vh;
+  height: 3rem;
+  background-color: #f2f2f2;
+}
+
+#password {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30vh;
+  height: 2rem;
+}
 
 
 .footer {
