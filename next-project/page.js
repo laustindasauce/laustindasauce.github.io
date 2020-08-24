@@ -6,11 +6,11 @@ const rm_button = document.getElementById("rm")
 const language_val = document.getElementById("backend")
 const project_val = document.getElementById("frontend")
 const password_val = document.getElementById("password")
-const rmPass = "NotSecureLOL"
 const languages = ["PYTHON", "JAVASCRIPT", "GO", "GOLANG", "C++", "C", "C#", "HTML", "CSS", "PHP", "RUBY", "R", "DJANGO", "JAVA", "PERL", "COBOL", "BASIC", "SQL", "SAS"]
 var projNum = 0
 var pID = ""
 var postData = new Object()
+var postRmData = new Object()
 let jsonData
 
 const BASE_URL = 'https://guldentech.com'
@@ -66,6 +66,30 @@ const postProjects = async () => {
         console.error(e)
     }
 }
+
+
+const postRmProjects = async () => {
+    try {
+        axios({
+            url: `${BASE_URL}/austinapi/rmprojects`,
+            method: 'post',
+            data: jsonData,
+        })
+            .then(function (response) {
+                projNum -= 1
+                alert("Please refresh browser to realize changes")
+                console.log(response)
+            })
+            .catch(function (error) {
+                alert("Something went wrong, try again if you'd like.")
+                console.log(error)
+            })
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+
 function addProject() {
     if (projNum > 14){
         alert("The project list is full!")
@@ -102,22 +126,59 @@ function addProject() {
     // alert("Working on being able to save newly added projects...")
 }
 
-function removeProject() {
-    var language = $("#backend").val().toUpperCase()
-    language_val.value = ''
-    var project = $("#frontend").val()
-    project = toCamelCaseString(project)
-    project_val.value = ''
-    var passwordText = password_val.value
-    password_val.value = ''
-    var proj = language + " &emsp; || &emsp; " + project
-    if (passwordText == rmPass) {
-        alert("How'd you get my password! Working on this function")
-    } else { 
-        var strAlert = proj + "\nCould not be removed since you entered incorrect password."
-        alert(strAlert) 
+function rmProject() {
+    if (projNum > 14) {
+        alert("The project list is full!")
+        return
     }
+    var language = $("#backend").val().toUpperCase()
+    if (checkWhitespace(language)) {
+        alert(`Invalid format for ${language}: dont include whitespace\nFor multiple languages: Pick main language and add others in project description.`)
+        language_val.value = ''
+        return
+    }
+    if (!(inLanguageArray(language))) {
+        alert(`Not a valid language, check your spelling: ${language}`)
+        alert(`Valid languages: ${languages}`)
+        language_val.value = ''
+        return
+    }
+    var project = $("#frontend").val()
+    if (!project) {
+        alert(`Please give me a description for the project I should write in ${language}`)
+        return
+    }
+    project = toCamelCaseString(project)
+
+    var password = $("#password").val()
+    language_val.value = ''
+    project_val.value = ''
+    password_val.value = ''
+    
+    postRmData.language = language
+    postRmData.description = project
+    postRmData.password = password
+    jsonData = JSON.stringify(postRmData)
+    console.log(jsonData)
+    postRmProjects()
 }
+
+// function removeProject() {
+//     var language = $("#backend").val().toUpperCase()
+//     language_val.value = ''
+//     var project = $("#frontend").val()
+//     project = toCamelCaseString(project)
+//     project_val.value = ''
+//     var passwordText = password_val.value
+//     password_val.value = ''
+//     var proj = language + " &emsp; || &emsp; " + project
+//     if (passwordText == rmPass) {
+//         alert("How'd you get my password! Working on this function")
+//     } else { 
+//         var strAlert = proj + "\nCould not be removed since you entered incorrect password."
+//         alert(strAlert) 
+//     }
+// }
 
 function newRead(language, project) {
     projNum += 1
@@ -175,7 +236,7 @@ function main() {
         addProject()
     })
     rm_button.addEventListener('click', function () {
-        removeProject()
+        rmProject()
     })
 }
 
