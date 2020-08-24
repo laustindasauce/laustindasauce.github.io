@@ -13,7 +13,7 @@ var pID = ""
 var postData = new Object()
 let jsonData
 
-const BASE_URL = 'baseURL'
+const BASE_URL = 'https://guldentech.com'
 
 const getProjects = async () => {
     try {

@@ -59,6 +59,12 @@ a, a:active, a:hover {
     opacity: 1;
 }
 
+.picture {
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-top: 4rem;
+}
+
 .footer {
     background-color: #1a1a25;
     color: #f2f2f2;
