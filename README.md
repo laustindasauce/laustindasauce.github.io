@@ -37,5 +37,8 @@ My Webapp
 
 ### New Project
 * [fs/browserify/brfs](https://github.com/browserify/brfs)
-* $ browserify -t brfs page.js > bundle.js
+* If you use 'fs' package
+    * $ browserify -t brfs page.js > bundle.js
+* If not you dont need the brfs tag
+    * $ browserify page.js > bundle.js
 * backend run on Go ~ right now locally but could move this to AWS cloud

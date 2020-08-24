@@ -13,11 +13,11 @@ var pID = ""
 var postData = new Object()
 let jsonData
 
-const BASE_URL = 'myLocalRouterIP'
+const BASE_URL = 'baseURL'
 
 const getProjects = async () => {
     try {
-        const res = await axios.get(`${BASE_URL}/projects`);
+        const res = await axios.get(`${BASE_URL}/austinapi/projects`);
 
         const projects = res.data;
         let language = []
@@ -50,7 +50,7 @@ const getProjects = async () => {
 const postProjects = async () => {
     try {
         axios({
-          url: `${BASE_URL}/projects`,
+          url: `${BASE_URL}/austinapi/projects`,
           method: 'post',
           data: jsonData,
         })
