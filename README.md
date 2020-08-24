@@ -15,7 +15,7 @@ My Webapp
 * Removed Facebook since I don't really use Facebook
 * Move these to their own page
 
-## New Project
+## Next Project
 * Uses my [backend](https://github.com/abspen1/go-backend) to persist data
 * Might need to adjust the format of the description string..
 * Backend is running on guldentech.com
