@@ -22,6 +22,54 @@ h2 {
   margin: 0 auto;
 }
 
+#title-container-docker {
+  color: #0db7ed;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#title-container-docker {
+  color: #29beb0;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#title-container-python {
+  color: #FFD43B;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#title-container-redis {
+  color: #A41E11;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+
 a, a:active, a:hover {
     text-decoration: none;
     color: #f2f2f2;
