@@ -16,9 +16,11 @@ My Webapp
 * Move these to their own page
 
 ## New Projects
-* Cool idea but tough to implement
-* Rattled my brain on how to persist the data but so far no luck
-* Currently using browserify and fs
+* Officially working while running locally
+* Uses my [backend](https://github.com/abspen1/go-backend) to persist data
+* Might need to adjust the format of the description string..
+* Looking into hosting the backend on an AWS cloud server to run 24/7
+* I then should be able to actually merge this to master with working next project page
 
 ## To-Do
 ### Add a page for project ideas!!
@@ -41,4 +43,4 @@ My Webapp
     * $ browserify -t brfs page.js > bundle.js
 * If not you dont need the brfs tag
     * $ browserify page.js > bundle.js
-* backend run on Go ~ right now locally but could move this to AWS cloud
+* backend run on Go ~ right now locally but could move this to Guldentech
