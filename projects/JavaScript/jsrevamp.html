@@ -1,45 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<header class="top-header">
-    <!-- <h1>JavaScript Projects</h1> -->
-    <!-- Bootstrap files -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</header>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Austin's JS Projects</title>
+        
 
-<head>
-    <meta charset="UTF-8">
-    <title>Austin's JS Projects</title>
-    <link rel="stylesheet" href="jsrevamp.css">
-</head>
-<body>
-    <div class="projects">
-        <div class="project" id="hang">
-            <a href="https://github.com/abspen1/hangman-js">
-                <img align="center"
-                    src="https://github-readme-stats.vercel.app/api/pin/?username=abspen1&repo=hangman-js&theme=graywhite" />
-            </a>
-            <button type="button" class="btn btn-success" id="add">
-                <span onclick="location='hangman/hangman.html'" STYLE="text-decoration:none">Play</span>
-            </button>
+        <!-- Bootstrap files -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+        <link rel="stylesheet" href="jsrevamp.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="nav-item"><a href="/index.html">Home</a></div>
+                <div class="nav-item"><a href="/projects/projects.html">Projects</a></div>
+            </div>
         </div>
-        <div class="project" id="webapp">
-            <a href="https://github.com/abspen1/abspen1.github.io">
-                <img align="center"
-                    src="https://github-readme-stats.vercel.app/api/pin/?username=abspen1&repo=abspen1.github.io&theme=graywhite" />
-            </a>
-            <button type="button" class="btn btn-success" id="add">
-                Add Project
-            </button>
+
+        <div id="title-container">
+            <h1>Javascript Projects</h1>
         </div>
-        <div class="project" id="algo">
-            <a href="https://github.com/abspen1/js-trading-algo">
+
+        <div class="projects">
+            <div class="project" id="hang">
+                <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=abspen1&repo=hangman-js&theme=default_repocard" />
+                <div id="container">
+                    <div class="button" id="button-2">
+                        <div id="slide"></div>
+                        <span onclick="location='hangman/hangman.html'" STYLE="text-decoration:none">Play</span>
+                    </div>
+                    <div class="button" id="button-2">
+                        <div id="slide"></div>
+                        <span onclick="window.open('https://github.com/abspen1/hangman-js')" STYLE="text-decoration:none">Github</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project" id="webapp">
                 <img align="center"
-                    src="https://github-readme-stats.vercel.app/api/pin/?username=abspen1&repo=js-trading-algo&theme=graywhite" />
-            </a>
-            <button type="button" class="btn btn-success" id="add">
-                Add Project
-            </button>
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=abspen1&repo=abspen1.github.io&theme=default_repocard" />
+                <div id="container">
+                    <div class="button" id="button-2">
+                        <div id="slide"></div>
+                        <span onclick="window.open('https://github.com/abspen1/abspen1.github.io')" STYLE="text-decoration:none">Github</span>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="project" id="algo">
+                <img align="center"
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=abspen1&repo=js-trading-algo&theme=default_repocard" />
+                <div id="container">
+                    <div class="button" id="button-2">
+                        <div id="slide"></div>
+                        <span onclick="location='algo/algo.html'" STYLE="text-decoration:none">Play</span>
+                    </div>
+                    <div class="button" id="button-2">
+                        <div id="slide"></div>
+                        <span onclick="window.open('https://github.com/abspen1/js-trading-algo')" STYLE="text-decoration:none">Github</span>
+                    </div>
+                    
+                </div>
+
+            </div>
+
         </div>
-    </div>
-</body>
+
+        <div class="footer">Austin Spencer &emsp; | &emsp; abspencer2097@gmail.com</div>
+    </body>
+</html>
