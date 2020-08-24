@@ -112,6 +112,8 @@ a, a:active, a:hover {
 
 #info {
     /* display: block; */
+    position: absolute;
+    right: 0;
     width: 33%;
     align-items: center;
     flex-direction: row;
@@ -135,14 +137,16 @@ a, a:active, a:hover {
     color: #1a1a25;
   /* margin-bottom: 5px; */
 }
+
 #bottom-container {
-  display: flex;
-  align-items: left;
-  flex-direction: row;
-  justify-content: left;
-  height: 40vh;
-  width: 80vw;
-  margin: 0 auto;
+    background-color:rgba(72,72,72,0.4);
+	padding: 20px;
+	width: 450px;
+	float: left;
+    position: absolute;
+    left: 2%;
+    bottom: 10%;
+   margin: 10px;
 }
 
 #input-container {
@@ -159,38 +163,77 @@ a, a:active, a:hover {
   justify-content: center;
 }
 
-.btn {
-  width: 30vh;
-}
-
 #input-title {
   margin-top: 10px;
   margin-bottom: 30px;
   /* color: solid black; */
+  padding-bottom: 15px;
   font-weight: bold;
   text-align: center;
   color: solid rgb(238, 110, 5);
 }
 
-#backend {
+#name {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 30vh;
+  width: 100%;
   height: 2rem;
 }
-#frontend {
+#email {
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 30vh;
-  height: 3rem;
-  background-color: #f2f2f2;
+  width: 100%;
+  height: 2rem;
 }
 
-#password {
+#message {
   margin-top: 10px;
-  margin-bottom: 10px;
-  width: 30vh;
-  height: 2rem;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 3.5rem;
+}
+
+#button-blue{
+    float:left;
+    width: 100%;
+    border: #fbfbfb solid 4px;
+    cursor:pointer;
+    background-color: #3498db;
+    color:white;
+    font-size:24px;
+    padding-top:22px;
+    padding-bottom:22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+}
+
+#button-blue:hover{
+    /* background-color: rgba(0,0,0,0); */
+    background-color: #f2f2f2;
+	color: #0493bd;
+}
+	
+.submit:hover {
+	color: #3498db;
+}
+	
+/* .ease {
+	width: 0px;
+	height: 74px;
+	background-color: #fbfbfb;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-o-transition: .3s ease;
+	-ms-transition: .3s ease;
+	transition: .3s ease;
+} */
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
 }
 
 
