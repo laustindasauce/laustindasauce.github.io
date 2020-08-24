@@ -15,12 +15,11 @@ My Webapp
 * Removed Facebook since I don't really use Facebook
 * Move these to their own page
 
-## New Projects
-* Officially working while running locally
+## New Project
 * Uses my [backend](https://github.com/abspen1/go-backend) to persist data
 * Might need to adjust the format of the description string..
-* Looking into hosting the backend on an AWS cloud server to run 24/7
-* I then should be able to actually merge this to master with working next project page
+* Backend is running on guldentech.com
+* Still need to code the remove function on the backend
 
 ## To-Do
 ### Add a page for project ideas!!
