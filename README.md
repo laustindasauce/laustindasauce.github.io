@@ -1,8 +1,10 @@
 # abspen1.github.io
 My Webapp
 
-## Games
-* Could add link to source project within each browser version as well
+## About
+* Added info form that can email me when someone wants to send me something!
+* Was able to do this with my [backend](https://github.com/abspen1/go-backend) to persist data running Go
+
 ### Hangman
 * Added random-words generator with browserify 😍
 
