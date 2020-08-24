@@ -15,11 +15,11 @@ My Webapp
 * Removed Facebook since I don't really use Facebook
 * Move these to their own page
 
-## New Projects
-* Cool idea but tough to implement
-* Rattled my brain on how to persist the data but so far no luck
-* Currently using browserify and fs
-* Check my backend branch for updated version of this page
+## Next Project
+* Uses my [backend](https://github.com/abspen1/go-backend) to persist data
+* Might need to adjust the format of the description string..
+* Backend is running on guldentech.com
+* Still need to code the remove function on the backend
 
 ## To-Do
 ### Add a page for project ideas!!
@@ -38,3 +38,8 @@ My Webapp
 
 ### New Project
 * [fs/browserify/brfs](https://github.com/browserify/brfs)
+* If you use 'fs' package
+    * $ browserify -t brfs page.js > bundle.js
+* If not you dont need the brfs tag
+    * $ browserify page.js > bundle.js
+* backend run on Go ~ right now locally but could move this to Guldentech
