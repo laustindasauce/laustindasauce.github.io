@@ -32,11 +32,10 @@ a, a:active, a:hover {
 }
 
 .navbar {
-    position: fixed;
-    text-align: right;
+    position: absolute;
     right: 0;
     z-index: 100;
-    width: 100%;
+    /* width: 100%; */
     /* background-color: #1a1a25; */
     padding-bottom: 1rem;
     padding-top: 1rem;
@@ -185,22 +184,6 @@ body:before {
   height: 20vh;
   width: 80vw;
   margin: 0 auto;
-}
-#orders {
-  height: 5vh;
-  width: 90vw;
-  border: 1px solid rgb(49, 121, 49);
-  border-top-width: 5px;
-  border-left-width: 5px;
-  border-right-width: 5px;
-  border-bottom-width: 0;
-  border-radius: 10px;
-  /* margin: 5px; */
-  
-  /* display: flex; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
 }
 #positions {
   height: 40vh;
