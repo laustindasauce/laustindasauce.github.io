@@ -57,19 +57,22 @@ a, a:active, a:hover {
 }
 
 .navbar {
+    /* font-size: 20px; */
+    text-align: right;
     position: fixed;
-    top: 0;
-    left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 100;
+    width: 100%;
     background: rgba(0, 0, 0, 0.3);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
-@media (max-width:767px) {
+/* @media (max-width:767px) {
     .navbar {
         display: none;
     }
-}
+} */
 
 .navbar-container {
     position: relative;
@@ -124,7 +127,7 @@ a, a:active, a:hover {
     left: 0;
     right: 0;
     z-index: -1;
-    background: url(assets/jpl.jpg) 50%;
+    /* background: url(assets/jpl.jpg) 50%; */
     filter: brightness(15%);
     background-size: cover;
 }
