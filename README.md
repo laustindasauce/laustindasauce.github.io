@@ -3,7 +3,7 @@ My Webapp
 
 ## About
 * Added info form that can email me when someone wants to send me something!
-* Was able to do this with my [backend](https://github.com/abspen1/go-backend) to persist data running Go
+* Was able to do this with my [backend](https://github.com/abspen1/go-backend) in Go
 
 ### Hangman
 * Added random-words generator with browserify 😍
@@ -16,6 +16,11 @@ My Webapp
 * Open in new tab since there isn't a link back to home page
 * Removed Facebook since I don't really use Facebook
 * Move these to their own page
+
+## Projects
+* [Adam Alston](https://github.com/adamalston/v1) has his website open-source as well.. I pulled the styles for this page from there
+* I also got the idea for the footer/header on pages from his website. 
+* Program language logos all from [Logo Wine](https://www.logo.wine/Technology)
 
 ## Next Project
 * Uses my [backend](https://github.com/abspen1/go-backend) to persist data
@@ -44,4 +49,4 @@ My Webapp
     * $ browserify -t brfs page.js > bundle.js
 * If not you dont need the brfs tag
     * $ browserify page.js > bundle.js
-* backend run on Go ~ right now locally but could move this to Guldentech
+* [backend](https://github.com/abspen1/go-backend) to persist data run on Go 
