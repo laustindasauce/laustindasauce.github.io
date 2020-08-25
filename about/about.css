@@ -219,17 +219,6 @@ a, a:active, a:hover {
 .submit:hover {
 	color: #3498db;
 }
-	
-/* .ease {
-	width: 0px;
-	height: 74px;
-	background-color: #fbfbfb;
-	-webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-o-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
-} */
 
 .submit:hover .ease{
   width:100%;
