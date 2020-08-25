@@ -12,7 +12,7 @@ html, body {
     font-size: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
-    background-color: #666685;
+    background-color: #181828;
     height: 100%;
 }
 
@@ -57,22 +57,15 @@ a, a:active, a:hover {
 }
 
 .navbar {
-    /* font-size: 20px; */
     text-align: right;
     position: fixed;
     right: 0;
     z-index: 100;
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    /* padding-bottom: 1rem;
+    padding-top: 1rem; */
 }
-
-/* @media (max-width:767px) {
-    .navbar {
-        display: none;
-    }
-} */
 
 .navbar-container {
     position: relative;
@@ -92,7 +85,7 @@ a, a:active, a:hover {
     position: relative;
     display: inline-block;
     font-family: Comfortaa, sans-serif;
-    font-size: 1.2rem;
+    font-size: 15px;
     margin-right: 2rem;
 }
 
@@ -183,9 +176,9 @@ a, a:active, a:hover {
     margin: 1rem 1rem 2rem;
     width: 24rem;
     height: 27rem;
-    background-color: #181a1b;
+    background-color: #f2f2f2;
     border-radius: 2rem;
-    border: .3rem solid #181a1b;
+    border: .2rem solid #20a0ff;
 }
 
 @media (max-width:575px) {
@@ -241,7 +234,7 @@ a, a:active, a:hover {
 
 .project-card-title {
     font-size: 2rem;
-    color: white;
+    color: #181828;
 }
 
 .project-card-btn {
@@ -272,15 +265,7 @@ a, a:active, a:hover {
 .project-card-blackbutton:hover {
     border: .1em solid white;
 }
-/* 
-.footer {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    margin-top: -2rem;
-} */
+
 #footer {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
