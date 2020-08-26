@@ -33,10 +33,10 @@ h2 {
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  height: 20vh;
-  width: 80vw;
+  /* height: 20vh;
+  width: 80vw; */
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 #title-container-docker {
@@ -46,10 +46,10 @@ h2 {
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  height: 20vh;
-  width: 80vw;
+  /* height: 20vh;
+  width: 80vw; */
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 #title-container-docker {
@@ -59,10 +59,10 @@ h2 {
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  height: 20vh;
-  width: 80vw;
+  /* height: 20vh;
+  width: 80vw; */
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 #title-container-python {
@@ -72,10 +72,10 @@ h2 {
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  height: 20vh;
-  width: 80vw;
+  /* height: 20vh;
+  width: 80vw; */
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 #title-container-redis {
@@ -85,10 +85,10 @@ h2 {
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  height: 20vh;
-  width: 80vw;
+  /* height: 20vh;
+  width: 80vw; */
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 .navbar {
