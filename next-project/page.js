@@ -81,8 +81,7 @@ const postRmProjects = async () => {
                 } else if (response.data === "Err") {
                     alert("Incorrect password!")
                 } else {
-                    projNum -= 1
-                    alert("Refresh to see changes")
+                    location.reload(true)
                 }
             })
             .catch(function (error) {
@@ -167,23 +166,6 @@ function rmProject() {
     console.log(jsonData)
     postRmProjects()
 }
-
-// function removeProject() {
-//     var language = $("#backend").val().toUpperCase()
-//     language_val.value = ''
-//     var project = $("#frontend").val()
-//     project = toCamelCaseString(project)
-//     project_val.value = ''
-//     var passwordText = password_val.value
-//     password_val.value = ''
-//     var proj = language + " &emsp; || &emsp; " + project
-//     if (passwordText == rmPass) {
-//         alert("How'd you get my password! Working on this function")
-//     } else { 
-//         var strAlert = proj + "\nCould not be removed since you entered incorrect password."
-//         alert(strAlert) 
-//     }
-// }
 
 function newRead(language, project) {
     projNum += 1
