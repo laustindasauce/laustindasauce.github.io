@@ -4,7 +4,7 @@ const send_button = document.getElementById("button-blue")
 const name_val = document.getElementById("name")
 const email_val = document.getElementById("email")
 const message_val = document.getElementById("message")
-const input_h5 = document.getElementById("input-title")
+const bottom_div = document.getElementById('bottom-container')
 var postData = new Object()
 let jsonData
 
@@ -24,6 +24,9 @@ const postInfo = async () => {
                     alert("Email username/host could not be found")
                 } else if (response.data === "Email not sent") {
                     alert("Email wasn't sent due to an error.. please try again.")
+                } else {
+                    bottom_div.style.display = "none"
+                    alert("I'll be in touch!")
                 }
                 console.log(response)
             })
