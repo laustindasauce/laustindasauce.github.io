@@ -43,6 +43,18 @@ h2 {
   margin: 0 auto;
   padding-top: 2rem;
 }
+#title-message {
+  color: #f2f2f2;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 20px;
+}
 
 #title-container-docker {
   color: #0db7ed;
