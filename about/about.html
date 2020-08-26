@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Austin's Bio</title>
-        <link rel="stylesheet" href="about.css">
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Austin's Bio</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div id="main-container">
         <div class="navbar">
             <div class="navbar-container">
                 <div class="nav-item"><a class="nav-item-link scrolling-link" href="/index.html">Home</a></div>
+                <div class="nav-item"><a class="nav-item-link scrolling-link" href="/about/about.html">About</a></div>
                 <div class="nav-item"><a class="nav-item-link scrolling-link" href="/projects/projects.html">Projects</a></div>
             </div>
         </div>
-        <div class="picture">
-            <div class="profile-pic">
-                <img src="/images/profile.png" height="300" width="300" alt="">
+        <div id="upper-container">
+            <div id="positions">
+                <div class="profile-pic">
+                    <img src="/images/profile.png" height="350" width="350" alt="">
+                </div>
+            </div>
+            <div id="orders">
+                <div class="name">
+                    <h1>A &emsp; U &emsp; S &emsp; T &emsp; I &emsp; N</h1>
+                </div>
+            </div>
+            
+        </div>
+        <div id="text-container">
+            <div id="info">
+                <div class="text-box">
+                    <span>Hello! Thanks for visiting my website! My name is Austin Spencer and I am currently an undergraduate
+                        student at Arizona State University. I enjoy staying active and spending time with friends. My favorite
+                        hobbies are golfing and hiking.</span>
+                </div>
             </div>
         </div>
-        <div class="footer">Austin Spencer &emsp; | &emsp; abspencer2097@gmail.com</div>
-    </body>
+        <div id="projects" class="project scroll-spy">
+            <div class="container project-container">
+                <div class="row project-row">
+                    <div class="col project-col">
+                        <div id="bottom-container">
+                            <div id="input-container">
+                                <h5 id="input-title" style="margin: 5px; font-weight: bold; font-size: 25px;">Get in touch with me!</h5>
+                                <input id="name" type="text" placeholder="&emsp;Name" required="required" />
+                                <input id="email" type="text"
+                                    placeholder="&emsp;Email &emsp; **Your email will not be shared with anyone else**" required="required" />
+                                <textarea id="message" type="text" placeholder="&emsp;Message" required="required"></textarea>
+                                <input type="submit" value="SEND" id="button-blue" />
+                            </div>
+                        
+                        </div>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+<footer id="footer">
+    <div class="footer">Austin Spencer &emsp; | &emsp; abspencer2097@gmail.com</div>
+</footer>
+</body>
+<script src="bundle.js"></script>
 </html>

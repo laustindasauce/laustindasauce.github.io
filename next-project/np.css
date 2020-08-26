@@ -236,3 +236,15 @@ body:before {
     margin-left: 10px;
     margin-right: 2vw;
 }
+
+.footer {
+    /* background-color: #1a1a25; */
+    color: #f2f2f2;
+    text-align: center;
+    /* position: absolute; */
+    /* bottom: 0; */
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}
