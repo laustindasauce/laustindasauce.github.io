@@ -18,7 +18,13 @@ const postInfo = async () => {
             data: jsonData,
         })
             .then(function (response) {
-                // your action after success
+                if (response.data === "Format Error") {
+                    alert("Invalid email format")
+                } else if (response.data === "Error") {
+                    alert("Email username/host could not be found")
+                } else if (response.data === "Email not sent") {
+                    alert("Email wasn't sent due to an error.. please try again.")
+                }
                 console.log(response)
             })
             .catch(function (error) {
@@ -44,7 +50,7 @@ function sendEmail() {
     if (/(.+)@(.+){2,}\.(.+){2,}/.test(email)) {
         console.log("Valid email address")
     } else {
-        alert(`${email} is not a valid email address. If you think this is an error reach out to me via abspencer2097@gmail.com`)
+        alert(`${email} is not a valid email address.`)
         return
     }
 
@@ -63,15 +69,7 @@ function sendEmail() {
     jsonData = JSON.stringify(postData)
     console.log(jsonData)
     postInfo()
-    // alert("Working on being able to save newly added projects...")
 }
-
-
-
-
-
-
-
 
 function main() {
     send_button.addEventListener('click', function () {
