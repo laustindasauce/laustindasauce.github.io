@@ -77,9 +77,14 @@ const postRmProjects = async () => {
             data: jsonData,
         })
             .then(function (response) {
-                projNum -= 1
-                alert("Please refresh browser to realize changes")
-                console.log(response)
+                if (response.data === "Error") {
+                    alert("Something went wrong!")
+                } else if (response.data === "Err") {
+                    alert("Incorrect password!")
+                } else {
+                    projNum -= 1
+                    alert("Refresh to see changes")
+                }
             })
             .catch(function (error) {
                 alert("Something went wrong, try again if you'd like.")
