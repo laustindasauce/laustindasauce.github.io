@@ -1,57 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-<header class="top-header">
-</header>
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Austin's Webapp</title>
+    <title>Austin's Home Page</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<!--dust particel-->
-<div>
-    <div class="starsec"></div>
-    <div class="starthird"></div>
-    <div class="starfourth"></div>
-    <div class="starfifth"></div>
-</div>
-<!--Dust particle end--->
+<body>
+    <div id="main-container">
+        <div id="title-container">
+            <h2>Home</h2>
+        </div>
 
-<!-- Main Body -->
-<section class="menu">
-    <div class="fancy-title">
-            <span style="width: 100%;text-align: center">HOME</span>
+        <div class="projects">
+            <div class="project" id="hang">
+                <div id="container">
+                    <div class="button" id="button-2">
+                        <a href="about/about.html">
+                            <div id="slide"></div>
+                            <span>About</span>
+                        </a>
+                    </div>
+                    <div class="button" id="button-2">
+                        <a href="social/social.html">
+                            <div id="slide"></div>
+                            <span>Social</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects">
+            <div class="project" id="hang">
+                <div id="container">
+                    <div class="button" id="button-2">
+                        <a href="projects/projects.html">
+                            <div id="slide"></div>
+                            <span>projects</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects">
+            <div class="project" id="hang">
+                <div id="container">
+                    <div class="button" id="button-2">
+                        <a href="https://github.com/abspen1" target="_blank">
+                            <div id="slide"></div>
+                            <span>github</span>
+                        </a>
+                    </div>
+                    <div class="button" id="button-2">
+                        <a href="https://www.linkedin.com/in/austin-spencer-b56a25177/" target="_blank">
+                            <div id="slide"></div>
+                            <span>linkedin</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <a style="text-decoration: none;" href="/about/about.html">
-        <div class="fancy-hover fancy-hover--about">
-            <span style="width: 100%;text-align: center">About</span>
-        </div>
-    </a>
-    <a style="text-decoration: none;" href="/projects/projects.html">
-        <div class="fancy-hover fancy-hover--games">
-            <span style="width: 100%;text-align: center">Projects</span>
-        </div>
-    </a>
-    <a style="text-decoration: none;" href="/next-project/np.html">
-        <div class="fancy-hover fancy-hover--np">
-            <span style="width: 100%;text-align: center">Next Project</span>
-        </div>
-    </a>
-    <a style="text-decoration: none;" href="https://github.com/abspen1/" target="_blank">
-        <div class="fancy-hover fancy-hover--github">
-            <span style="width: 100%;text-align: center">Github</span>
-        </div>
-    </a>
-    <a style="text-decoration: none;" href="https://www.linkedin.com/in/austin-spencer-b56a25177/" target="_blank">
-        <div class="fancy-hover fancy-hover--linkedin">
-            <span style="width: 100%;text-align: center">Linkedin</span>
-        </div>
-    </a>
-    <a style="text-decoration: none;" href="social/social.html">
-        <div class="fancy-hover fancy-hover--social">
-            <span style="width: 100%;text-align: center">Social Media</span>
-        </div>
-    </a>
-    <script src="app.js"></script>
-</section>
+    <footer id="footer">
+        <div class="footer">Austin Spencer &emsp; | &emsp; abspencer2097@gmail.com</div>
+    </footer>
+</body>
+
+</html>
