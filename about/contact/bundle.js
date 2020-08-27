@@ -65,9 +65,6 @@ function sendEmail() {
         return
     }
     
-    name_val.value = ''
-    email_val.value = ''
-    message_val.value = ''
     postData.name = name
     postData.email = email
     postData.message = message

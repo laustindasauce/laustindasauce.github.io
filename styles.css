@@ -4,12 +4,18 @@
     padding: 0;
 }
 
+html { 
+  background: url(https://wallpapercave.com/wp/wp2501644.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 html, body {
     font-size: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
-    background: url('https://cdn.hipwallpaper.com/i/59/43/mnDtrY.jpg');
-    backdrop-filter: blur;
     height: 100%;
 }
 
@@ -32,7 +38,7 @@ h2 {
 }
 
 #title-container {
-  color: #f2f2f2;
+  color: #fff;
   /* font-style: oblique; */
   display: flex;
   align-items: center;
@@ -44,7 +50,7 @@ h2 {
   padding-top: 2rem;
 }
 #title-message {
-  color: #f2f2f2;
+  color: #fff;
   /* font-style: oblique; */
   display: flex;
   align-items: center;
@@ -128,7 +134,7 @@ h2 {
     align-items: center;
     min-height: 2rem;
     text-align: right;
-    color: #f2f2f2;
+    color: #fff;
     z-index: 2;
     transition: all .1s linear;
 }
@@ -150,7 +156,7 @@ h2 {
     bottom: -1.3rem;
     left: 0;
     transition: all .1s ease-in-out;
-    background-color: #f2f2f2;
+    background-color: #fff;
 }
 
 .nav-item:hover:after {
@@ -192,11 +198,11 @@ h2 {
   display: flex;
   height: 50px;
   width: 150px;
-  border: 2px solid #f2f2f2;
+  border: 2px solid #fff;
   border-radius: 5px;
   /* margin: 10px 10px 10px 10px; */
   margin: 20px;
-  color: #f2f2f2;
+  color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1em;
@@ -207,7 +213,7 @@ h2 {
 }
 
 span {
-  color: #f2f2f2;
+  color: #fff;
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -227,7 +233,7 @@ span {
   width: 100%;
   height: 100%;
   left: -200px;
-  background: #f2f2f2;
+  background: rgba(255, 255, 255, 0.521);
   position: absolute;
   transition: all .35s ease-Out;
   bottom: 0;
@@ -245,7 +251,7 @@ span {
   text-align: center;
   padding-top: 10vh;
   /* font-size: 20px; */
-  color: #f2f2f2;
+  color: #fff;
   position: relative;
   padding-bottom: 4rem;
 }

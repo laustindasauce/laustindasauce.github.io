@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Form Design</title>
+    <link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+<style>
+    ::placeholder {
+        /* Firefox, Chrome, Opera */
+        color: white;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: white;
+    }
+
+    ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="main-container">
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="nav-item"><a class="nav-item-link scrolling-link" href="/index.html">Home</a></div>
+                <div class="nav-item"><a class="nav-item-link scrolling-link" href="/about/about.html">About</a></div>
+                <div class="nav-item"><a class="nav-item-link scrolling-link" href="contact/contact.html">Projects</a></div>
+            </div>
+        </div>
+        <div id="title-container">
+            <h1>Contact Me</h1>
+            <!-- <h2>We are always ready to serve you!</h2> -->
+        </div>
+        <div id="projects" class="project scroll-spy">
+            <div class="container project-container">
+                <div class="row project-row">
+                    <div class="col project-col">
+                        <div id="bottom-container">
+                            <div id="input-container">
+                                <h5 id="input-title" style="margin: 5px; font-weight: bold; font-size: 25px;">Please enter your name, email, and a message!</h5>
+                                <input id="name" type="text" class="form-control" placeholder="Name" required="required" />
+                                <input id="email" type="text" class="form-control"
+                                    placeholder="Email &emsp; **Your email is kept private**"
+                                    required="required" />
+                                <textarea id="message" type="text" class="form-control" placeholder="Message" required="required"></textarea>
+                                <input type="submit" class="form-control" value="SEND" id="button-blue" />
+                            </div>
+        
+                        </div>
+                        <div id="bottom-container2">
+                            <div id="input-container2">
+                                <h5 id="input-title2" style="margin: 5px; font-weight: bold; font-size: 25px;">Thanks! I will get back to you as
+                                    soon as possible! If you haven't already, explore the rest of my website!</h5>
+                                <a href="/index.html">
+                                    <input type="submit2" class="form-control" value="HOME" id="button-blue2" />
+                                </a>
+                            </div>
+                        
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>      
+    </div>
+
+</body>
+<footer id="footer">
+    <div class="footer">Austin Spencer &emsp; | &emsp; abspencer2097@gmail.com</div>
+</footer>
+<script src="bundle.js"></script>
+</html>
