@@ -245,7 +245,7 @@ a, a:active, a:hover {
     position: absolute;
     display: inline-block;
     /* width: 5rem; */
-    bottom: 3rem;
+    bottom: .8rem;
     right: 5rem;
     padding: .8rem 2rem;
     font-size: 1.4rem;
