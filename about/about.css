@@ -23,6 +23,17 @@ html, body {
     height: 100%;
 }
 
+@media screen and (min-width: 320px) {
+  body {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 22px;
+  }
+}
+
 #main-container {
     min-height: 100%;
 }
@@ -269,7 +280,7 @@ a, a:active, a:hover {
 .project-card-info {
     position: relative;
     display: inline-block;
-    margin: 1rem 1rem 2rem;
+    /* margin: 1rem 1rem 2rem; */
     width: 45rem;
     height: 30rem;
     background-color: #f2f2f2c4;
@@ -279,7 +290,6 @@ a, a:active, a:hover {
 
 p {
     margin: 10px;
-    font-size: 2.5rem;
     color: black;
 }
 
