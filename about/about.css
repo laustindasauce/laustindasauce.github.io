@@ -1,14 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+@import url(https://use.fontawesome.com/releases/v5.8.1/css/all.css);
+
 *, :after, :before {
     /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
 }
 
+html { 
+  background: url(/images/gretch1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 html, body {
     font-size: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
-    background-color: #7c6f66;
     height: 100%;
 }
 
@@ -21,60 +32,46 @@ a, a:active, a:hover {
     color: white;
     outline: 0;
 }
-h1 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-}
 
-#upper-container {
-    width: 100%;
-    text-align: center;
+.container {
     margin: 0 auto;
-    padding-top: 4rem;
-    padding-left: 20px;
-    /* border: 1px solid #f2f2f2; */
-    border-radius: 10px;
-    display: inline-flex;
-    align-items: center;
+    max-width: 120rem;
 }
 
-#positions {
-  height: calc(350px + 3rem);
-  width: 350px;
-  /* border: 1px solid #24272e; */
-  border-radius: 10px;
-  margin: 5px;
-  
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2.4rem;
 }
 
-#orders {
-  height: 22vh;
-  width: 60%;
-  /* border: 1px #24272e solid; */
-  border-radius: 10px;
-  margin: 5px;
-  font-size: 1.5vw;
-  color: #09af2d;
-  /* white-space: nowrap; */
-  
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+@media (max-width:767px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:479px) {
+    .row {
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+    }
+}
+
+@media (max-width:767px) {
+    .content {
+        font-size: 1.6rem;
+    }
 }
 
 .navbar {
-  text-align: right;
-  position: fixed;
-  right: 0;
-  z-index: 100;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+    text-align: right;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* padding-bottom: 1rem;
+    padding-top: 1rem; */
 }
 
 .navbar-container {
@@ -84,7 +81,7 @@ h1 {
     max-width: 120rem;
     margin: 0 auto;
     align-items: center;
-    min-height: 2rem;
+    min-height: 6rem;
     text-align: right;
     color: #f2f2f2;
     z-index: 2;
@@ -115,146 +112,197 @@ h1 {
     opacity: 1;
 }
 
-.picture {
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-top: 7rem;
+.project {
+    position: relative;
+    background: none;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
 }
 
-#info {
-    /* display: block; */
-    position: relative;
-    left: 12%;
-    /* width: 25%; */
-    align-items: center;
-    flex-direction: row;
+.project:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* background: url(assets/jpl.jpg) 50%; */
+    filter: brightness(15%);
+    background-size: cover;
+}
+
+.project__title {
+    font-size: 3.2rem;
+    color: #303133;
+}
+
+.project-row {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+@media (max-width:767px) {
+    .project-row {
+        flex-direction: row;
+    }
+}
+
+@media (max-width:575px) {
+    .project-row {
+        flex-direction: column;
+    }
+}
+
+.project-col {
+    display: flex;
+    flex: 0 0 33.33332%;
     justify-content: center;
-    /* height: 4rem; */
-    width: 80vw;
-    margin: 0 auto;
+    padding: 6rem;
 }
 
-#text-container {
-    width: 100%;
-    text-align: center;
-    margin: 5px;
-    padding-top: 4rem;
-    /* padding-bottom: 7rem; */
-    padding-left: 20px;
-    border-radius: 10px;
-    /* display: inline-flex; */
-    /* align-items: center; */
+@media (max-width:991px) {
+    .project-col {
+        flex: 0 0 50%;
+    }
 }
 
-#container {
-    position: relative;
-    text-align: center;
-    justify-items: center;
+@media (max-width:575px) {
+    .project-col {
+        flex: 0 0 100%;
+    }
 }
 
-.text-box {
-    position: relative;
-    /* text-align: center; */
-    width: 60%;
-    border: 1px solid #1ab622;
-    border-radius: 10px;
-    border-width: 2px;
-    margin: 2rem;
-    font-size: 20px;
-    color: #1a1a25;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-bottom: 2rem;
+.project-container {
     padding-top: 2rem;
 }
 
-.button {
-  display: flex;
-  height: 80px;
-  width: 200px;
-  border: 2px solid #f2f2f2;
-  border-radius: 5px;
-  margin: 20px;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 2em;
-  letter-spacing: 1.5px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.project-card {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 1rem 2rem;
+    width: 30rem;
+    height: 45rem;
+    background-color: #f2f2f27a;
+    border-radius: 2rem;
+    border: .1rem solid #09af2d;
 }
 
-span {
-  color: #f2f2f2;
-  text-decoration: none;
-  letter-spacing: 1px;
+@media (max-width:575px) {
+    .project-card {
+        width: 32rem;
+    }
 }
 
-#button-2 {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+@media (max-width:479px) {
+    .project-card {
+        width: 100%;
+    }
 }
 
-#button-2 span {
-  position: relative;
-  transition: all .35s ease-Out;
+.project-card-cover {
+    height: 35rem;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 2rem;
 }
 
-#bottom-container2 {
-  background-color:transparent;
-  padding: 20px;
-  width: 450px;
-  float: left;
-  position: absolute;
-  left: 25%;
-  padding-bottom: 20px;
-  margin-bottom: 2rem;
+.project-card-python {
+    background-image: url(/images/profile.png);
 }
 
-#slide {
-  width: 100%;
-  height: 100%;
-  left: -200px;
-  background: #ffffff;
-  position: absolute;
-  transition: all .35s ease-Out;
-  bottom: 0;
+.project-card-content {
+    padding: 1rem;
 }
 
-#button-2:hover #slide {
-  left: 0;
+.project-card-title {
+    position: absolute;
+    display: inline-block;
+    /* width: 5rem; */
+    bottom: 3rem;
+    left: .5rem;
+    padding: .8rem 2rem;
+    font-size: 1.6rem;
+    color: white;
+    background: #09af2d;
+    border-radius: 2rem;
+    transition: all .2s linear;
+    border: .1em solid transparent;
 }
 
-#button-2:hover span {
-  color: #09af2d;
-  /* border: #09af2d; */
+.project-card-btn {
+    position: absolute;
+    display: inline-block;
+    /* width: 5rem; */
+    bottom: 3rem;
+    right: .5rem;
+    padding: .8rem 2rem;
+    font-size: 1.6rem;
+    color: white;
+    background: #09af2d;
+    border-radius: 2rem;
+    transition: all .2s linear;
+    border: .1em solid transparent;
 }
 
-.next-project {
-    width: 200px;
-    height: 5px;
-    left: 40%;
-    margin: 20px;
-  text-align: center;
-  justify-content: center;
-  /* border: solid #f2f2f2; */
-  border-width: 5px;
-  padding-top: 2rem;
-  /* font-size: 20px; */
-  color: #f2f2f2;
-  position: relative;
-    /* left: 12%; */
-  padding-bottom: 4rem;
+.project-card-btn:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    border: .1em solid white;
+}
+.project-card-title:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    border: .1em solid white;
 }
 
-.text {
-  font-size: 2em;
+.project-card-blackbutton {
+    background: black;
 }
+
+.project-card-blackbutton:hover {
+    border: .1em solid white;
+}
+
+/* Now onto my info */
+
+.project-card-info {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 1rem 2rem;
+    width: 45rem;
+    height: 30rem;
+    background-color: #f2f2f2c4;
+    border-radius: 2rem;
+    border: .1rem solid #09af2d;
+}
+
+p {
+    margin: 10px;
+    font-size: 2.5rem;
+    color: black;
+}
+
+
+@media (max-width:575px) {
+    .project-card-info {
+        width: 32rem;
+    }
+}
+
+@media (max-width:479px) {
+    .project-card-info {
+        width: 100%;
+    }
+}
+
+.project-card-content-info {
+    padding: 1rem;
+}
+
+
 
 #footer {
-    width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;
