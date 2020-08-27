@@ -5,6 +5,7 @@ const name_val = document.getElementById("name")
 const email_val = document.getElementById("email")
 const message_val = document.getElementById("message")
 const bottom_div = document.getElementById('bottom-container')
+const bottom2_div = document.getElementById('bottom-container2')
 var postData = new Object()
 let jsonData
 
@@ -26,7 +27,7 @@ const postInfo = async () => {
                     alert("Email wasn't sent due to an error.. please try again.")
                 } else {
                     bottom_div.style.display = "none"
-                    alert("I'll be in touch!")
+                    bottom2_div.style.display = "block"
                 }
                 console.log(response)
             })
@@ -63,9 +64,6 @@ function sendEmail() {
         return
     }
     
-    name_val.value = ''
-    email_val.value = ''
-    message_val.value = ''
     postData.name = name
     postData.email = email
     postData.message = message
@@ -75,6 +73,7 @@ function sendEmail() {
 }
 
 function main() {
+    bottom2_div.style.display = "none"
     send_button.addEventListener('click', function () {
         sendEmail()
     })

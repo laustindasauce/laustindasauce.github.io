@@ -114,6 +114,26 @@ a, a:active, a:hover {
     background-size: cover;
 }
 
+.project2 {
+    position: relative;
+    background: none;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.project2:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* background: url(assets/jpl.jpg) 50%; */
+    filter: brightness(15%);
+    background-size: cover;
+}
+
 .project__title {
     font-size: 3.2rem;
     color: #303133;
@@ -199,6 +219,16 @@ a, a:active, a:hover {
   margin-bottom: 2rem;
 }
 
+#bottom-container2 {
+  background-color:transparent;
+  padding: 20px;
+  width: 450px;
+  float: left;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 2rem;
+}
+
 #input-container {
   display: flex;
   align-items: center;
@@ -217,21 +247,34 @@ a, a:active, a:hover {
   color: #f2f2f2;
 }
 
+#input-container2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 4rem;
+  margin-bottom: 100px;
+}
+
+#input-title2 {
+  margin-top: 10px;
+  /* margin-bottom: 50px; */
+  /* color: solid black; */
+  border: solid #f3f3f34b;
+  border-width: .4px;
+  /* margin-bottom: 200px; */
+  background: #f2f2f257;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
 #password-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-}
-
-#input-title {
-  margin-top: 10px;
-  margin-bottom: 30px;
-  /* color: solid black; */
-  padding-bottom: 15px;
-  font-weight: bold;
-  text-align: center;
-  color: solid rgb(238, 110, 5);
 }
 
 .form-control {
@@ -296,6 +339,39 @@ a, a:active, a:hover {
 }
 
 .submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+
+#button-blue2{
+    text-align: center;
+    float:left;
+    width: 100%;
+    border: #fbfbfb solid 4px;
+    cursor:pointer;
+    background-color: transparent;
+    color:white;
+    font-size:24px;
+    padding-top:22px;
+    padding-bottom:22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 90px;
+    font-weight:700;
+}
+
+#button-blue2:hover{
+    /* background-color: rgba(0,0,0,0); */
+    background-color: #f2f2f2b7;
+	color: #0493bd;
+}
+	
+.submit2:hover {
+	color: #3498db;
+}
+
+.submit2:hover .ease{
   width:100%;
   background-color:white;
 }
