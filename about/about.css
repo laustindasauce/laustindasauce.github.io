@@ -231,9 +231,9 @@ a, a:active, a:hover {
     display: inline-block;
     /* width: 5rem; */
     bottom: 3rem;
-    left: .5rem;
+    left: 10rem;
     padding: .8rem 2rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: white;
     background: #09af2d;
     border-radius: 2rem;
@@ -246,9 +246,9 @@ a, a:active, a:hover {
     display: inline-block;
     /* width: 5rem; */
     bottom: 3rem;
-    right: .5rem;
+    right: 5rem;
     padding: .8rem 2rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: white;
     background: #09af2d;
     border-radius: 2rem;
