@@ -51,8 +51,9 @@ My Webapp
 * Still need to code the remove function on the backend
 
 ## To-Do
-### Add a page for project ideas!!
 * Add README to individual folders that we link to
+* **Create backend for rps game**
+* Maybe create a broken link somewhere in site to show my 404 page LOL :joy:
 
 ## Sources
 ### Animated Background
