@@ -164,7 +164,6 @@ function login() {
         return
     }
     username = email_val.value
-    console.log(username)
     postData.username = username
     postData.wins = userScore
     postData.losses = computerScore
