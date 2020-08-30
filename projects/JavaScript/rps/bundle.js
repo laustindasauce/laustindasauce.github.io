@@ -98,16 +98,16 @@ function game(userChoice) {
 
 const BASE_URL = 'https://guldentech.com'
 
-const login_GET = async () => {
+const login_POST = async () => {
     try {
         axios({
-            url: `${BASE_URL}/austinapi/rps`,
+            url: `${BASE_URL}/austinapi/rps/login`,
             method: 'post',
             data: jsonData,
         })
             .then(function (response) {
                 if (response.data === "Format Error") {
-                    alert("Invalid email format")
+                    alert(`${username} :: Invalid email format`)
                     username = ""
                     return
                 } else if (response.data === "Error") {
@@ -164,12 +164,12 @@ function login() {
         return
     }
     username = email_val.value
+    console.log(username)
     postData.username = username
     postData.wins = userScore
     postData.losses = computerScore
-    console.log(postData)
     jsonData = JSON.stringify(postData)
-    login_GET()
+    login_POST()
     email_val.value = ""
 }
 
@@ -179,9 +179,9 @@ function saveData() {
         return
     }
 
-    postData.username = username
-    postData.wins = userScore
-    postData.losses = computerScore
+    postData.Username = username
+    postData.Wins = userScore
+    postData.Losses = computerScore
     jsonData = JSON.stringify(postData)
     save_POST()
 }
