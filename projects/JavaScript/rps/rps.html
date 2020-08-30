@@ -6,17 +6,34 @@
     <title>Rock Paper Scissors Game</title>
     <link rel="stylesheet" href="rps.css">
 </head>
-<div class="home-page">
-    <div class="homePage" id="home">
-        <span onclick="location='/index.html'">Home Page</span>
-    </div>
-</div>
 
 <body>
     <header>
         <h1>Rock Paper Scissors</h1>
     </header>
-
+    <div class="home-page">
+        <div class="homePage" id="home">
+            <span onclick="location='/index.html'">Home Page</span>
+        </div>
+    </div>
+    <div id="input-container">
+        <!-- <h5 id="input-title">Log in</h5> -->
+        <div id="username-cont">
+            <input id="username" type="text" placeholder="Email" required="required" />
+        </div>
+        
+    </div>
+    <div id="buttons">
+        <button type="button" class="btn btn-danger" id="login">
+            Log In
+        </button>
+    </div>
+    <div id="save-prog">
+        <button type="button" class="btn btn-danger" id="save">
+            Save Progress
+        </button>
+    </div>
+    
     <div class="score-board">
         <div id="user-label" class="badge">user</div>
         <div id="computer-label" class="badge">comp</div>
