@@ -119,6 +119,8 @@ const login_POST = async () => {
 
                 userScore_span.innerHTML = userScore
                 computerScore_span.innerHTML = computerScore 
+
+                result_p.innerHTML = `Hello ${username}, don't forget to save your progress when finished!`
                 
 
                 console.log(response)
