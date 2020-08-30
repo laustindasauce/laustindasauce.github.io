@@ -157,10 +157,16 @@ function login() {
         alert("Please enter you email to login!")
         return
     }
+    if (username !== "") {
+        alert("Already signed in! Please save your progress and refresh page to sign in as different user!")
+        email_val.value = ""
+        return
+    }
     username = email_val.value
     postData.username = username
     postData.wins = userScore
     postData.losses = computerScore
+    console.log(postData)
     jsonData = JSON.stringify(postData)
     login_GET()
     email_val.value = ""
