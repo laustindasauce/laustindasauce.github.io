@@ -13,8 +13,8 @@ const smallUserWord = "(user)".fontsize(4).sub()
 const smallCPUWord = "(cpu)".fontsize(4).sub()
 const login_btn = document.getElementById("login")
 const save_btn = document.getElementById("save")
-let logged_in = false
 let email_val = document.getElementById("username")
+let username = ""
 var postData = new Object()
 let jsonData
 
@@ -99,19 +99,38 @@ const BASE_URL = 'https://guldentech.com'
 
 const login_GET = async () => {
     try {
-        const res = await axios.get(`${BASE_URL}/austinapi/rps`);
+        axios({
+            url: `${BASE_URL}/austinapi/rps`,
+            method: 'post',
+            data: jsonData,
+        })
+            .then(function (response) {
+                if (response.data === "Format Error") {
+                    alert("Invalid email format")
+                    username = ""
+                    return
+                } else if (response.data === "Error") {
+                    alert("Email username/host could not be found")
+                    username = ""
+                    return
+                }
+                userScore = response.data.Wins
+                computerScore = response.data.Losses
 
-        const info = res.data
+                userScore_span.innerHTML = userScore
+                computerScore_span.innerHTML = computerScore 
+                
 
-        
-
-        console.log(`GET: Here's the user info`, info);
-
-        return
+                console.log(response)
+            })
+            .catch(function (error) {
+                // your action on error success
+                console.log(error)
+            })
     } catch (e) {
-        console.error(e);
+        console.error(e)
     }
-};
+}
 
 const save_POST = async () => {
     try {
@@ -134,24 +153,26 @@ const save_POST = async () => {
 }
 
 function login() {
-    email = email_val.value
-    if (email.value == "") {
+    if (email_val.value == "") {
         alert("Please enter you email to login!")
         return
     }
-    postData.username = email
+    username = email_val.value
+    postData.username = username
+    postData.wins = userScore
+    postData.losses = computerScore
     jsonData = JSON.stringify(postData)
     login_GET()
+    email_val.value = ""
 }
 
 function saveData() {
-    email = email_val.value
-    if (email.value == "" && logged_in == false) {
-        alert("Please enter you email or login before saving!")
+    if (username == "") {
+        alert("Please login before saving!")
         return
     }
 
-    postData.username = email
+    postData.username = username
     postData.wins = userScore
     postData.losses = computerScore
     jsonData = JSON.stringify(postData)
