@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 let userScore = 0
 let computerScore = 0
 const userScore_span = document.getElementById("user-score")
@@ -9,6 +11,12 @@ const paper_div = document.getElementById("p")
 const scissors_div = document.getElementById("s")
 const smallUserWord = "(user)".fontsize(4).sub()
 const smallCPUWord = "(cpu)".fontsize(4).sub()
+const login_btn = document.getElementById("login")
+const save_btn = document.getElementById("save")
+let logged_in = false
+let email_val = document.getElementById("username")
+var postData = new Object()
+let jsonData
 
 
 function getComputerChoice() {
@@ -83,6 +91,72 @@ function game(userChoice) {
     }
 }
 
+/*
+    Adding backend requests below here
+*/
+
+const BASE_URL = 'https://guldentech.com'
+
+const login_GET = async () => {
+    try {
+        const res = await axios.get(`${BASE_URL}/austinapi/rps`);
+
+        const info = res.data
+
+        
+
+        console.log(`GET: Here's the user info`, info);
+
+        return
+    } catch (e) {
+        console.error(e);
+    }
+};
+
+const save_POST = async () => {
+    try {
+        axios({
+            url: `${BASE_URL}/austinapi/rps`,
+            method: 'post',
+            data: jsonData,
+        })
+            .then(function (response) {
+                // your action after success
+                console.log(response)
+            })
+            .catch(function (error) {
+                // your action on error success
+                console.log(error)
+            })
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+function login() {
+    email = email_val.value
+    if (email.value == "") {
+        alert("Please enter you email to login!")
+        return
+    }
+    postData.username = email
+    jsonData = JSON.stringify(postData)
+    login_GET()
+}
+
+function saveData() {
+    email = email_val.value
+    if (email.value == "" && logged_in == false) {
+        alert("Please enter you email or login before saving!")
+        return
+    }
+
+    postData.username = email
+    postData.wins = userScore
+    postData.losses = computerScore
+    jsonData = JSON.stringify(postData)
+    save_POST()
+}
 
 function main() {
     rock_div.addEventListener('click', function () {
@@ -95,6 +169,13 @@ function main() {
 
     scissors_div.addEventListener('click', function () {
         game("s")
+    })
+
+    save_btn.addEventListener('click', function () {
+        saveData()
+    })
+    login_btn.addEventListener('click', function () {
+        login()
     })
 }
 
