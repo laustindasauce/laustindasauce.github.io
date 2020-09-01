@@ -253,14 +253,14 @@ a, a:active, a:hover {
 }
 
 .project-card-btn:hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-    border: .1em solid white;
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+    border: .15em solid white;
 }
 .project-card-title:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
-    border: .1em solid white;
+    border: .15em solid white;
 }
 
 .project-card-blackbutton {
