@@ -9,7 +9,7 @@ h1{
   width: 30em;
   animation: type 6s steps(60, end); 
 }
-span{
+h1 span{
   animation: blink 1s infinite;
 }
 @keyframes type{ 

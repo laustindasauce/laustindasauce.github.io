@@ -29,7 +29,7 @@ a, a:active, a:hover {
     outline: 0;
 }
 
-span {
+.button span {
   font-size: 20px;
 }
 
@@ -115,14 +115,14 @@ h2 {
 }
 
 .navbar {
-  text-align: right;
-  position: fixed;
-  right: 0;
-  z-index: 100;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+    text-align: right;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* padding-bottom: 1rem;
+    padding-top: 1rem; */
 }
 
 .navbar-container {
@@ -132,9 +132,9 @@ h2 {
     max-width: 120rem;
     margin: 0 auto;
     align-items: center;
-    min-height: 2rem;
+    min-height: 6rem;
     text-align: right;
-    color: #fff;
+    color: #f2f2f2;
     z-index: 2;
     transition: all .1s linear;
 }
@@ -156,7 +156,7 @@ h2 {
     bottom: -1.3rem;
     left: 0;
     transition: all .1s ease-in-out;
-    background-color: #fff;
+    background-color: #f2f2f2;
 }
 
 .nav-item:hover:after {
