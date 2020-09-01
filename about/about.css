@@ -1,7 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Comfortaa);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
-@import url(https://use.fontawesome.com/releases/v5.8.1/css/all.css);
-
 *, :after, :before {
     /* box-sizing: border-box; */
     margin: 0;
@@ -9,7 +5,7 @@
 }
 
 html { 
-  background: url(/images/gretch1.jpg) no-repeat center center fixed; 
+  background: url(/images/austyyy-1.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
