@@ -252,10 +252,10 @@ a, a:active, a:hover {
   margin-top: 10px;
   /* margin-bottom: 50px; */
   /* color: solid black; */
-  border: solid #f3f3f34b;
-  border-width: .4px;
+  /* border: solid #f3f3f34b; */
+  /* border-width: .4px; */
   /* margin-bottom: 200px; */
-  background: #f2f2f257;
+  background: transparent;
   padding: 10px;
   font-weight: bold;
   text-align: center;
