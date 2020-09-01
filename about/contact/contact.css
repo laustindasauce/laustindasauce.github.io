@@ -203,7 +203,7 @@ a, a:active, a:hover {
 
 #bottom-container {
   background-color:transparent;
-  padding: 20px;
+  margin: auto;
   width: 450px;
   float: left;
   position: relative;
