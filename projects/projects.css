@@ -224,6 +224,10 @@ a, a:active, a:hover {
     background-image: url(https://www.logo.wine/a/logo/C%2B%2B/C%2B%2B-Logo.wine.svg);
 }
 
+.project-card-current-project {
+    background-image: url(/images/bots.jpg);
+}
+
 .project-card-java {
     background-image: url('https://www.logo.wine/a/logo/Java_(programming_language)/Java_(programming_language)-Logo.wine.svg');
 }
