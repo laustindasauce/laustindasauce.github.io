@@ -101,7 +101,7 @@ function addProject() {
         return
     }
     var language = $("#language").val()
-    if (language === "N/A"){
+    if (!language){
         alert(`Please select a programming language`)
         return
     }
@@ -130,7 +130,7 @@ function rmProject() {
         return
     }
     var language = $("#language").val()
-    if (language === "N/A") {
+    if (!language) {
         alert(`Please select a programming language`)
         return
     }
