@@ -4,7 +4,7 @@ const axios = require('axios')
 // const pr1_p = document.getElementById("pr1")
 const add_button = document.getElementById("add")
 const rm_button = document.getElementById("rm")
-const language_val = document.getElementById("backend")
+const language_val = document.getElementById("language")
 const project_val = document.getElementById("frontend")
 const password_val = document.getElementById("password")
 const languages = ["PYTHON", "JAVASCRIPT", "GO", "GOLANG", "C++", "C", "C#", "HTML", "CSS", "PHP", "RUBY", "R", "DJANGO", "JAVA", "PERL", "COBOL", "BASIC", "SQL", "SAS"]
@@ -100,19 +100,12 @@ function addProject() {
         alert("The project list is full!")
         return
     }
-    var language = $("#backend").val().toUpperCase()
-    if (checkWhitespace(language)){
-        alert(`Invalid format for ${language}: dont include whitespace\nFor multiple languages: Pick main language and add others in project description.`)
-        language_val.value = ''
+    var language = $("#language").val()
+    if (language === "N/A"){
+        alert(`Please select a programming language`)
         return
     }
-    if (!(inLanguageArray(language))){
-        alert(`Not a valid language, check your spelling: ${language}`)
-        alert(`Valid languages: ${languages}`)
-        language_val.value = ''
-        return
-    }
-    var project = $("#frontend").val()
+    var project = $("#frontend").val().toLowerCase()
     if (!project){
         alert(`Please give me a description for the project I should write in ${language}`)
         return
@@ -136,18 +129,12 @@ function rmProject() {
         alert("The project list is full!")
         return
     }
-    var language = $("#backend").val().toUpperCase()
-    if (checkWhitespace(language)) {
-        alert(`Invalid format for ${language}: dont include whitespace\nFor multiple languages: Pick main language and add others in project description.`)
-        language_val.value = ''
+    var language = $("#language").val()
+    if (language === "N/A") {
+        alert(`Please select a programming language`)
         return
     }
-    if (!(inLanguageArray(language))) {
-        alert(`Not a valid language, check your spelling: ${language}`)
-        alert(`Valid languages: ${languages}`)
-        language_val.value = ''
-        return
-    }
+    
     var project = $("#frontend").val()
     if (!project) {
         alert(`Please give me a description for the project I should write in ${language}`)
@@ -207,14 +194,6 @@ function initDisplay() {
 function newSetProjects(file, num) {
     pID = "pr" + num.toString()
     document.getElementById(pID).innerHTML = file.fontcolor("white")
-}
-
-function checkWhitespace(s) {
-    return s.indexOf(' ') >= 0;
-}
-
-function inLanguageArray(a) {
-    return languages.includes(a)
 }
 
 // This is to set up our existing projects on reload of site
