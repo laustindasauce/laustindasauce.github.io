@@ -280,7 +280,7 @@ a, a:active, a:hover {
     font-size: 18px;
 }
 
-#name, #email, #state {
+#name, #email {
   color: white;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -289,6 +289,17 @@ a, a:active, a:hover {
   background: transparent;
 }
 
+#state {
+  color: white;
+  margin-top: 10px;
+  /* padding: 5px; */
+  border: transparent;
+  border-bottom: 1px solid rgb(192, 187, 187);
+  margin-bottom: 30px;
+  width: 100%;
+  height: 2rem;
+  background: transparent;
+}
 #button-blue{
     float:left;
     width: 100%;
