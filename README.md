@@ -6,13 +6,11 @@ My website, still run on github servers but being redirected now to my domain [a
 * Was able to do this with my [backend](https://github.com/abspen1/go-backend) in Go
 
 ## Social Links
-* Open in new tab since there isn't a link back to home page
-* Removed Facebook since I don't really use Facebook
-* Move these to their own page
+* Broke Facebook link since I don't really use Facebook or expect people clicking that link often
 
 ## Contact Page
 * Allows people to enter their name, email, and a message that will get emailed to me
-* Uses Go backend to send me the email with the user's contact information
+* Uses [Go backend](https://github.com/abspen1/go-backend) to send me the email with the user's contact information
 * Once user submits their info a new screen will show thanking them with a link to the home page
 * Uses a go package to ensure emails are valid and also the JavaScript app makes sure that all input fields are filled 
 
@@ -30,12 +28,12 @@ My website, still run on github servers but being redirected now to my domain [a
 * Added backend to the game with Axios and browserify
    * You can now plug in your email and it will get your total score
 * I might add where you can clear your score
+* User score is stored in Redis on my [backend](https://github.com/abspen1/go-backend)
 
 ## Next Project
 * Uses my [backend](https://github.com/abspen1/go-backend) to persist data
 * Might need to adjust the format of the description string..
 * Backend is running on guldentech.com
-* Still need to code the remove function on the backend
 
 ## 404 Page
 * Added a wild 404 page with some crazy colors
@@ -50,6 +48,7 @@ My website, still run on github servers but being redirected now to my domain [a
 * [Kumar Kuila](https://codepen.io/uiswarup/pen/XWdXGGV)
 
 ### Fancy Hover
+* Not using this right now but going to leave here as reference for future use possibly
 * [Shaw](https://codepen.io/shshaw/pen/MoxrPV)
 
 ### New Project
