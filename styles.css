@@ -222,6 +222,7 @@ span {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  background: rgba(112, 112, 112, 0.185);
 }
 
 #button-2 span {
