@@ -79,14 +79,20 @@ const postRmProjects = async () => {
             .then(function (response) {
                 if (response.data === "Error") {
                     alert("Something went wrong!")
+                    password_val.value = ''
                 } else if (response.data === "Err") {
                     alert("Incorrect password!")
+                    password_val.value = ''
                 } else {
                     location.reload(true)
+                    language_val.value = ''
+                    project_val.value = ''
+                    password_val.value = ''
                 }
             })
             .catch(function (error) {
                 alert("Something went wrong, try again if you'd like.")
+                password_val.value = ''
                 console.log(error)
             })
     } catch (e) {
@@ -143,9 +149,6 @@ function rmProject() {
     project = toCamelCaseString(project)
 
     var password = $("#password").val()
-    language_val.value = ''
-    project_val.value = ''
-    password_val.value = ''
     
     postRmData.language = language
     postRmData.description = project
