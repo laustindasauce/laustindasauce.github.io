@@ -23,6 +23,11 @@ html, body {
     min-height: 100%;
 }
 
+#hits {
+  visibility: hidden;
+  display: none;
+}
+
 a, a:active, a:hover {
     text-decoration: none;
     color: white;
