@@ -1,0 +1,230 @@
+*, :after, :before {
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-size: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden;
+}
+body { 
+    margin: auto; 
+    background: #181828;
+}
+
+body:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(-45deg, #0d580d, #03883f, aquamarine, #61f70a);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    /* background: #181828; */
+    background-position: center center;
+    z-index: -1;
+    opacity: 0.9;
+    margin: -7px;
+    filter: blur(6px);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#main-container {
+    min-height: 100%;
+}
+
+a, a:active, a:hover {
+    text-decoration: none;
+    color: white;
+    outline: 0;
+}
+
+.button span {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+#title-container {
+  color: #fff;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+#title-message {
+  color: #fff;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 20px;
+}
+
+.navbar {
+    text-align: right;
+    position: fixed;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* padding-bottom: 1rem;
+    padding-top: 1rem; */
+}
+
+.navbar-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 120rem;
+    margin: 0 auto;
+    align-items: center;
+    min-height: 6rem;
+    text-align: right;
+    color: #f2f2f2;
+    z-index: 2;
+    transition: all .1s linear;
+}
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+    font-family: Comfortaa, sans-serif;
+    font-size: 15px;
+    margin-right: 2rem;
+}
+
+.nav-item:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: .2rem;
+    opacity: 0;
+    bottom: -1.3rem;
+    left: 0;
+    transition: all .1s ease-in-out;
+    background-color: #f2f2f2;
+}
+
+.nav-item:hover:after {
+    opacity: 1;
+}
+
+.projects {
+  /* padding-top: 10vh; */
+  margin: 50px 0;
+  /* position: absolute; */
+  text-align: center;
+  align-content: center;
+}
+
+.project {
+    /* border: 4px solid white; */
+    /* border-radius: 15px; */
+    margin: 0 20px;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  height: 50px;
+  width: 150px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  /* margin: 10px 10px 10px 10px; */
+  margin: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+span {
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+#button-2 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(112, 112, 112, 0.185);
+}
+
+#button-2 span {
+  position: relative;
+  transition: all .35s ease-Out;
+}
+
+#slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background: rgba(255, 255, 255, 0.521);
+  position: absolute;
+  transition: all .35s ease-Out;
+  bottom: 0;
+}
+
+#button-2:hover #slide {
+  left: 0;
+}
+
+#button-2:hover span {
+  color: #121316;
+}
+
+.text {
+  font-size: 2em;
+}
+
+#footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: -4.5rem;
+}
