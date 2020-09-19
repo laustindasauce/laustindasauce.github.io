@@ -1,5 +1,5 @@
 # abspen1.github.io
-My website, still run on github servers but being redirected now to my domain [austinspencer.works](austinspencer.works)
+My website, now being redirected now to my domain [austinspencer.works](austinspencer.works)
 
 ## About
 * Added info form that can email me when someone wants to send me something!
