@@ -25,7 +25,7 @@ html, body {
 
 #hits {
   visibility: hidden;
-  display: none;
+  /* display: none; */
 }
 
 a, a:active, a:hover {
@@ -217,6 +217,28 @@ h2 {
   overflow: hidden;
 }
 
+.button2 {
+  display: flex;
+  height: 50px;
+  width: 150px;
+  border: 2px solid rgb(10, 170, 82);
+  border-radius: 5px;
+  /* margin: 10px 10px 10px 10px; */
+  margin: 20px;
+  color: rgb(10, 170, 82);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.button2 span {
+  font-size: 20px;
+  color: rgb(91, 248, 162);
+}
+
 span {
   color: #fff;
   text-decoration: none;
@@ -235,11 +257,33 @@ span {
   transition: all .35s ease-Out;
 }
 
+#button-3 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(112, 112, 112, 0.185);
+}
+
+#button-3 span {
+  position: relative;
+  transition: all .35s ease-Out;
+}
+
 #slide {
   width: 100%;
   height: 100%;
   left: -200px;
-  background: rgba(255, 255, 255, 0.521);
+  background: rgba(255, 255, 255, 0.63);
+  position: absolute;
+  transition: all .35s ease-Out;
+  bottom: 0;
+}
+
+#slide2 {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background: rgba(65, 236, 142, 0.527);
   position: absolute;
   transition: all .35s ease-Out;
   bottom: 0;
@@ -252,6 +296,14 @@ span {
 #button-2:hover span {
   color: #121316;
 }
+#button-3:hover #slide2 {
+  left: 0;
+}
+
+#button-3:hover span {
+  color: #fff;
+}
+
 
 .next-project {
   text-align: center;
