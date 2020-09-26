@@ -1,6 +1,8 @@
 # abspen1.github.io
 My website, now being redirected now to my domain [austinspencer.works](austinspencer.works)
 
+### Check out [V2](https://github.com/abspen1/V2) of my website, built with Vue framework!
+
 ## About
 * Added info form that can email me when someone wants to send me something!
 * Was able to do this with my [backend](https://github.com/abspen1/go-backend) in Go
