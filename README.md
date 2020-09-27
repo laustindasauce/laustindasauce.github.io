@@ -1,4 +1,4 @@
-# abspen1.github.io
+# V1 of my website! [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fabspen1%2Fabspen1.github.io&count_bg=%23323330&title_bg=%23F0DB4F&icon=&icon_color=%23E7E7E7&title=JS&edge_flat=false)](https://hits.seeyoufarm.com)
 My website, now being redirected now to my domain [austinspencer.works](austinspencer.works)
 
 ### Check out [V2](https://github.com/abspen1/V2) of my website, built with Vue framework!
