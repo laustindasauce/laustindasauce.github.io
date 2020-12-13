@@ -42,6 +42,13 @@ h2 {
   font-size: 40px;
 }
 
+.center {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
+
 #title-container {
   color: #fff;
   /* font-style: oblique; */
@@ -319,6 +326,15 @@ span {
 }
 
 #footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: -4.5rem;
+}
+
+#footer-mov {
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;

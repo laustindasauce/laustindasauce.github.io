@@ -91,6 +91,20 @@ h2 {
   padding-top: 4rem;
 }
 
+
+#title-container-java {
+  color: #f89820;
+  /* font-style: oblique; */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 20vh;
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
 .navbar {
   text-align: right;
   position: fixed;
