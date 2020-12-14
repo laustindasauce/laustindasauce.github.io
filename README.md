@@ -17,9 +17,10 @@ My website, now being redirected now to my domain [austinspencer.works](austinsp
 * Uses a go package to ensure emails are valid and also the JavaScript app makes sure that all input fields are filled 
 
 ## Projects
-* [Adam Alston](https://github.com/adamalston/v1) has his website open-source as well.. I pulled the styles for this page from there
-* I also got the idea for the footer/header on pages from his website. 
-* Program language logos all from [Logo Wine](https://www.logo.wine/Technology)
+* Most of my personal coding projects are within these sources
+* I love keeping a high percantage of my code as open-source
+* I have recently added some screen-recorded demos of the Java projects running
+* I might try to do more of this for projects I can't have a webpage for
 
 ### Hangman
 * Added random-words generator with browserify 😍
@@ -52,6 +53,11 @@ My website, now being redirected now to my domain [austinspencer.works](austinsp
 ### Fancy Hover
 * Not using this right now but going to leave here as reference for future use possibly
 * [Shaw](https://codepen.io/shshaw/pen/MoxrPV)
+
+### Project Page
+* [Adam Alston](https://github.com/adamalston/v1) has his website open-source as well.. I pulled the styles for this page from there
+* I also got the idea for the footer/header on pages from his website. 
+* Program language logos all from [Logo Wine](https://www.logo.wine/Technology)
 
 ### New Project
 * [fs/browserify/brfs](https://github.com/browserify/brfs)
