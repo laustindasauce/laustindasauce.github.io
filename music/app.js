@@ -12,7 +12,7 @@ const ablum_value = document.getElementById('album')
 const artist_value = document.getElementById('artist')
 const song_value = document.getElementById('songs')
 
-const API_ROOT = "http://ws.audioscrobbler.com/2.0/"
+const API_ROOT = "https://ws.audioscrobbler.com/2.0/"
 
 const API_KEY = "2ce7ea55e2b2d8313f00e8d1160a334c"
 
