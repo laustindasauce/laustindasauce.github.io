@@ -143,9 +143,7 @@ async function main() {
     song_btn.addEventListener('click', function () {
         let USER = ''
         if (username_val.value) {
-            console.log("username")
             if (isUser()) {
-                console.log('TRUE')
                 USER = username_val.value
             }
         } else {
