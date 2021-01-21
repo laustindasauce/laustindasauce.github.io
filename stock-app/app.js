@@ -41,6 +41,7 @@ function addFields() {
     btn.type = 'submit';
     btn.id = 'send-button'
     container.appendChild(btn);
+    // Run main to set the listener for newly created button
     main()
 }
 
