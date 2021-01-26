@@ -39,9 +39,7 @@ const postAppPrice = async (shareP, perc) => {
 
 function setString(price, perc) {
     let holdingVal = accountVal * (perc / 100);
-    console.log(holdingVal)
     let numShares = holdingVal / price;
-    console.log(numShares)
     // numShares = Math.floor(numShares);
     let dataString = "Price: $" + price + "  Ideal Holding Value: $" + holdingVal + "  Shares: " + numShares;
     return dataString
