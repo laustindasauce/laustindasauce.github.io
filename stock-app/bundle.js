@@ -11,7 +11,7 @@ let jsonData
 
 const BASE_URL = 'https://guldentech.com'
 
-const postAppPrice = async (percent) => {
+const postAppPrice = async (shareP, perc) => {
     try {
         axios({
           url: `${BASE_URL}/austinapi/current-stock-price`,
@@ -19,8 +19,14 @@ const postAppPrice = async (percent) => {
           data: jsonData,
         })
           .then(function (response) {
-            // your action after success
-            console.log(response)
+            if (response.data === "500") {
+                alert("There was an internal auth error!")
+            } else if (response.data === "404") {
+                alert(`${jsonData.Stock} is not a valid ticker!`)
+            } else {
+                let dataString = setString(response.data, perc)
+                shareP.innerText = dataString
+            }
           })
           .catch(function (error) {
             // your action on error success
@@ -29,6 +35,16 @@ const postAppPrice = async (percent) => {
     } catch (e) {
         console.error(e)
     }
+}
+
+function setString(price, perc) {
+    let holdingVal = accountVal * (perc / 100);
+    console.log(holdingVal)
+    let numShares = holdingVal / price;
+    console.log(numShares)
+    // numShares = Math.floor(numShares);
+    let dataString = "Price: $" + price + "  Ideal Holding Value: $" + holdingVal + "  Shares: " + numShares;
+    return dataString
 }
 
 function addFields() {
@@ -90,7 +106,7 @@ async function getShares(number) {
         var shareP = document.getElementById('shares' + i);
         if (ticker.value == "") return false;
         if (percentage.value == "") return false;
-        console.log(`${ticker} is the ticker`)
+        console.log(`${ticker.value} is the ticker`)
         try {
             exposure += parseInt(percentage.value);
         } catch (error) {
@@ -99,9 +115,9 @@ async function getShares(number) {
         }
         tickers.push(ticker.value.toUpperCase());
         percentages.push(percentage.value);
-        postData.Stock = ticker.value
-        jsonData = JSON.stringify(postData)
-        shareP.innerText = await postAppPrice(parseInt(percentage.value))
+        postData.Stock = ticker.value.toUpperCase();
+        jsonData = JSON.stringify(postData);
+        await postAppPrice(shareP, parseFloat(percentage.value));
     }
     return true;
 }
@@ -116,7 +132,7 @@ function main() {
         // alert(`${number} stocks given`)
         let correct = await getShares(number);
         if (!correct) return alert('Please fill out each text field. Be sure only numbers in the percentage fields.')
-        alert(tickers)
+        // alert(tickers)
         alert(`Your leverage is at ${exposure}%, be sure this is what you want.`)
     }
 }
