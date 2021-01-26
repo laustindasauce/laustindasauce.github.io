@@ -10,7 +10,7 @@ let jsonData
 
 const BASE_URL = 'https://guldentech.com'
 
-const postAppPrice = async (percent) => {
+const postAppPrice = async () => {
     try {
         axios({
           url: `${BASE_URL}/austinapi/current-stock-price`,
