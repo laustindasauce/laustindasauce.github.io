@@ -1,7 +1,11 @@
+// const fs = require('fs')
+const axios = require('axios')
+
 var tickers = []
 var percentages = []
 var exposure = 0
 let accountVal
+var postData = new Object()
 let jsonData
 
 const BASE_URL = 'https://guldentech.com'
@@ -82,6 +86,7 @@ async function getShares(number) {
     for (i = 0; i < number; i++) {
         var ticker = document.getElementById('ticker' + i);
         var percentage = document.getElementById('percentage' + i);
+        var shareP = document.getElementById('shares' + i);
         if (ticker.value == "") return false;
         if (percentage.value == "") return false;
         console.log(`${ticker} is the ticker`)
@@ -93,13 +98,14 @@ async function getShares(number) {
         }
         tickers.push(ticker.value.toUpperCase());
         percentages.push(percentage.value);
-        // let shares = postAppPrice(parseInt(percentage.value))
-        
+        postData.Stock = ticker.value
+        jsonData = JSON.stringify(postData)
+        shareP.innerText = await postAppPrice(parseInt(percentage.value))
     }
     return true;
 }
 
-async function main() {
+function main() {
     const send_button = document.getElementById("send-button")
 
     send_button.addEventListener('click', () => runMain(), false)
@@ -113,3 +119,12 @@ async function main() {
         alert(`Your leverage is at ${exposure}%, be sure this is what you want.`)
     }
 }
+
+function showFields() {
+    const button = document.getElementById("showfields")
+    button.addEventListener('click', function() {
+        addFields()
+    })
+}
+
+showFields()
