@@ -18,11 +18,12 @@ const postAppPrice = async (shareP, perc) => {
           method: 'post',
           data: jsonData,
         })
-          .then(function (response) {
-            if (response.data === "500") {
+        .then(function (response) {
+            console.log(response.data)
+            if (response.data == 500) {
                 alert("There was an internal auth error!")
-            } else if (response.data === "404") {
-                alert(`${jsonData.Stock} is not a valid ticker!`)
+            } else if (response.data == 404) {
+                alert(`${postData.Stock} is not a valid ticker!`)
             } else {
                 let dataString = setString(response.data, perc)
                 shareP.innerText = dataString
