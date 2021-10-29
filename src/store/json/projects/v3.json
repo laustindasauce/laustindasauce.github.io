@@ -4,8 +4,8 @@
   "links": {
     "repo": "https://github.com/austinbspencer/V3",
     "repoShort": "V3",
-    "live": "https://austinspencer.works/V3"
+    "live": "https://git.austinbspencer.com"
   },
   "language": "Vue.js",
-  "description": "Newest iteration of my personal website. Built with Vue.js and Vuetify!"
+  "description": "V3 iteration of my personal website. Built with Vue.js and Vuetify!"
 }

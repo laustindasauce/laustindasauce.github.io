@@ -4,7 +4,7 @@
   "links": {
     "repo": "https://github.com/austinbspencer/twitter-bot",
     "repoShort": "twitter-bot",
-    "live": "https://austinspencer.works/twitter-bot/"
+    "live": "https://git.austinbspencer.com/twitter-bot/"
   },
   "language": "Python",
   "description": "Fully automated Twitter account!"
