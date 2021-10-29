@@ -1,7 +1,7 @@
 <template>
   <v-container class="pa-5 mb-5 pb-20">
     <landing />
-    <about />
+    <!-- <about /> -->
     <work-history />
     <projects />
   </v-container>

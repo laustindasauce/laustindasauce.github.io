@@ -1,11 +1,11 @@
 {
-    "name": "bday-email",
-    "title": "Birthday Emailer",
-    "links": {
-        "repo": "https://github.com/abspen1/bday-email",
-        "repoShort": "bday-email",
-        "live": null
-    },
-    "language": "Go",
-    "description": "Automated birthday emailer written in Go"
+  "name": "bday-email",
+  "title": "Birthday Emailer",
+  "links": {
+    "repo": "https://github.com/abspen1/bday-email",
+    "repoShort": "bday-email",
+    "live": null
+  },
+  "language": "Go",
+  "description": "Automated birthday emailer written in Go"
 }

@@ -1,10 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer
-      v-model="drawer"
-      color="background"
-      app
-    >
+    <v-navigation-drawer floating permanent color="background" app>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title primary--text">
@@ -17,16 +13,8 @@
 
       <v-divider></v-divider>
 
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          :to="item.to"
-          link
-        >
+      <v-list dense nav>
+        <v-list-item v-for="item in items" :key="item.title" :to="item.to" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -81,24 +69,17 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      color="background"
-      app
-      hide-on-scroll
-    >
-      <v-app-bar-nav-icon
+    <v-app-bar color="background" app hide-on-scroll>
+      <!-- <v-app-bar-nav-icon
         class="secondary--text"
         @click="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+      ></v-app-bar-nav-icon> -->
 
-      <v-toolbar-title class="secondary--text">{{ $route.name }}</v-toolbar-title>
+      <v-toolbar-title class="secondary--text">{{
+        $route.name
+      }}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        @click="darkMode()"
-        fab
-        elevation="1"
-        icon
-      >
+      <v-btn @click="darkMode()" fab elevation="1" icon>
         <v-icon class="secondary--text">mdi-invert-colors</v-icon>
       </v-btn>
     </v-app-bar>

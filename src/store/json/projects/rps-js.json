@@ -1,12 +1,12 @@
 {
-    "name": "rps-js",
-    "title": "Rock Paper Scissors",
-    "links": {
-        "repo": "https://github.com/abspen1/rps-js",
-        "repoShort": "rps-js",
-        "live": "https://austinspencer.works/rps-js",
-        "private": true
-    },
-    "language": "JavaScript",
-    "description": "Rock Paper Scissors game built with JavaScript!"
+  "name": "rps-js",
+  "title": "Rock Paper Scissors",
+  "links": {
+    "repo": "https://github.com/austinbspencer/rps-js",
+    "repoShort": "rps-js",
+    "live": "https://austinbspencer.com/rps-js",
+    "private": true
+  },
+  "language": "JavaScript",
+  "description": "Rock Paper Scissors game built with JavaScript!"
 }

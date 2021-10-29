@@ -1,11 +1,11 @@
 {
-    "name": "go-encode",
-    "title": "Encoder",
-    "links": {
-        "repo": "https://github.com/abspen1/go-encode",
-        "repoShort": "go-encode",
-        "live": null
-    },
-    "language": "Go",
-    "description": "Converted from Encoder / Decoder written in C++"
+  "name": "go-encode",
+  "title": "Encoder",
+  "links": {
+    "repo": "https://github.com/austinbspencer/go-encode",
+    "repoShort": "go-encode",
+    "live": null
+  },
+  "language": "Go",
+  "description": "Converted from Encoder / Decoder written in C++"
 }

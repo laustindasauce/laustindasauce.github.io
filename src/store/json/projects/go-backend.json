@@ -1,11 +1,11 @@
 {
-    "name": "go-backend",
-    "title": "Back-End",
-    "links": {
-        "repo": "https://github.com/abspen1/go-backend",
-        "repoShort": "go-backend",
-        "live": "http://guldentech.com/austinapi"
-    },
-    "language": "Go",
-    "description": "RESTful API built with Go"
+  "name": "go-backend",
+  "title": "Back-End",
+  "links": {
+    "repo": "https://github.com/austinbspencer/go-backend",
+    "repoShort": "go-backend",
+    "live": "http://guldentech.com/austinapi"
+  },
+  "language": "Go",
+  "description": "RESTful API built with Go"
 }

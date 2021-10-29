@@ -1,11 +1,11 @@
 {
-    "name": "go-trading-algo",
-    "title": "Algorithmic Trading",
-    "links": {
-        "repo": "https://github.com/abspen1/go-trading-algo",
-        "repoShort": "go-trading-algo",
-        "live": null
-    },
-    "language": "Go",
-    "description": "Trading algorithm that uses Alpaca API"
+  "name": "go-trading-algo",
+  "title": "Algorithmic Trading",
+  "links": {
+    "repo": "https://github.com/austinbspencer/go-trading-algo",
+    "repoShort": "go-trading-algo",
+    "live": null
+  },
+  "language": "Go",
+  "description": "Trading algorithm that uses Alpaca API"
 }
