@@ -127,7 +127,7 @@
 export default {
   name: "Menu",
   data: () => ({
-    drawer: false,
+    drawer: true,
     fab: false,
   }),
   methods: {
