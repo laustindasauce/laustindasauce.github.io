@@ -1,0 +1,11 @@
+{
+    "name": "eav2",
+    "title": "Env Advisors",
+    "links": {
+        "repo": "https://github.com/abspen1/eav2",
+        "repoShort": "eav2",
+        "live": "https://austinspencer.works/eav2"
+    },
+    "language": "Vue.js",
+    "description": "Environment Advisors is a website that is still in the works. The goal is to be a place where you can go to find out environmental and overall information on whatever stock you want to see."
+}

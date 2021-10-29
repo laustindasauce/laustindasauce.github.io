@@ -1,0 +1,161 @@
+<template>
+  <div>
+    <h1 id="gorestfulapihitshttpshitsseeyoufarmcomapicountincrbadgesvgurlhttps3a2f2fgithubcom2fabspen12fgobackendcount_bg2329beb0title_bg23555555icongosvgicon_color2329beb0titlehitsedge_flatfalsehttpshitsseeyoufarmcom">Go RESTful API <a href="https://hits.seeyoufarm.com"><img
+          src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fabspen1%2Fgo-backend&count_bg=%2329BEB0&title_bg=%23555555&icon=go.svg&icon_color=%2329BEB0&title=hits&edge_flat=false"
+          alt="Hits"
+        /></a></h1>
+    <p>Building a RESTful API using Go programming language. I love the combination of Go and Redis as my backend for my website. I think Go is an awesome programming language and combined with the ease and speed of Redis is hard to beat. I would love to implement something more complex in the backend that would allow me to use Go Routines and channeling to get the most out of Go's speed and possibilities. This program is used in my <a href="https://austinbspencer.github.io">website</a> as the backend for a few different pages. Also check out my websites <a href="https://github.com/austinbspencer/austinbspencer.github.io">repository</a>!</p>
+    <h2 id="alp">📁 alp</h2>
+    <ul>
+      <li>Package that allows my <a href="https://austinspencer.works/stock-app">webapp</a> to get current stock data</li>
+      <li>Post request returns the current price of given stock ticker</li>
+      <li>Used to check how many shares for each holding given the percentage and current price of the stock</li>
+    </ul>
+    <h2 id="authdeprecated">📁 auth (Deprecated)</h2>
+    <ul>
+      <li>Package that imports goDotEnv</li>
+      <li>This allows me to not need the goDotEnv function in each project and rather just import the function from my auth project</li>
+    </ul>
+    <h2 id="botsffl">📁 botsffl</h2>
+    <ul>
+      <li>Package that is pretty ugly to be honest</li>
+      <li>Need to clean up this code but it works for now</li>
+      <li>Back-end for my fantasy football league's hub <a href="https://austinspencer.works/BOTS-FFL">BOTS-FFL</a></li>
+      <li>This package is how I get the standings and point leaders on the website</li>
+    </ul>
+    <h2 id="email">📁 email</h2>
+    <ul>
+      <li>Package for the contact page on my website</li>
+      <li>Imports the net/smtp package to allow me to send gmail of the contact info</li>
+      <li>Will send an email in format:</li>
+    </ul>
+    <pre><code class="bash language-bash">webapp
+
+
+Name: Joe  Email: example@host.com
+Message: This is an example.
+</code></pre>
+    <ul>
+      <li><strong>Now also sending birthday messages from Python script api request</strong></li>
+    </ul>
+    <h2 id="players">📁 players</h2>
+    <ul>
+      <li>Populates team names for the dropdown bar within the Roster section of my website <a href="https://austinspencer.works/BOTS-FFL/#rosters">here</a></li>
+      <li>Most of the work here is done on my Python scripts that pulls the data from Sleeper.app and saves it into my Redis database</li>
+    </ul>
+    <h3 id="rosters">📁 rosters</h3>
+    <ul>
+      <li>Largest set of data on my back-end server so far</li>
+      <li>Shows the full roster for all 12 teams within each region</li>
+      <li>In total around 300 players for each region</li>
+    </ul>
+    <h3 id="trending">📁 trending</h3>
+    <ul>
+      <li>Package that shows the trending players based on adds/dropped in sleeper leagues</li>
+      <li>Pretty cool and simple call</li>
+      <li>The request is made on a Python script that then saves the top 10 for 24hour and 5 day ranges respectively</li>
+      <li>All visible within the trending section of the website <a href="https://austinspencer.works/BOTS-FFL/#trending-players">here</a></li>
+    </ul>
+    <h2 id="projects">📁 projects</h2>
+    <ul>
+      <li>Package I use to connect to redis for 'Next Project' page in my website</li>
+      <li>The main bulk of working with saving the project information</li>
+      <li>The way I use Redigo in this package is actually pretty awesome..</li>
+      <li>Using a set I have the key as projects and the value added is a JSON Marshall of the struct Project : Project Description</li>
+    </ul>
+    <h2 id="rps">📁 rps</h2>
+    <ul>
+      <li>Rock Paper Scissors backend package</li>
+      <li>Will save a user's score with a hash like this:</li>
+    </ul>
+    <pre><code class="bash language-bash">username {
+      wins: 20,
+      losses: 20,
+}
+</code></pre>
+    <h2 id="test">📁 test</h2>
+    <ul>
+      <li>Messy code that I use to test specific functions, mostly with Redis and JSON</li>
+    </ul>
+    <h2 id="todos">📁 todos</h2>
+    <ul>
+      <li>This package displays my todos json list</li>
+      <li>Made to be used on my website but haven't gotten around to actually implementing it</li>
+      <li>Would be something to look into finishing at a later point</li>
+    </ul>
+    <h2 id="twitter">📁 twitter</h2>
+    <ul>
+      <li>This is how I am displaying the data for my twitter bot on the webpage</li>
+      <li>This is one of my all-time favorite projects I have ever done and I have spent a lot of time doing it</li>
+      <li>Please check out the <a href="https://austinspencer.works/twitter-bot">webpage</a> and the <a href="https://github.com/austinbspencer/twitter-bot">source code</a></li>
+    </ul>
+    <h3 id="tweet">📁 tweet</h3>
+    <ul>
+      <li>This package uses Go to with the twitter API to tweet out specific tweets</li>
+      <li>As of right now the only tweets being sent out with the back-end post request is about Call of Duty</li>
+      <li>The main chunk of code is built with JavaScript and uses the call-of-duty-api npm package</li>
+      <li>The JavaScript application will tweet out every hour if there are new stats to log of the specific users (myself and 1 other friend currently)</li>
+      <li>Will also tweet out the weekly stats at the end of the week</li>
+      <li>I'm looking forward to taking advantage of this package more in the future!!</li>
+    </ul>
+    <h2 id="checkmailpackage">Checkmail Package</h2>
+    <ul>
+      <li>Checking to make sure the email given is a valid email</li>
+      <li>Already a simple format check on the front end to catch obvious errors</li>
+      <li>This is a much more ellaborate check</li>
+    </ul>
+    <h1 id="running">Running</h1>
+    <h2 id="runmaingo">Run main.go</h2>
+    <ul>
+      <li>cd to your go-backend directory</li>
+      <li>In terminal: $ go run main.go</li>
+      <li>Now your program/server is running</li>
+    </ul>
+    <h2 id="testgetpostrequests">Test GET/POST requests</h2>
+    <ul>
+      <li>Using an app of your choosing (I use <a href="https://www.postman.com/downloads/">Postman</a>)</li>
+      <li>Put in your request URL (localhost:8558/projects)</li>
+      <li>Either choose POST or GET request and check the body of the output</li>
+    </ul>
+    <h2 id="builttorunasdockercontainer">Built to run as Docker container</h2>
+    <h3 id="dockercommands">Docker Commands</h3>
+    <ul>
+      <li>cd into the working directory</li>
+    </ul>
+    <pre><code class="bash language-bash"># Build the image
+docker build -t imageName
+
+# Run the image you just built as a container
+docker run -d \
+--name containerName \
+--restart unless-stopped \
+# Expose the port
+-p 8558:8558 \
+imageName
+</code></pre>
+    <h2 id="kubernetesimplementation">Kubernetes Implementation</h2>
+    <ul>
+      <li>Added austin-api-dc-svc-ingress.yaml which is for the Kubernetes deployment</li>
+      <li>Integrated from the .env into env variables saved in Kubernetes secrets</li>
+      <li>Something to keep in mind is never use .env files with Docker containers since then anyone running the docker container will have access to those .env variables</li>
+    </ul>
+    <h3 id="rancherpipeline">Rancher Pipeline</h3>
+    <ul>
+      <li>Within Kubernetes, have pipelining set up with this GitHub repository</li>
+      <li>Each push in the repository will redeploy the project with the changes implemented</li>
+    </ul>
+    <h2 id="dockerhelp">Docker Help</h2>
+    <ul>
+      <li>$ docker --help</li>
+      <li>$ docker image --help</li>
+      <li>$ docker container --help</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="scss" scoped>
+</style>

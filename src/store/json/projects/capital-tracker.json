@@ -1,0 +1,13 @@
+{
+    "name": "capital-tracker",
+    "title": "Capital Tracker",
+    "links": {
+        "repo": "https://github.com/laude-capital",
+        "repoShort": "capital-tracker-issues",
+        "user": "laude-capital",
+        "live": "https://captrack.laudecapital.com/",
+        "private": true
+    },
+    "language": "Vue.js",
+    "description": "Web application that tracks stock trading. Specifically, option trading strategies."
+}

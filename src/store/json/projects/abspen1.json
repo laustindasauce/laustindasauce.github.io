@@ -1,0 +1,11 @@
+{
+    "name": "abspen-1",
+    "title": "Website V1",
+    "links": {
+        "repo": "https://github.com/abspen1/abspen1.github.io",
+        "repoShort": "abspen1.github.io",
+        "live": "https://austinspencer.works"
+    },
+    "language": "JavaScript",
+    "description": "My first attempt at building a personal website!"
+}

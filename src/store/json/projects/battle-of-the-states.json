@@ -1,0 +1,13 @@
+{
+    "name": "bots",
+    "title": "BOTS FFL",
+    "links": {
+        "repo": "https://github.com/battle-of-the-states",
+        "repoShort": "battle-of-the-states",
+        "user": "battle-of-the-states",
+        "live": "https://austinspencer.works/BOTS-FFL",
+        "private": true
+    },
+    "language": "Python / JavaScript",
+    "description": "Built to display Fantasy Football League statistics and tweet out scores / updates"
+}

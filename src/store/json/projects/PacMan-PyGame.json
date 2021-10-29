@@ -1,0 +1,12 @@
+{
+    "name": "pacman-pygame",
+    "title": "Pacman Game",
+    "links": {
+        "repo": "https://github.com/asu-cse-source-code/mat-243-pacman-pygame",
+        "repoShort": "mat-243-pacman-pygame",
+        "user": "asu-cse-source-code",
+        "live": null
+    },
+    "language": "Python",
+    "description": "PacMan-like game built with PyGame package in Python"
+}

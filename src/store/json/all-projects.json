@@ -1,0 +1,108 @@
+{
+    "title": "Projects",
+    "icon": "mdi-palette-advanced",
+    "items": [
+        {
+            "title": "Python",
+            "items": [
+                {
+                    "title": "Twitter Bot",
+                    "to": "twitter-bot"
+                },
+                {
+                    "title": "Algorithmic Trading",
+                    "to": "alpaca-python"
+                },
+                {
+                    "title": "Pacman Game",
+                    "to": "pacman-pygame"
+                },
+                {
+                    "title": "BOTS FFL",
+                    "to": "bots"
+                }
+            ]
+        },
+        {
+            "title": "Go",
+            "items": [
+                {
+                    "title": "Go Back-End",
+                    "to": "go-backend"
+                },
+                {
+                    "title": "Algorithmic Trading",
+                    "to": "go-trading-algo"
+                },
+                {
+                    "title": "Birthday Emailer",
+                    "to": "bday-email"
+                },
+                {
+                    "title": "Encoder",
+                    "to": "go-encode"
+                }
+            ]
+        },
+        {
+            "title": "JavaScript",
+            "items": [
+                {
+                    "title": "Rock Paper Scissors",
+                    "to": "rps-js"
+                },
+                {
+                    "title": "Discord Bot",
+                    "to": "discord-bot"
+                },
+                {
+                    "title": "Website V1",
+                    "to": "abspen-1"
+                }
+            ]
+        },
+        {
+            "title": "C++",
+            "items": [
+                {
+                    "title": "Encoder",
+                    "to": "encode-decode"
+                },
+                {
+                    "title": "Lexical Analyzer",
+                    "to": "lexical-analyzer"
+                }
+            ]
+        },
+        {
+            "title": "Vue.js",
+            "items": [
+                {
+                    "title": "This Website!",
+                    "to": "v3"
+                },
+                {
+                    "title": "Captial Tracker",
+                    "to": "capital-tracker"
+                },
+                {
+                    "title": "Env Advisors",
+                    "to": "eav2"
+                }
+            ]
+        },
+        {
+            "title": "Java",
+            "items": [
+                {
+                    "title": "Attendance GUI",
+                    "to": "attendance-gui"
+                },
+                {
+                    "title": "Coffee Shop",
+                    "to": "coffee-shop"
+                }
+            ]
+        }
+    ]
+}

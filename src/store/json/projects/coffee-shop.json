@@ -1,0 +1,11 @@
+{
+    "name": "coffee-shop",
+    "title": "Coffee Shop",
+    "links": {
+        "repo": "https://github.com/abspen1/coffee-shop",
+        "repoShort": "coffee-shop",
+        "live": "https://austinspencer.works/projects/java/demos/coffee/"
+    },
+    "language": "Java",
+    "description": "Interactive coffee shop"
+}

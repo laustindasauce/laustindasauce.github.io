@@ -1,0 +1,11 @@
+{
+    "name": "encode-decode",
+    "title": "Encode/Decode",
+    "links": {
+        "repo": "https://github.com/abspen1/cse-310-encode-decode",
+        "repoShort": "cse-310-encode-decode",
+        "live": null
+    },
+    "language": "C++",
+    "description": "This is a program that will take std::in input and output to std::out. However both can be redirected from/to txt files."
+}

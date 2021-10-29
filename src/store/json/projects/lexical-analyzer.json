@@ -1,0 +1,13 @@
+{
+    "name": "lexical-analyzer",
+    "title": "Lexical Analyzer",
+    "links": {
+        "repo": "https://github.com/asu-cse-source-code/cse-340/tree/main/cse-340-project-two",
+        "repoShort": "cse-340/tree/main/cse-340-project-two",
+        "user": "asu-cse-source-code",
+        "live": null,
+        "private": true
+    },
+    "language": "C++",
+    "description": "Generating a lexical analyzer automatically!"
+}

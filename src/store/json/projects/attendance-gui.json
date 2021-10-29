@@ -1,0 +1,13 @@
+{
+    "name": "attendance-gui",
+    "title": "Attendance GUI",
+    "links": {
+        "repo": "https://github.com/asu-cse-source-code/cse-360/tree/main/cse-360-final-project",
+        "repoShort": "cse-360/tree/main/cse-360-final-project",
+        "user": "asu-cse-source-code",
+        "live": "https://austinspencer.works/projects/java/demos/gui/",
+        "private": true
+    },
+    "language": "Java",
+    "description": "allow teachers to upload their rosters and then easily keep track of the attendance of each student."
+}
