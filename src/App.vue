@@ -1,7 +1,7 @@
 <template>
   <v-app
     id="app"
-    :style="{background: $vuetify.theme.themes[theme].background}"
+    :style="{ background: $vuetify.theme.themes[theme].background }"
   >
     <app-menu />
 
@@ -87,5 +87,10 @@ pre {
   font-variant: normal;
   font-weight: 400;
   line-height: 18px;
+}
+
+center {
+  align-items: center;
+  align-content: center;
 }
 </style>
