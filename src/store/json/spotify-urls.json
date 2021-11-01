@@ -1,0 +1,18 @@
+{
+  "title": "Spotify",
+  "icon": "mdi-spotify",
+  "items": [
+    {
+      "title": "Login",
+      "icon": "mdi-login-variant",
+      "to": "login",
+      "loginReq": false
+    },
+    {
+      "title": "Playlists",
+      "icon": "mdi-music-box-multiple-outline",
+      "to": "user-playlists",
+      "loginReq": true
+    }
+  ]
+}
