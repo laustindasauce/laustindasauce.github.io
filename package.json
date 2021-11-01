@@ -9,6 +9,7 @@
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "babel-eslint": "^10.1.0",
     "chalk": "^4.1.1",
     "core-js": "^3.6.5",
