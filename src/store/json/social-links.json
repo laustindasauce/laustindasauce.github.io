@@ -1,0 +1,32 @@
+[
+  {
+    "title": "email",
+    "icon": "mdi-email-outline",
+    "url": "mailto:me@austinbspencer.com"
+  },
+  {
+    "title": "github",
+    "icon": "mdi-github",
+    "url": "https://github.com/austinbspencer"
+  },
+  {
+    "title": "linkedIn",
+    "icon": "mdi-linkedin",
+    "url": "https://www.linkedin.com/in/austinbspencer"
+  },
+  {
+    "title": "facebook",
+    "icon": "mdi-facebook",
+    "url": "https://www.facebook.com/austin.spencer.129/"
+  },
+  {
+    "title": "instagram",
+    "icon": "mdi-instagram",
+    "url": "https://www.instagram.com/austinspencer/"
+  },
+  {
+    "title": "twitter",
+    "icon": "mdi-twitter",
+    "url": "https://twitter.com/austinbspencer"
+  }
+]
