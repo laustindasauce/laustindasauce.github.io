@@ -3,6 +3,8 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+import axios from "axios";
+
 import allProjects from "./json/all-projects.json";
 import twitterBot from "./json/projects/twitter-bot.json";
 import abspen1 from "./json/projects/abspen1.json";
@@ -22,11 +24,22 @@ import lexical from "./json/projects/lexical-analyzer.json";
 import rps from "./json/projects/rps-js.json";
 import pacman from "./json/projects/PacMan-PyGame.json";
 import v3 from "./json/projects/v3.json";
+import socialLinks from "./json/social-links.json";
+import workHistory from "./json/work-history.json";
+
+import spotifyActions from "./json/spotify-urls.json";
+
+const BASE_URL = "http://localhost:8558";
+// const BASE_URL = "https://austinbspencer.com"
+const OATH_PATH = "/go-api/spotify/get-oath-url";
+const AWAIT_PATH = "/go-api/spotify/await";
+const GET_PATH = "/go-api/spotify/user/get";
 
 export default new Vuex.Store({
   state: {
     items: [
       { title: "Home", icon: "mdi-home", to: "/" },
+      // { title: "Music", icon: "mdi-spotify", to: "/music" },
       // { title: 'Contact', icon: 'mdi-information-outline', to: '/contact' },
     ],
     projects: [allProjects],
@@ -51,89 +64,25 @@ export default new Vuex.Store({
       v3,
     ],
     currProject: {},
-    links: [
-      {
-        title: "email",
-        icon: "mdi-email-outline",
-        url: "mailto:me@austinbspencer.com",
-      },
-      {
-        title: "github",
-        icon: "mdi-github",
-        url: "https://github.com/austinbspencer",
-      },
-      {
-        title: "linkedIn",
-        icon: "mdi-linkedin",
-        url: "https://www.linkedin.com/in/austinbspencer",
-      },
-      {
-        title: "facebook",
-        icon: "mdi-facebook",
-        url: "https://www.facebook.com/austin.spencer.129/",
-      },
-      {
-        title: "instagram",
-        icon: "mdi-instagram",
-        url: "https://www.instagram.com/austinspencer/",
-      },
-      {
-        title: "twitter",
-        icon: "mdi-twitter",
-        url: "https://twitter.com/austinbspencer",
-      },
-    ],
-    work: [
-      {
-        company: "USAA",
-        title: "Data Engineer Intern",
-        roles: [
-          "Learn cloud using Snowflake and AWS as well as SQL and Informatica",
-          "Work closely with business engagement using agile to run our projects",
-          "Join daily stand ups and be given stories for a specific delivery",
-        ],
-        color: "#0A3C61",
-        url: "https://www.usaa.com/",
-        image: "usaa.jpeg",
-        dates: "May 2021 - Aug 2021",
-      },
-      {
-        company: "Salt River Project",
-        title: "Solutions Center Intern",
-        roles: [
-          "Provide phone/chat assistance to internal SRP clients with varying degrees of technical knowledge",
-          "Provide excellent customer service demonstrating patience while effectively dealing with client problems",
-          "Perform problem-solving over the phone or through chat and determine appropriate course of problem escalation as required, while ensuring detailed written documentation",
-        ],
-        color: "#004886",
-        url: "https://www.srpnet.com/",
-        image: "srp.png",
-        dates: "Nov 2020 - Apr 2021",
-      },
-    ],
+    links: socialLinks,
+    work: workHistory,
+    spotifyActions: [spotifyActions],
+    oathUrl: null,
+    spotifyId: null,
+    spotifyUser: null,
+    spotifyUserPlaylists: null,
   },
   getters: {
-    currentItems(state) {
-      return state.items;
-    },
-    projects(state) {
-      return state.projects;
-    },
-    projectInfo(state) {
-      return state.projectInfo;
-    },
-    currentProject(state) {
-      return state.currProject;
-    },
-    links(state) {
-      return state.links;
-    },
-    work(state) {
-      return state.work;
-    },
-    colors(state) {
-      return state.colors;
-    },
+    currentItems: (state) => state.items,
+    projects: (state) => state.projects,
+    projectInfo: (state) => state.projectInfo,
+    currentProject: (state) => state.currProject,
+    links: (state) => state.links,
+    work: (state) => state.work,
+    spotifyActions: (state) => state.spotifyActions,
+    oathUrl: (state) => state.oathUrl,
+    spotifyId: (state) => state.spotifyId,
+    spotifyUserPlaylists: (state) => state.spotifyUserPlaylists,
   },
   mutations: {
     projectInfo(state, name) {
@@ -141,7 +90,48 @@ export default new Vuex.Store({
         return proj.name === name;
       });
     },
+    SET_OATH_URL: (state, url) => (state.oathUrl = url),
+    SET_SPOTIFY_ID: (state, id) => (state.spotifyId = id),
+    SET_SPOTIFY_USER_PLAYLISTS: (state, playlists) =>
+      (state.spotifyUserPlaylists = playlists),
   },
-  actions: {},
+  actions: {
+    spotifyOathLogin({ commit }) {
+      axios.get(`${BASE_URL}${OATH_PATH}`).then((resp) => {
+        if (resp.data.response === "SUCCESS") {
+          // console.log(resp.data);
+          commit("SET_OATH_URL", resp.data.url);
+        }
+      });
+    },
+    spotifyAwait({ commit }) {
+      console.log("Waiting on login");
+      axios.get(`${BASE_URL}${AWAIT_PATH}`).then((res) => {
+        // console.log(res.data);
+        commit("SET_SPOTIFY_ID", res.data.id);
+      });
+    },
+    getUserPlaylists({ commit, getters }, { limit }) {
+      console.log("Getting user playlists");
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetPlaylistsForUser";
+      params.Args = {
+        Limit: limit,
+      };
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_SPOTIFY_USER_PLAYLISTS", res.data);
+      });
+    },
+  },
   modules: {},
 });
