@@ -29,8 +29,8 @@ import workHistory from "./json/work-history.json";
 
 import spotifyActions from "./json/spotify-urls.json";
 
-// const BASE_URL = "http://localhost:8558";
-const BASE_URL = "https://austinbspencer.com";
+const BASE_URL = "http://localhost:8558";
+// const BASE_URL = "https://austinbspencer.com";
 const OATH_PATH = "/go-api/spotify/get-oath-url";
 const GET_PATH = "/go-api/spotify/user/get";
 
@@ -71,7 +71,7 @@ export default new Vuex.Store({
     spotifyUser: null,
     spotifyUserPlaylists: [],
     allPlaylistsWithTracks: [],
-    allPlaylistsTracks: null,
+    allPlaylistsTracks: new Object(),
     currentPlaylistTracks: null,
   },
   getters: {
@@ -86,6 +86,7 @@ export default new Vuex.Store({
     spotifyId: (state) => state.spotifyId,
     spotifyUserPlaylists: (state) => state.spotifyUserPlaylists,
     allPlaylistsWithTracks: (state) => state.allPlaylistsWithTracks,
+    allPlaylistsTracks: (state) => state.allPlaylistsTracks,
     currentPlaylistTracks: (state) => state.currentPlaylistTracks,
   },
   mutations: {
@@ -101,8 +102,8 @@ export default new Vuex.Store({
     SET_CURRENT_PLAYLIST_TRACKS: (state, tracks) =>
       (state.currentPlaylistTracks = tracks),
     APPEND_PLAYLIST_IDS: (state, id) => state.allPlaylistsWithTracks.push(id),
-    SET_PLAYLIST_WITH_TRACKS: (state, id, info) =>
-      (state.allPlaylistsTracks[id] = info),
+    SET_PLAYLIST_WITH_TRACKS: (state, payload) =>
+      (state.allPlaylistsTracks[payload.id] = payload.playlist),
   },
   actions: {
     spotifyOathLogin({ commit }) {
@@ -113,19 +114,15 @@ export default new Vuex.Store({
         }
       });
     },
-    // spotifyAwait({ commit }) {
-    //   console.log("Waiting on login");
-    //   axios.get(`${BASE_URL}${AWAIT_PATH}`).then((res) => {
-    //     // console.log(res.data);
-    //     commit("SET_SPOTIFY_ID", res.data.id);
-    //   });
-    // },
     getUserPlaylists({ commit, getters }, { limit }) {
-      console.log("Getting user playlists");
+      if (getters.spotifyUserPlaylists.length > 0) {
+        console.log("Playlists already set!");
+        return;
+      }
       let params = new Object();
 
       params.ID = getters.spotifyId;
-      params.Method = "GetPlaylistsForUser";
+      params.Method = "GetPlaylists";
       params.Args = {
         Limit: limit,
       };
@@ -143,9 +140,9 @@ export default new Vuex.Store({
     },
     getPlaylistTracks({ commit, getters }, { id }) {
       if (getters.allPlaylistsWithTracks.includes(id)) {
+        console.log("We have this playlist already!");
         commit("SET_CURRENT_PLAYLIST_TRACKS", getters.allPlaylistsTracks[id]);
       } else {
-        console.log("Getting user playlists");
         let params = new Object();
 
         params.ID = getters.spotifyId;
@@ -167,7 +164,7 @@ export default new Vuex.Store({
           commit("APPEND_PLAYLIST_IDS", id);
           commit("SET_PLAYLIST_WITH_TRACKS", {
             id: id,
-            info: res.data.playlist,
+            playlist: res.data.playlist,
           });
         });
       }
