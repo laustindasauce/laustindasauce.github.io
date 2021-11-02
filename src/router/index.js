@@ -80,6 +80,11 @@ const routes = [
     props: true,
     component: () => import("../views/Spotify/LoggedIn.vue"),
   },
+  {
+    path: "/spotify/unsuccessful-login",
+    name: "Unsuccessful Login",
+    component: () => import("../views/Spotify/LogInFailed.vue"),
+  },
 ];
 
 const router = new VueRouter({
