@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <h1>You've been successfully logged in :)</h1>
-  </div>
+  <v-container>
+    <v-row>
+      <h1>You've been successfully logged in :)</h1>
+      <h3>You will be redirected to the profile page momentarily</h3>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
