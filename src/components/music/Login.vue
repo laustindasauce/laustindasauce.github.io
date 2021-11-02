@@ -53,7 +53,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch("spotifyOathLogin");
-    this.$store.dispatch("spotifyAwait");
   },
 };
 </script>
