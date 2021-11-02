@@ -39,7 +39,7 @@ export default new Vuex.Store({
   state: {
     items: [
       { title: "Home", icon: "mdi-home", to: "/" },
-      // { title: "Music", icon: "mdi-spotify", to: "/music" },
+      { title: "Spotify", icon: "mdi-spotify", to: "/spotify" },
       // { title: 'Contact', icon: 'mdi-information-outline', to: '/contact' },
     ],
     projects: [allProjects],
@@ -66,11 +66,14 @@ export default new Vuex.Store({
     currProject: {},
     links: socialLinks,
     work: workHistory,
-    spotifyActions: [spotifyActions],
+    spotifyActions: spotifyActions,
     oathUrl: null,
     spotifyId: null,
     spotifyUser: null,
     spotifyUserPlaylists: null,
+    allPlaylistsWithTracks: [],
+    allPlaylistsTracks: null,
+    currentPlaylistTracks: null,
   },
   getters: {
     currentItems: (state) => state.items,
@@ -83,6 +86,8 @@ export default new Vuex.Store({
     oathUrl: (state) => state.oathUrl,
     spotifyId: (state) => state.spotifyId,
     spotifyUserPlaylists: (state) => state.spotifyUserPlaylists,
+    allPlaylistsWithTracks: (state) => state.allPlaylistsWithTracks,
+    currentPlaylistTracks: (state) => state.currentPlaylistTracks,
   },
   mutations: {
     projectInfo(state, name) {
@@ -94,6 +99,11 @@ export default new Vuex.Store({
     SET_SPOTIFY_ID: (state, id) => (state.spotifyId = id),
     SET_SPOTIFY_USER_PLAYLISTS: (state, playlists) =>
       (state.spotifyUserPlaylists = playlists),
+    SET_CURRENT_PLAYLIST_TRACKS: (state, tracks) =>
+      (state.currentPlaylistTracks = tracks),
+    APPEND_PLAYLIST_IDS: (state, id) => state.allPlaylistsWithTracks.push(id),
+    SET_PLAYLIST_WITH_TRACKS: (state, id, info) =>
+      (state.allPlaylistsTracks[id] = info),
   },
   actions: {
     spotifyOathLogin({ commit }) {
@@ -131,6 +141,37 @@ export default new Vuex.Store({
         console.log(res.data);
         commit("SET_SPOTIFY_USER_PLAYLISTS", res.data);
       });
+    },
+    getPlaylistTracks({ commit, getters }, { id }) {
+      if (getters.allPlaylistsWithTracks.includes(id)) {
+        commit("SET_CURRENT_PLAYLIST_TRACKS", getters.allPlaylistsTracks[id]);
+      } else {
+        console.log("Getting user playlists");
+        let params = new Object();
+
+        params.ID = getters.spotifyId;
+        params.Method = "GetPlaylist";
+        params.PlaylistId = id;
+        params.Args = {
+          Limit: 0,
+        };
+
+        let jsonData = JSON.stringify(params);
+
+        axios({
+          url: `${BASE_URL}${GET_PATH}`,
+          method: "post",
+          data: jsonData,
+        }).then((res) => {
+          console.log(res.data);
+          commit("SET_CURRENT_PLAYLIST_TRACKS", res.data.playlist);
+          commit("APPEND_PLAYLIST_IDS", id);
+          commit("SET_PLAYLIST_WITH_TRACKS", {
+            id: id,
+            info: res.data.playlist,
+          });
+        });
+      }
     },
   },
   modules: {},

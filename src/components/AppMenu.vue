@@ -13,7 +13,7 @@
 
       <v-divider></v-divider>
 
-      <v-list dense nav>
+      <v-list nav>
         <v-list-item v-for="item in items" :key="item.title" :to="item.to" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -23,44 +23,6 @@
             <v-list-item-title v-text="item.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
-
-      <v-divider></v-divider>
-
-      <v-list>
-        <v-list-group
-          v-for="item in spotifyActions"
-          :key="item.title"
-          v-model="item.active"
-          :prepend-icon="item.icon"
-        >
-          <template v-slot:activator>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item-content>
-          </template>
-
-          <v-list-item
-            @click.stop
-            v-for="child in item.items"
-            v-if="
-              (child.loginReq && spotifyId !== null) ||
-              (!child.loginReq && spotifyId === null)
-            "
-            :key="child.title"
-            :to="{ name: 'Music', params: { name: child.to } }"
-            v-model="child.active"
-            sub-group
-            no-action
-          >
-            <v-list-item-icon>
-              <v-icon v-text="child.icon"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-group>
       </v-list>
 
       <v-divider></v-divider>
@@ -168,9 +130,6 @@ export default {
     },
     projects() {
       return this.$store.getters.projects;
-    },
-    spotifyActions() {
-      return this.$store.getters.spotifyActions;
     },
     spotifyId() {
       return this.$store.getters.spotifyId;

@@ -1,18 +1,27 @@
-{
-  "title": "Spotify",
-  "icon": "mdi-spotify",
-  "items": [
-    {
-      "title": "Login",
-      "icon": "mdi-login-variant",
-      "to": "login",
-      "loginReq": false
-    },
-    {
-      "title": "Playlists",
-      "icon": "mdi-music-box-multiple-outline",
-      "to": "user-playlists",
-      "loginReq": true
-    }
-  ]
-}
+[
+  {
+    "title": "Profile",
+    "icon": "mdi-account",
+    "to": "/spotify"
+  },
+  {
+    "title": "Top Artists",
+    "icon": "mdi-account-music-outline",
+    "to": "/spotify/artists"
+  },
+  {
+    "title": "Top Tracks",
+    "icon": "mdi-music",
+    "to": "/spotify/tracks"
+  },
+  {
+    "title": "Playlists",
+    "icon": "mdi-playlist-music",
+    "to": "/spotify/playlists"
+  },
+  {
+    "title": "Recent",
+    "icon": "mdi-history",
+    "to": "/spotify/recent"
+  }
+]

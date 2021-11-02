@@ -3,7 +3,8 @@
     id="app"
     :style="{ background: $vuetify.theme.themes[theme].background }"
   >
-    <app-menu />
+    <app-menu v-if="notAtMusic" />
+    <spotify-menu v-else>{{ (this.$vuetify.theme.dark = true) }}</spotify-menu>
 
     <v-main>
       <router-view></router-view>
@@ -15,12 +16,14 @@
 <script>
 import AppMenu from "./components/AppMenu.vue";
 import AppFooter from "./components/AppFooter.vue";
+import SpotifyMenu from "./components/SpotifyMenu.vue";
 
 export default {
   name: "App",
   components: {
     "app-menu": AppMenu,
     "app-footer": AppFooter,
+    SpotifyMenu,
   },
   data: () => ({
     //
@@ -34,6 +37,13 @@ export default {
     },
     atHome() {
       return this.$route.name === "Home" ? true : false;
+    },
+    notAtMusic() {
+      return (
+        this.$route.name === "Home" ||
+        this.$route.name === "About" ||
+        this.$route.name === "Project"
+      );
     },
   },
 };
@@ -88,9 +98,20 @@ pre {
   font-weight: 400;
   line-height: 18px;
 }
-
-center {
+.third {
+  padding-top: 33vh;
+}
+.center {
   align-items: center;
   align-content: center;
+}
+.center-center {
+  margin-top: 50vh;
+  padding-top: 50vh;
+}
+.login {
+  padding-top: 45vh;
+  align-content: center;
+  align-items: center;
 }
 </style>

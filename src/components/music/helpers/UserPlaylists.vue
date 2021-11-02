@@ -2,7 +2,11 @@
   <v-card class="mx-auto" max-width="500">
     <v-list>
       <v-list-item-group v-model="model">
-        <v-list-item v-for="item in userPlaylists" :key="item.id">
+        <v-list-item
+          v-for="item in userPlaylists"
+          :key="item.id"
+          @click="showPlaylist(item)"
+        >
           <v-list-item-icon>
             <v-icon>mdi-spotify</v-icon>
           </v-list-item-icon>
@@ -27,7 +31,11 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    showPlaylist(item) {
+      console.log(`Show playlist : ${item.id}`);
+    },
+  },
 };
 </script>
 

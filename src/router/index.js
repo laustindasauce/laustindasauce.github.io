@@ -23,15 +23,56 @@ const routes = [
     path: "/projects/:name",
     name: "Project",
     props: true,
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Project.vue"),
+    component: () => import("../views/Project.vue"),
   },
   {
-    path: "/music/:name",
-    name: "Music",
+    path: "/spotify",
+    name: "Profile",
+    component: () => import("../views/Spotify/Profile.vue"),
+  },
+  {
+    path: "/spotify/playlists",
+    name: "Playlists",
+    component: () => import("../views/Spotify/Playlists.vue"),
+  },
+  {
+    path: "/spotify/tracks",
+    name: "Top Tracks",
+    component: () => import("../views/Spotify/Tracks.vue"),
+  },
+  {
+    path: "/spotify/artists",
+    name: "Top Artists",
+    component: () => import("../views/Spotify/Artists.vue"),
+  },
+  {
+    path: "/spotify/recent",
+    name: "Recent",
+    component: () => import("../views/Spotify/RecentTracks.vue"),
+  },
+  {
+    path: "/spotify/recommendations/:id",
+    name: "Recommendations",
     props: true,
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Music.vue"),
+    component: () => import("../views/Spotify/Recommendations.vue"),
+  },
+  {
+    path: "/spotify/playlists/:id",
+    name: "Single Playlist",
+    props: true,
+    component: () => import("../views/Spotify/SinglePlaylist.vue"),
+  },
+  {
+    path: "/spotify/tracks/:id",
+    name: "Single Track",
+    props: true,
+    component: () => import("../views/Spotify/SingleTrack.vue"),
+  },
+  {
+    path: "/spotify/artists/:id",
+    name: "Single Artist",
+    props: true,
+    component: () => import("../views/Spotify/SingleArtist.vue"),
   },
 ];
 
