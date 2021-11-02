@@ -40,8 +40,7 @@ export default {
   methods: {
     goToLoginPage() {
       this.loadingLogin = true;
-      console.log(this.url);
-      window.open(this.url, "_blank");
+      location.href = this.url;
     },
   },
   computed: {

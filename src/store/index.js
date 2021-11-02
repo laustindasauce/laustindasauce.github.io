@@ -32,7 +32,6 @@ import spotifyActions from "./json/spotify-urls.json";
 const BASE_URL = "http://localhost:8558";
 // const BASE_URL = "https://austinbspencer.com";
 const OATH_PATH = "/go-api/spotify/get-oath-url";
-const AWAIT_PATH = "/go-api/spotify/await";
 const GET_PATH = "/go-api/spotify/user/get";
 
 export default new Vuex.Store({

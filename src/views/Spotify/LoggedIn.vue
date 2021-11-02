@@ -15,6 +15,7 @@ export default {
   mounted() {
     console.log(this.id);
     this.$store.commit("SET_SPOTIFY_ID", this.id);
+    this.$router.push("/spotify");
   },
 
   methods: {},
