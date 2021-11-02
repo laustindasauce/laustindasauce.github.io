@@ -70,7 +70,7 @@ export default new Vuex.Store({
     oathUrl: null,
     spotifyId: null,
     spotifyUser: null,
-    spotifyUserPlaylists: null,
+    spotifyUserPlaylists: [],
     allPlaylistsWithTracks: [],
     allPlaylistsTracks: null,
     currentPlaylistTracks: null,
@@ -139,7 +139,7 @@ export default new Vuex.Store({
         data: jsonData,
       }).then((res) => {
         console.log(res.data);
-        commit("SET_SPOTIFY_USER_PLAYLISTS", res.data);
+        commit("SET_SPOTIFY_USER_PLAYLISTS", res.data.playlists);
       });
     },
     getPlaylistTracks({ commit, getters }, { id }) {

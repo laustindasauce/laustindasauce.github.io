@@ -4,14 +4,18 @@
       <login />
     </div>
     <div v-else>
-      <h1>Playlists</h1>
+      <h1 class="mt-5 mb-5">Your Playlists</h1>
       <v-row class="mt-5" v-if="userPlaylists !== null">
-        <v-col sm="6" md="5" lg="4">
-          <user-playlists
-            :userPlaylists="userPlaylists.playlists"
-          ></user-playlists>
+        <v-col
+          cols="12"
+          sm="6"
+          md="4"
+          lg="3"
+          v-for="playlist in userPlaylists"
+          :key="playlist.id"
+        >
+          <playlist-card :playlist="playlist"></playlist-card>
         </v-col>
-        <v-col sm="6" md="7" lg="8"> </v-col>
       </v-row>
     </div>
   </v-container>
@@ -19,12 +23,13 @@
 
 <script>
 import Login from "../../components/music/Login.vue";
-import UserPlaylists from "../../components/music/helpers/UserPlaylists.vue";
+// import UserPlaylists from "../../components/music/helpers/UserPlaylists.vue";
+import PlaylistCard from "../../components/music/PlaylistCard.vue";
 
 export default {
   components: {
     Login,
-    UserPlaylists,
+    PlaylistCard,
   },
   name: "Playlists",
 
