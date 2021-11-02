@@ -5,6 +5,7 @@
     </div>
     <div v-else>
       <h1>Profile</h1>
+      <pre>{{ spotifyUser }}</pre>
     </div>
   </v-container>
 </template>
@@ -25,7 +26,12 @@ export default {
     spotifyId() {
       return this.$store.getters.spotifyId;
     },
+    spotifyUser() {
+      return this.$store.getters.spotifyUser;
+    },
   },
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("getProfile");
+  },
 };
 </script>

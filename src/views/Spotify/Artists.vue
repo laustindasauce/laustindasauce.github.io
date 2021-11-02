@@ -5,6 +5,7 @@
     </div>
     <div v-else>
       <h1>Artists</h1>
+      <pre>{{ topArtists }}</pre>
     </div>
   </v-container>
 </template>
@@ -22,10 +23,15 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("getTopItems", { type: "artists" });
+  },
   computed: {
     spotifyId() {
       return this.$store.getters.spotifyId;
+    },
+    topArtists() {
+      return this.$store.getters.topArtists;
     },
   },
   methods: {},

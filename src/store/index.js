@@ -74,6 +74,11 @@ export default new Vuex.Store({
     allPlaylistsTracks: new Object(),
     currentPlaylistTracks: null,
     audioFeatures: null,
+    topTracks: null,
+    topArtists: null,
+    spotifyArtist: null,
+    spotifyTrack: null,
+    recentTracks: null,
   },
   getters: {
     currentItems: (state) => state.items,
@@ -85,11 +90,17 @@ export default new Vuex.Store({
     spotifyActions: (state) => state.spotifyActions,
     oathUrl: (state) => state.oathUrl,
     spotifyId: (state) => state.spotifyId,
+    spotifyUser: (state) => state.spotifyUser,
     spotifyUserPlaylists: (state) => state.spotifyUserPlaylists,
     allPlaylistsWithTracks: (state) => state.allPlaylistsWithTracks,
     allPlaylistsTracks: (state) => state.allPlaylistsTracks,
     currentPlaylistTracks: (state) => state.currentPlaylistTracks,
     audioFeatures: (state) => state.audioFeatures,
+    topTracks: (state) => state.topTracks,
+    topArtists: (state) => state.topArtists,
+    spotifyArtist: (state) => state.spotifyArtist,
+    spotifyTrack: (state) => state.spotifyTrack,
+    recentTracks: (state) => state.recentTracks,
   },
   mutations: {
     projectInfo(state, name) {
@@ -99,6 +110,7 @@ export default new Vuex.Store({
     },
     SET_OATH_URL: (state, url) => (state.oathUrl = url),
     SET_SPOTIFY_ID: (state, id) => (state.spotifyId = id),
+    SET_SPOTIFY_USER: (state, profile) => (state.spotifyUser = profile),
     SET_SPOTIFY_USER_PLAYLISTS: (state, playlists) =>
       (state.spotifyUserPlaylists = playlists),
     SET_CURRENT_PLAYLIST_TRACKS: (state, tracks) =>
@@ -108,6 +120,11 @@ export default new Vuex.Store({
       (state.allPlaylistsTracks[payload.id] = payload.playlist),
     SET_AUDIO_FEATURES: (state, audioFeatures) =>
       (state.audioFeatures = audioFeatures),
+    SET_TOP_TRACKS: (state, tracks) => (state.topTracks = tracks),
+    SET_TOP_ARTISTS: (state, artists) => (state.topArtists = artists),
+    SET_SPOTIFY_ARTIST: (state, artist) => (state.spotifyArtist = artist),
+    SET_SPOTIFY_TRACK: (state, track) => (state.spotifyTrack = track),
+    SET_RECENT_TRACKS: (state, tracks) => (state.recentTracks = tracks),
   },
   actions: {
     spotifyOathLogin({ commit }) {
@@ -116,6 +133,28 @@ export default new Vuex.Store({
           // console.log(resp.data);
           commit("SET_OATH_URL", resp.data.url);
         }
+      });
+    },
+    getProfile({ commit, getters }) {
+      if (getters.spotifyUser !== null) {
+        console.log("User already set!");
+        return;
+      }
+
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetProfile";
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_SPOTIFY_USER", res.data);
       });
     },
     getUserPlaylists({ commit, getters }, { limit }) {
@@ -191,6 +230,99 @@ export default new Vuex.Store({
       }).then((res) => {
         console.log(res.data);
         commit("SET_AUDIO_FEATURES", res.data.audioFeatures);
+      });
+    },
+    getTopItems({ commit, getters }, { type }) {
+      if (type === "tracks") {
+        if (getters.topTracks !== null) {
+          console.log("top tracks already set!");
+          return;
+        }
+      } else {
+        if (getters.topArtists !== null) {
+          console.log("top artists already set!");
+          return;
+        }
+      }
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetTopItems";
+      params.Args = {
+        Type: type,
+      };
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        if (res.data.type === "tracks") {
+          commit("SET_TOP_TRACKS", res.data.tracks);
+        } else if (res.data.type === "artists") {
+          commit("SET_TOP_ARTISTS", res.data.artists);
+        }
+      });
+    },
+    getArtist({ commit, getters }, { id }) {
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetArtist";
+      params.ArtistId = id;
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_SPOTIFY_ARTIST", res.data.artist);
+      });
+    },
+    getTrack({ commit, getters }, { id }) {
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetTrack";
+      params.TrackId = id;
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_SPOTIFY_TRACK", res.data.track);
+      });
+    },
+    getRecentTracks({ commit, getters }) {
+      if (getters.recentTracks !== null) {
+        console.log("Already have recent tracks!");
+        return;
+      }
+
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetRecent";
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_RECENT_TRACKS", res.data.tracks);
       });
     },
   },

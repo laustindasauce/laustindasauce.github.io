@@ -5,6 +5,7 @@
     </div>
     <div v-else>
       <h1>Single Track</h1>
+      <pre>{{ track }}</pre>
     </div>
   </v-container>
 </template>
@@ -17,15 +18,20 @@ export default {
     Login,
   },
   name: "SingleTrack",
-
+  props: ["id"],
   data() {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("getTrack", { id: this.id });
+  },
   computed: {
     spotifyId() {
       return this.$store.getters.spotifyId;
+    },
+    track() {
+      return this.$store.getters.spotifyTrack;
     },
   },
   methods: {},

@@ -5,6 +5,7 @@
     </div>
     <div v-else>
       <h1>Recent Tracks</h1>
+      <pre>{{ recentTracks }}</pre>
     </div>
   </v-container>
 </template>
@@ -22,10 +23,15 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("getRecentTracks");
+  },
   computed: {
     spotifyId() {
       return this.$store.getters.spotifyId;
+    },
+    recentTracks() {
+      return this.$store.getters.recentTracks;
     },
   },
   methods: {},

@@ -1,5 +1,12 @@
 <template>
-  <v-navigation-drawer v-model="drawer" mini-variant floating permanent app>
+  <v-navigation-drawer
+    v-model="drawer"
+    color="black"
+    mini-variant
+    floating
+    permanent
+    app
+  >
     <v-list-item class="px-2">
       <v-list-item-avatar>
         <v-img src="spotify.png"></v-img>
@@ -16,6 +23,7 @@
 
     <div class="third">
       <v-list-item
+        color="spotifyGreen"
         v-for="item in spotifyActions"
         :key="item.title"
         :to="item.to"
@@ -23,7 +31,7 @@
         link
       >
         <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
+          <v-icon color="white">{{ item.icon }}</v-icon>
         </v-list-item-icon>
 
         <v-list-item-content>
