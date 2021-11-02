@@ -74,6 +74,12 @@ const routes = [
     props: true,
     component: () => import("../views/Spotify/SingleArtist.vue"),
   },
+  {
+    path: "/spotify/successful-login/:id",
+    name: "Successful Login",
+    props: true,
+    component: () => import("../views/Spotify/LoggedIn.vue"),
+  },
 ];
 
 const router = new VueRouter({

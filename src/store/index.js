@@ -29,8 +29,8 @@ import workHistory from "./json/work-history.json";
 
 import spotifyActions from "./json/spotify-urls.json";
 
-// const BASE_URL = "http://localhost:8558";
-const BASE_URL = "https://austinbspencer.com";
+const BASE_URL = "http://localhost:8558";
+// const BASE_URL = "https://austinbspencer.com";
 const OATH_PATH = "/go-api/spotify/get-oath-url";
 const AWAIT_PATH = "/go-api/spotify/await";
 const GET_PATH = "/go-api/spotify/user/get";
@@ -114,13 +114,13 @@ export default new Vuex.Store({
         }
       });
     },
-    spotifyAwait({ commit }) {
-      console.log("Waiting on login");
-      axios.get(`${BASE_URL}${AWAIT_PATH}`).then((res) => {
-        // console.log(res.data);
-        commit("SET_SPOTIFY_ID", res.data.id);
-      });
-    },
+    // spotifyAwait({ commit }) {
+    //   console.log("Waiting on login");
+    //   axios.get(`${BASE_URL}${AWAIT_PATH}`).then((res) => {
+    //     // console.log(res.data);
+    //     commit("SET_SPOTIFY_ID", res.data.id);
+    //   });
+    // },
     getUserPlaylists({ commit, getters }, { limit }) {
       console.log("Getting user playlists");
       let params = new Object();
