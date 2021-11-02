@@ -8,29 +8,7 @@
 
     <v-card-actions>
       <v-btn color="orange lighten-2" text> More Info </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon @click="show = !show">
-        <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
-      </v-btn>
     </v-card-actions>
-
-    <v-expand-transition>
-      <div v-show="show">
-        <v-divider></v-divider>
-
-        <v-card-text>
-          <ul>
-            <li><strong>Owner: </strong>{{ playlist.owner.display_name }}</li>
-            <li>
-              <strong>Profile: </strong
-              ><a :href="playlist.owner.external_urls.spotify">link</a>
-            </li>
-          </ul>
-        </v-card-text>
-      </div>
-    </v-expand-transition>
   </v-card>
 </template>
 

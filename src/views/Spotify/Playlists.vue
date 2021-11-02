@@ -23,7 +23,6 @@
 
 <script>
 import Login from "../../components/music/Login.vue";
-// import UserPlaylists from "../../components/music/helpers/UserPlaylists.vue";
 import PlaylistCard from "../../components/music/PlaylistCard.vue";
 
 export default {
