@@ -9,6 +9,7 @@
     "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "apexcharts": "^3.29.0",
     "axios": "^0.24.0",
     "babel-eslint": "^10.1.0",
     "chalk": "^4.1.1",
@@ -23,6 +24,7 @@
     "prettier": "^2.2.1",
     "showdown": "^1.9.1",
     "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.2",
     "vue-eslint-parser": "^7.6.0",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",

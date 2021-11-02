@@ -73,6 +73,7 @@ export default new Vuex.Store({
     allPlaylistsWithTracks: [],
     allPlaylistsTracks: new Object(),
     currentPlaylistTracks: null,
+    audioFeatures: null,
   },
   getters: {
     currentItems: (state) => state.items,
@@ -88,6 +89,7 @@ export default new Vuex.Store({
     allPlaylistsWithTracks: (state) => state.allPlaylistsWithTracks,
     allPlaylistsTracks: (state) => state.allPlaylistsTracks,
     currentPlaylistTracks: (state) => state.currentPlaylistTracks,
+    audioFeatures: (state) => state.audioFeatures,
   },
   mutations: {
     projectInfo(state, name) {
@@ -104,6 +106,8 @@ export default new Vuex.Store({
     APPEND_PLAYLIST_IDS: (state, id) => state.allPlaylistsWithTracks.push(id),
     SET_PLAYLIST_WITH_TRACKS: (state, payload) =>
       (state.allPlaylistsTracks[payload.id] = payload.playlist),
+    SET_AUDIO_FEATURES: (state, audioFeatures) =>
+      (state.audioFeatures = audioFeatures),
   },
   actions: {
     spotifyOathLogin({ commit }) {
@@ -168,6 +172,26 @@ export default new Vuex.Store({
           });
         });
       }
+    },
+    getAudioFeatures({ commit, getters }, { ids }) {
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetAudioFeatures";
+      params.Args = {
+        AudioFeatureIds: ids,
+      };
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_AUDIO_FEATURES", res.data.audioFeatures);
+      });
     },
   },
   modules: {},

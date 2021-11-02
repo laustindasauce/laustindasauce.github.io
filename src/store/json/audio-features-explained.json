@@ -1,0 +1,47 @@
+[
+  {
+    "name": "acousticness",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "danceability",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "energy",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "instrumentalness",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "liveness",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "speechiness",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "valence",
+    "desc": "A measure from 0.0 to 1.0 of whether the track is acoustic.",
+    "score": 0
+  },
+  {
+    "name": "loudness",
+    "desc": "The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track. Values typical range between -60 and 0 db.",
+    "score": 0
+  },
+  {
+    "name": "tempo",
+    "desc": "The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.",
+    "score": 0
+  }
+]
