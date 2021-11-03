@@ -117,4 +117,7 @@ pre {
   align-content: center;
   align-items: center;
 }
+.row-link:hover {
+  cursor: pointer;
+}
 </style>

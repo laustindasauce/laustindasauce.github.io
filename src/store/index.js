@@ -29,8 +29,8 @@ import workHistory from "./json/work-history.json";
 
 import spotifyActions from "./json/spotify-urls.json";
 
-// const BASE_URL = "http://localhost:8558";
-const BASE_URL = "https://austinbspencer.com";
+const BASE_URL = "http://localhost:8558";
+// const BASE_URL = "https://austinbspencer.com";
 const OATH_PATH = "/go-api/spotify/get-oath-url";
 const GET_PATH = "/go-api/spotify/user/get";
 
@@ -83,6 +83,7 @@ export default new Vuex.Store({
     spotifyArtist: null,
     spotifyTrack: null,
     recentTracks: null,
+    recentTracksConv: null,
     totalPlaylists: null,
   },
   getters: {
@@ -110,6 +111,7 @@ export default new Vuex.Store({
     spotifyArtist: (state) => state.spotifyArtist,
     spotifyTrack: (state) => state.spotifyTrack,
     recentTracks: (state) => state.recentTracks,
+    recentTracksConv: (state) => state.recentTracksConv,
     totalPlaylists: (state) => state.totalPlaylists,
   },
   mutations: {
@@ -140,6 +142,8 @@ export default new Vuex.Store({
     SET_SPOTIFY_ARTIST: (state, artist) => (state.spotifyArtist = artist),
     SET_SPOTIFY_TRACK: (state, track) => (state.spotifyTrack = track),
     SET_RECENT_TRACKS: (state, tracks) => (state.recentTracks = tracks),
+    SET_RECENT_TRACKS_CONV: (state, tracks) =>
+      (state.recentTracksConv = tracks),
     SET_TOTAL_PLAYLISTS: (state, total) => (state.totalPlaylists = total),
   },
   actions: {
@@ -381,6 +385,28 @@ export default new Vuex.Store({
       }).then((res) => {
         console.log(res.data);
         commit("SET_RECENT_TRACKS", res.data.tracks);
+      });
+    },
+    getTracks({ commit, getters }, { ids }) {
+      if (getters.recentTracksConv !== null) {
+        console.log("Already have recent tracks converted!");
+        return;
+      }
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetTracks";
+      params.TrackIds = ids;
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_RECENT_TRACKS_CONV", res.data.tracks);
       });
     },
   },

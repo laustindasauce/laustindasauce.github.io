@@ -6,7 +6,7 @@
       color="rgb(0, 0, 0, 0.1)"
       tile
     >
-      <v-row v-if="!small">
+      <v-row v-if="!small" align="center">
         <v-col cols="auto" sm="2" md="1" lg="1">
           <v-img
             class="image-link"
@@ -33,7 +33,7 @@
           {{ formatDuration(track.duration_ms) }}
         </v-col>
       </v-row>
-      <v-row v-else>
+      <v-row v-else align="center">
         <v-col cols="2">
           <v-img
             class="image-link"
@@ -56,7 +56,7 @@
             </h5>
           </div>
         </v-col>
-        <v-col class="text-right" cols="1">
+        <v-col class="text-right" cols="2">
           {{ formatDuration(track.duration_ms) }}
         </v-col>
       </v-row>

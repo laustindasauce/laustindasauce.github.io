@@ -50,7 +50,9 @@ export default {
     },
   },
   mounted() {
-    this.loadingPlaylists = true;
+    if (this.spotifyId === null) {
+      return;
+    }
     this.$store.dispatch("getUserPlaylists", { limit: 50 });
   },
 };

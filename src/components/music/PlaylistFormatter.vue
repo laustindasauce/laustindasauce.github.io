@@ -3,7 +3,11 @@
     <v-row>
       <v-col cols="12" sm="12" md="4" class="text-center">
         <playlist-card :playlist="playlist" />
-        <audio-chart class="mt-3" :items="playlist.tracks.items" />
+        <audio-chart
+          class="mt-3"
+          :items="playlist.tracks.items"
+          :horizontal="true"
+        />
       </v-col>
       <v-col cols="12" md="8">
         <div v-for="items in playlist.tracks.items">

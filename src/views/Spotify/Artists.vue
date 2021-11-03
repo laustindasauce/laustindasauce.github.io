@@ -74,6 +74,9 @@ export default {
   },
 
   mounted() {
+    if (this.spotifyId === null) {
+      return;
+    }
     this.$store.dispatch("getTopItems", { type: "artists", limit: 50 });
     this.$store.dispatch("getTopItems", {
       type: "artists",

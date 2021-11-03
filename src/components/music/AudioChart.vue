@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5">
-    <h2>audio features</h2>
+    <h2 v-if="horizontal">audio features</h2>
     <div id="chart" v-if="chartReady">
       <apexchart
         type="bar"
@@ -8,7 +8,7 @@
         :options="chartOptions"
         :series="series"
       ></apexchart>
-      <h3>all stats</h3>
+      <h3 v-if="horizontal">all stats</h3>
       <div class="text-left mt-3">
         <v-row>
           <v-col cols="12">
@@ -49,7 +49,7 @@ import audioTypes from "../../store/json/audio-features-explained.json";
 
 export default {
   name: "AudioChart",
-  props: ["items"],
+  props: ["items", "horizontal"],
   data() {
     return {
       chartReady: false,
@@ -79,7 +79,7 @@ export default {
           bar: {
             distributed: true,
             borderRadius: 4,
-            horizontal: true,
+            horizontal: this.horizontal,
           },
         },
         dataLabels: {

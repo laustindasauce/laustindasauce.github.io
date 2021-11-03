@@ -41,15 +41,15 @@
           <v-btn>See More</v-btn>
         </v-col>
       </v-row>
-      <v-row class="mt-5">
+      <v-row v-if="topTracks !== null" class="mt-5">
         <v-col v-if="topTracks !== null" cols="12" sm="12" md="6" lg="6">
           <div v-for="(track, i) in topTracks.items" :key="track.id">
             <track-item v-if="i < 10" :track="track" :small="true" />
           </div>
         </v-col>
         <v-col v-if="topArtists !== null" cols="12" sm="12" md="6" lg="6">
-          <div v-for="(track, i) in topTracks.items">
-            <track-item v-if="i < 10" :track="track" />
+          <div v-for="(artist, i) in topArtists.items" :key="artist.id">
+            <artist-list v-if="i < 10" :artist="artist" />
           </div>
         </v-col>
       </v-row>
@@ -61,9 +61,11 @@
 import Login from "../../components/music/Login.vue";
 import UserProfile from "../../components/music/UserProfile.vue";
 import TrackItem from "../../components/music/TrackItem.vue";
+import ArtistList from "../../components/music/ArtistList.vue";
 
 export default {
   components: {
+    ArtistList,
     Login,
     TrackItem,
     UserProfile,
@@ -98,10 +100,14 @@ export default {
     },
   },
   mounted() {
+    if (this.spotifyId === null) {
+      return;
+    }
     this.$store.dispatch("getProfile");
     this.$store.dispatch("getUserPlaylists", { limit: 50 });
     this.$store.dispatch("getTopItems", { type: "artists" });
     this.$store.dispatch("getTopItems", { type: "tracks" });
+    this.$store.dispatch("getRecentTracks");
   },
 };
 </script>
