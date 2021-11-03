@@ -86,6 +86,7 @@ export default new Vuex.Store({
     recentTracks: null,
     recentTracksConv: null,
     totalPlaylists: null,
+    recommendedTracks: null,
   },
   getters: {
     currentItems: (state) => state.items,
@@ -115,6 +116,7 @@ export default new Vuex.Store({
     recentTracks: (state) => state.recentTracks,
     recentTracksConv: (state) => state.recentTracksConv,
     totalPlaylists: (state) => state.totalPlaylists,
+    recommendedTracks: (state) => state.recommendedTracks,
   },
   mutations: {
     projectInfo(state, name) {
@@ -149,6 +151,8 @@ export default new Vuex.Store({
     SET_RECENT_TRACKS_CONV: (state, tracks) =>
       (state.recentTracksConv = tracks),
     SET_TOTAL_PLAYLISTS: (state, total) => (state.totalPlaylists = total),
+    SET_RECOMMENDED_TRACKS: (state, tracks) =>
+      (state.recommendedTracks = tracks),
   },
   actions: {
     spotifyOathLogin({ commit }) {
@@ -409,7 +413,7 @@ export default new Vuex.Store({
         commit("SET_RECENT_TRACKS", res.data.tracks);
       });
     },
-    getTracks({ commit, getters }, { ids }) {
+    getTracks({ commit, getters }, { ids, type }) {
       if (getters.recentTracksConv !== null) {
         console.log("Already have recent tracks converted!");
         return;
@@ -428,7 +432,38 @@ export default new Vuex.Store({
         data: jsonData,
       }).then((res) => {
         console.log(res.data);
-        commit("SET_RECENT_TRACKS_CONV", res.data.tracks);
+        if (type === "conv") {
+          commit("SET_RECENT_TRACKS_CONV", res.data.tracks);
+        } else if (type === "recommendations") {
+          commit("SET_RECOMMENDED_TRACKS", res.data.tracks);
+        }
+      });
+    },
+    getRecommendedTracks({ commit, getters, dispatch }, { ids }) {
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetRecommendations";
+      params.Args = {
+        TrackSeeds: ids,
+      };
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        if (res.data.response === "SUCCESS") {
+          let newIds = [];
+          for (var i = 0; i < res.data.recommendations.tracks.length; i++) {
+            newIds.push(res.data.recommendations.tracks[i].id);
+          }
+          dispatch("getTracks", { ids: newIds, type: "recommendations" });
+          // commit("SET_RECOMMENDED_TRACKS", res.data.recommendations);
+        }
       });
     },
   },

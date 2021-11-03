@@ -45,3 +45,13 @@ export const parsePitchClass = (note) => {
 
   return key;
 };
+
+export const getTrackSeeds = (tracks) => {
+  const shuffledTracks = tracks.sort(() => 0.5 - Math.random());
+  return getTrackIds(shuffledTracks.slice(0, 5));
+};
+
+/**
+ * Return an array of track IDs from the given array of tracks
+ */
+export const getTrackIds = (tracks) => tracks.map(({ track }) => track.id);

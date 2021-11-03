@@ -16,7 +16,12 @@
         </v-row>
         <v-row justify="center">
           <v-col class="text-center">
-            <h1 class="large white--text">{{ artist.name }}</h1>
+            <h1
+              class="link large white--text"
+              @click="goToExternalLink(artist.external_urls.spotify)"
+            >
+              {{ artist.name }}
+            </h1>
           </v-col>
         </v-row>
         <br /><br /><br />
@@ -86,6 +91,9 @@ export default {
     numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
+    goToExternalLink(link) {
+      window.open(link, "_blank");
+    },
   },
 };
 </script>
@@ -97,5 +105,9 @@ export default {
 .large {
   font-size: 45px;
   font-weight: bold;
+}
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 </style>

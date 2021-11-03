@@ -3,6 +3,15 @@
     <v-row>
       <v-col cols="12" sm="12" md="4" class="text-center">
         <playlist-card :playlist="playlist" />
+        <br />
+        <v-btn
+          rounded
+          color="spotifyGreen"
+          class="ma-2 white--text"
+          @click="goToRecommendations(playlist.id)"
+          >get recommendations</v-btn
+        >
+        <br /><br />
         <audio-chart
           class="mt-3"
           :items="playlist.tracks.items"
@@ -37,7 +46,11 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    goToRecommendations(id) {
+      this.$router.push({ name: "Recommendations", params: { id: id } });
+    },
+  },
 };
 </script>
 

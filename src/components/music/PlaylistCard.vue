@@ -1,27 +1,18 @@
 <template>
-  <v-card class="mx-auto" color="rgb(0, 0, 0, 0.1)" max-width="344">
+  <div class="mx-auto text-center" color="rgb(0, 0, 0, 0.1)" max-width="344">
     <v-img
       class="image-link"
       @click="goToPlaylist(playlist.id)"
       :src="getImage()"
     ></v-img>
-
-    <v-card-title>
-      <h3 class="link" @click="goToPlaylist(playlist.id)">
-        {{ playlist.name }}
-      </h3></v-card-title
-    >
-
-    <v-card-subtitle class="mt-1">
-      {{ playlist.tracks.total }} tracks</v-card-subtitle
-    >
-
-    <v-card-actions>
-      <v-btn color="orange lighten-2" @click="goToPlaylist(playlist.id)" text>
-        More Info
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+    <h3 class="link mt-5 mb-2 text-center" @click="goToPlaylist(playlist.id)">
+      {{ playlist.name }}
+    </h3>
+    <h4 class="mb-2 text-center secondary--text">
+      by {{ playlist.owner.display_name }}
+    </h4>
+    <small>{{ playlist.tracks.total }} tracks</small>
+  </div>
 </template>
 
 <script>

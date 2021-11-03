@@ -8,36 +8,38 @@
         :options="chartOptions"
         :series="series"
       ></apexchart>
-      <h3 :class="horizontal ? '' : 'text-center'">all stats</h3>
-      <div class="text-left mt-3">
-        <v-row>
-          <v-col cols="12">
-            <v-sheet elevation="6">
-              <v-tabs
-                v-model="tab"
-                color="secondary"
-                background-color="spotifyBlack"
-                dark
-                next-icon="mdi-arrow-right-bold-box-outline"
-                prev-icon="mdi-arrow-left-bold-box-outline"
-                show-arrows
-              >
-                <v-tabs-slider color="spotifyGreen"></v-tabs-slider>
-                <v-tab v-for="type in audioTypes" :key="type.name">
-                  {{ type.name }}
-                </v-tab>
-              </v-tabs>
-              <v-tabs-items v-model="tab">
-                <v-tab-item v-for="type in audioTypes" :key="type.name">
-                  <v-card color="rgb(0, 0, 0, 0.0)" flat>
-                    <v-card-text>Score: {{ type.score }}</v-card-text>
-                    <v-card-text>Description: {{ type.desc }}</v-card-text>
-                  </v-card>
-                </v-tab-item>
-              </v-tabs-items>
-            </v-sheet>
-          </v-col>
-        </v-row>
+      <div v-if="!horizontal">
+        <h3 :class="horizontal ? '' : 'text-center'">all stats</h3>
+        <div class="text-left mt-3">
+          <v-row>
+            <v-col cols="12">
+              <v-sheet elevation="6">
+                <v-tabs
+                  v-model="tab"
+                  color="secondary"
+                  background-color="spotifyBlack"
+                  dark
+                  next-icon="mdi-arrow-right-bold-box-outline"
+                  prev-icon="mdi-arrow-left-bold-box-outline"
+                  show-arrows
+                >
+                  <v-tabs-slider color="spotifyGreen"></v-tabs-slider>
+                  <v-tab v-for="type in audioTypes" :key="type.name">
+                    {{ type.name }}
+                  </v-tab>
+                </v-tabs>
+                <v-tabs-items v-model="tab">
+                  <v-tab-item v-for="type in audioTypes" :key="type.name">
+                    <v-card color="rgb(0, 0, 0, 0.0)" flat>
+                      <v-card-text>Score: {{ type.score }}</v-card-text>
+                      <v-card-text>Description: {{ type.desc }}</v-card-text>
+                    </v-card>
+                  </v-tab-item>
+                </v-tabs-items>
+              </v-sheet>
+            </v-col>
+          </v-row>
+        </div>
       </div>
     </div>
     <!-- <pre>{{ audioFeatures }}</pre> -->

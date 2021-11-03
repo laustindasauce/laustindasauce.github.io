@@ -4,7 +4,7 @@
       <login />
     </div>
     <div v-else>
-      <h1>your recent tracks</h1>
+      <h3>your recent tracks</h3>
       <br /><br />
       <div v-if="recentTracksConv !== null" class="mt-5">
         <div v-for="track in recentTracksConv" :key="track.id">
@@ -39,8 +39,7 @@ export default {
     for (var i = 0; i < this.recentTracks.length; i++) {
       ids.push(this.recentTracks[i].track.id);
     }
-    console.log(ids);
-    this.$store.dispatch("getTracks", { ids: ids });
+    this.$store.dispatch("getTracks", { ids: ids, type: "conv" });
   },
   computed: {
     spotifyId() {
