@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5">
-    <h2 v-if="horizontal">audio features</h2>
+    <h2 :class="horizontal ? '' : 'text-center'">audio features</h2>
     <div id="chart" v-if="chartReady">
       <apexchart
         type="bar"
@@ -8,7 +8,7 @@
         :options="chartOptions"
         :series="series"
       ></apexchart>
-      <h3 v-if="horizontal">all stats</h3>
+      <h3 :class="horizontal ? '' : 'text-center'">all stats</h3>
       <div class="text-left mt-3">
         <v-row>
           <v-col cols="12">
@@ -106,6 +106,12 @@ export default {
         },
         tooltip: {
           theme: "dark",
+
+          y: {
+            title: {
+              formatter: (seriesName) => "value: ",
+            },
+          },
         },
         xaxis: {
           categories: [
@@ -120,7 +126,15 @@ export default {
           //   tickAmount: 10,
           labels: {
             style: {
-              colors: ["#ca1f47"],
+              colors: [
+                "#DC5672",
+                "#FE9E40",
+                "#FECE57",
+                "#347878",
+                "#3188C5",
+                "#4C63AF",
+                "#8459DC",
+              ],
               fontSize: "14px",
             },
           },

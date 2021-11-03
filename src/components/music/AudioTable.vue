@@ -1,69 +1,118 @@
 <template>
   <div v-if="audioFeatures !== null">
-    {{ audioFeatures }}
     <br /><br />
     <v-row class="text-center">
       <v-col cols="1" class="d-none d-lg-flex"></v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ formatDuration(audioFeatures[0].duration_ms) }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ formatDuration(audioFeatures[0].duration_ms) }}</h2>
         <div>
-          <small class="secondary--text">duration</small>
+          <small>duration</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ getPitch(audioFeatures[0].key) }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ getPitch(audioFeatures[0].key) }}</h2>
         <div>
-          <small class="secondary--text">key</small>
+          <small>key</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].mode === 1 ? "Major" : "Minor" }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioFeatures[0].mode === 1 ? "Major" : "Minor" }}</h2>
         <div>
-          <small class="secondary--text">modality</small>
+          <small>modality</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].time_signature }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioFeatures[0].time_signature }}</h2>
         <div>
-          <small class="secondary--text">time signature</small>
+          <small>time signature</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].tempo.toFixed(0) }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioFeatures[0].tempo.toFixed(0) }}</h2>
         <div>
-          <small class="secondary--text">tempo (BPM)</small>
+          <small>tempo (BPM)</small>
         </div>
       </v-col>
       <v-col cols="1" class="d-none d-lg-flex"></v-col>
       <v-col cols="1" class="d-none d-lg-flex"></v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ popularity }}%
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ popularity }}%</h2>
         <div>
-          <small class="secondary--text">popularity</small>
+          <small>popularity</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].acousticness }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioAnalysis.bars.length }}</h2>
         <div>
-          <small class="secondary--text">Duration</small>
+          <small>bars</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].acousticness }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioAnalysis.beats.length }}</h2>
         <div>
-          <small class="secondary--text">Duration</small>
+          <small>beats</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].acousticness }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioAnalysis.sections.length }}</h2>
         <div>
-          <small class="secondary--text">Duration</small>
+          <small>sections</small>
         </div>
       </v-col>
-      <v-col class="outline" cols="12" sm="6" lg="2">
-        {{ audioFeatures[0].acousticness }}
+      <v-col
+        class="outline secondary--text text--lighten-2"
+        cols="12"
+        sm="6"
+        lg="2"
+      >
+        <h2>{{ audioAnalysis.segments.length }}</h2>
         <div>
-          <small class="secondary--text">Duration</small>
+          <small>segments</small>
         </div>
       </v-col>
       <v-col cols="1" class="d-none d-lg-flex"></v-col>
@@ -76,15 +125,20 @@ import { parsePitchClass } from "../../utils";
 
 export default {
   name: "AudioTable",
-  props: ["popularity"],
+  props: ["popularity", "id"],
   data() {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("getAudioAnalysis", { id: this.id });
+  },
   computed: {
     audioFeatures() {
       return this.$store.getters.audioFeatures;
+    },
+    audioAnalysis() {
+      return this.$store.getters.audioAnalysis;
     },
   },
   methods: {
@@ -103,6 +157,6 @@ export default {
 
 <style lang="scss" scoped>
 .outline {
-  outline: 1px solid #767676;
+  outline: 0.1px solid #666666;
 }
 </style>

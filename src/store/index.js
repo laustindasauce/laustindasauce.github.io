@@ -74,6 +74,7 @@ export default new Vuex.Store({
     allPlaylistsTracks: new Object(),
     currentPlaylistTracks: null,
     audioFeatures: null,
+    audioAnalysis: null,
     topTracksLong: null,
     topTracks: null,
     topTracksShort: null,
@@ -102,6 +103,7 @@ export default new Vuex.Store({
     allPlaylistsTracks: (state) => state.allPlaylistsTracks,
     currentPlaylistTracks: (state) => state.currentPlaylistTracks,
     audioFeatures: (state) => state.audioFeatures,
+    audioAnalysis: (state) => state.audioAnalysis,
     topTracksLong: (state) => state.topTracksLong,
     topTracks: (state) => state.topTracks,
     topTracksShort: (state) => state.topTracksShort,
@@ -132,6 +134,8 @@ export default new Vuex.Store({
       (state.allPlaylistsTracks[payload.id] = payload.playlist),
     SET_AUDIO_FEATURES: (state, audioFeatures) =>
       (state.audioFeatures = audioFeatures),
+    SET_AUDIO_ANALYSIS: (state, audioAnalysis) =>
+      (state.audioAnalysis = audioAnalysis),
     SET_TOP_TRACKS_LONG: (state, tracks) => (state.topTracksLong = tracks),
     SET_TOP_TRACKS: (state, tracks) => (state.topTracks = tracks),
     SET_TOP_TRACKS_SHORT: (state, tracks) => (state.topTracksShort = tracks),
@@ -251,6 +255,24 @@ export default new Vuex.Store({
       }).then((res) => {
         console.log(res.data);
         commit("SET_AUDIO_FEATURES", res.data.audioFeatures);
+      });
+    },
+    getAudioAnalysis({ commit, getters }, { id }) {
+      let params = new Object();
+
+      params.ID = getters.spotifyId;
+      params.Method = "GetAudioAnalysis";
+      params.TrackId = id;
+
+      let jsonData = JSON.stringify(params);
+
+      axios({
+        url: `${BASE_URL}${GET_PATH}`,
+        method: "post",
+        data: jsonData,
+      }).then((res) => {
+        console.log(res.data);
+        commit("SET_AUDIO_ANALYSIS", res.data.audioAnalysis);
       });
     },
     getTopItems({ commit, getters }, { type, range, limit }) {

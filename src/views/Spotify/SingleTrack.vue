@@ -5,7 +5,10 @@
     </div>
     <div v-else-if="track !== null">
       <Track :track="track" />
-      <audio-table :popularity="track.popularity" />
+      <br />
+      <audio-table :popularity="track.popularity" :id="track.id" />
+      <br />
+      <br />
       <audio-chart :items="trackToArray" />
     </div>
   </v-container>

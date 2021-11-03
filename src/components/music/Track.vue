@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row align="center">
+    <v-row>
       <v-col cols="auto">
         <v-img
           class="image-link"
@@ -10,13 +10,13 @@
         ></v-img>
       </v-col>
       <v-col cols="auto">
-        <div>
+        <div class="mb-3">
           <h1>{{ track.name }}</h1>
         </div>
-        <div>
+        <div class="mb-2">
           <h3 class="secondary--text">{{ formatArtists(track.artists) }}</h3>
         </div>
-        <div class="secondary--text">
+        <div class="secondary--text mb-3">
           {{ track.album.name }}
         </div>
         <div>
