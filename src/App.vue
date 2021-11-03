@@ -56,7 +56,7 @@ h1 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  line-height: 32px;
+  line-height: 34px;
 }
 h2 {
   font-family: monaco, Consolas, "Lucida Console", monospace;
@@ -64,7 +64,7 @@ h2 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  line-height: 25px;
+  line-height: 29px;
 }
 h3 {
   font-family: monaco, Consolas, "Lucida Console", monospace;
@@ -72,7 +72,7 @@ h3 {
   font-style: normal;
   font-variant: normal;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 24px;
 }
 p {
   font-family: monaco, Consolas, "Lucida Console", monospace;
@@ -97,6 +97,9 @@ pre {
   font-variant: normal;
   font-weight: 400;
   line-height: 18px;
+}
+.quarter {
+  padding-top: 25vh;
 }
 .third {
   padding-top: 33vh;
