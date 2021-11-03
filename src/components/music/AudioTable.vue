@@ -1,5 +1,5 @@
 <template>
-  <div v-if="audioFeatures !== null">
+  <div v-if="audioFeatures !== null && audioAnalysis !== null">
     <br /><br />
     <v-row class="text-center">
       <v-col cols="1" class="d-none d-lg-flex"></v-col>

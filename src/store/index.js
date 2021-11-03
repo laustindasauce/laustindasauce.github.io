@@ -336,21 +336,21 @@ export default new Vuex.Store({
 
         if (res.data.range === "long_term") {
           if (res.data.type === "tracks") {
-            commit("SET_TOP_TRACKS_LONG", res.data.tracks);
+            commit("SET_TOP_TRACKS_LONG", res.data.top_tracks);
           } else if (res.data.type === "artists") {
-            commit("SET_TOP_ARTISTS_LONG", res.data.artists);
+            commit("SET_TOP_ARTISTS_LONG", res.data.top_artists);
           }
         } else if (res.data.range === "medium_term") {
           if (res.data.type === "tracks") {
-            commit("SET_TOP_TRACKS", res.data.tracks);
+            commit("SET_TOP_TRACKS", res.data.top_tracks);
           } else if (res.data.type === "artists") {
-            commit("SET_TOP_ARTISTS", res.data.artists);
+            commit("SET_TOP_ARTISTS", res.data.top_artists);
           }
         } else {
           if (res.data.type === "tracks") {
-            commit("SET_TOP_TRACKS_SHORT", res.data.tracks);
+            commit("SET_TOP_TRACKS_SHORT", res.data.top_tracks);
           } else if (res.data.type === "artists") {
-            commit("SET_TOP_ARTISTS_SHORT", res.data.artists);
+            commit("SET_TOP_ARTISTS_SHORT", res.data.top_artists);
           }
         }
       });
@@ -410,7 +410,7 @@ export default new Vuex.Store({
         data: jsonData,
       }).then((res) => {
         console.log(res.data);
-        commit("SET_RECENT_TRACKS", res.data.tracks);
+        commit("SET_RECENT_TRACKS", res.data.recent_tracks);
       });
     },
     getTracks({ commit, getters }, { ids, type }) {

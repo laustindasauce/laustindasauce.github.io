@@ -98,6 +98,9 @@ pre {
   font-weight: 400;
   line-height: 18px;
 }
+#app {
+  padding-bottom: 100px;
+}
 .quarter {
   padding-top: 25vh;
 }

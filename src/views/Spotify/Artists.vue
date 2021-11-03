@@ -49,7 +49,6 @@
           <artist-item :artist="artist"></artist-item>
         </v-col>
       </v-row>
-      <pre>{{ topArtists }}</pre>
     </div>
   </v-container>
 </template>
