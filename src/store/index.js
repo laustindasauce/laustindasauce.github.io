@@ -74,11 +74,16 @@ export default new Vuex.Store({
     allPlaylistsTracks: new Object(),
     currentPlaylistTracks: null,
     audioFeatures: null,
+    topTracksLong: null,
     topTracks: null,
+    topTracksShort: null,
+    topArtistsLong: null,
     topArtists: null,
+    topArtistsShort: null,
     spotifyArtist: null,
     spotifyTrack: null,
     recentTracks: null,
+    totalPlaylists: null,
   },
   getters: {
     currentItems: (state) => state.items,
@@ -96,11 +101,16 @@ export default new Vuex.Store({
     allPlaylistsTracks: (state) => state.allPlaylistsTracks,
     currentPlaylistTracks: (state) => state.currentPlaylistTracks,
     audioFeatures: (state) => state.audioFeatures,
+    topTracksLong: (state) => state.topTracksLong,
     topTracks: (state) => state.topTracks,
+    topTracksShort: (state) => state.topTracksShort,
+    topArtistsLong: (state) => state.topArtistsLong,
     topArtists: (state) => state.topArtists,
+    topArtistsShort: (state) => state.topArtistsShort,
     spotifyArtist: (state) => state.spotifyArtist,
     spotifyTrack: (state) => state.spotifyTrack,
     recentTracks: (state) => state.recentTracks,
+    totalPlaylists: (state) => state.totalPlaylists,
   },
   mutations: {
     projectInfo(state, name) {
@@ -120,11 +130,17 @@ export default new Vuex.Store({
       (state.allPlaylistsTracks[payload.id] = payload.playlist),
     SET_AUDIO_FEATURES: (state, audioFeatures) =>
       (state.audioFeatures = audioFeatures),
+    SET_TOP_TRACKS_LONG: (state, tracks) => (state.topTracksLong = tracks),
     SET_TOP_TRACKS: (state, tracks) => (state.topTracks = tracks),
+    SET_TOP_TRACKS_SHORT: (state, tracks) => (state.topTracksShort = tracks),
+    SET_TOP_ARTISTS_LONG: (state, artists) => (state.topArtistsLong = artists),
     SET_TOP_ARTISTS: (state, artists) => (state.topArtists = artists),
+    SET_TOP_ARTISTS_SHORT: (state, artists) =>
+      (state.topArtistsShort = artists),
     SET_SPOTIFY_ARTIST: (state, artist) => (state.spotifyArtist = artist),
     SET_SPOTIFY_TRACK: (state, track) => (state.spotifyTrack = track),
     SET_RECENT_TRACKS: (state, tracks) => (state.recentTracks = tracks),
+    SET_TOTAL_PLAYLISTS: (state, total) => (state.totalPlaylists = total),
   },
   actions: {
     spotifyOathLogin({ commit }) {
@@ -179,6 +195,7 @@ export default new Vuex.Store({
       }).then((res) => {
         console.log(res.data);
         commit("SET_SPOTIFY_USER_PLAYLISTS", res.data.playlists);
+        commit("SET_TOTAL_PLAYLISTS", res.data.total);
       });
     },
     getPlaylistTracks({ commit, getters }, { id }) {
@@ -232,16 +249,40 @@ export default new Vuex.Store({
         commit("SET_AUDIO_FEATURES", res.data.audioFeatures);
       });
     },
-    getTopItems({ commit, getters }, { type }) {
+    getTopItems({ commit, getters }, { type, range, limit }) {
       if (type === "tracks") {
-        if (getters.topTracks !== null) {
-          console.log("top tracks already set!");
-          return;
+        if (range === null || range === undefined || range === "medium_term") {
+          if (getters.topTracks !== null) {
+            console.log("top tracks already set!");
+            return;
+          }
+        } else if (range === "long_term") {
+          if (getters.topTracksLong !== null) {
+            console.log("top tracks long already set!");
+            return;
+          }
+        } else {
+          if (getters.topTracksShort !== null) {
+            console.log("top tracks short already set!");
+            return;
+          }
         }
       } else {
-        if (getters.topArtists !== null) {
-          console.log("top artists already set!");
-          return;
+        if (range === null || range === undefined || range === "medium_term") {
+          if (getters.topArtists !== null) {
+            console.log("top artists already set!");
+            return;
+          }
+        } else if (range === "long_term") {
+          if (getters.topArtistsLong !== null) {
+            console.log("top artists long already set!");
+            return;
+          }
+        } else {
+          if (getters.topArtistsShort !== null) {
+            console.log("top artists short already set!");
+            return;
+          }
         }
       }
       let params = new Object();
@@ -250,6 +291,8 @@ export default new Vuex.Store({
       params.Method = "GetTopItems";
       params.Args = {
         Type: type,
+        Timerange: range || "medium_term",
+        Limit: limit || 50,
       };
 
       let jsonData = JSON.stringify(params);
@@ -260,10 +303,25 @@ export default new Vuex.Store({
         data: jsonData,
       }).then((res) => {
         console.log(res.data);
-        if (res.data.type === "tracks") {
-          commit("SET_TOP_TRACKS", res.data.tracks);
-        } else if (res.data.type === "artists") {
-          commit("SET_TOP_ARTISTS", res.data.artists);
+
+        if (res.data.range === "long_term") {
+          if (res.data.type === "tracks") {
+            commit("SET_TOP_TRACKS_LONG", res.data.tracks);
+          } else if (res.data.type === "artists") {
+            commit("SET_TOP_ARTISTS_LONG", res.data.artists);
+          }
+        } else if (res.data.range === "medium_term") {
+          if (res.data.type === "tracks") {
+            commit("SET_TOP_TRACKS", res.data.tracks);
+          } else if (res.data.type === "artists") {
+            commit("SET_TOP_ARTISTS", res.data.artists);
+          }
+        } else {
+          if (res.data.type === "tracks") {
+            commit("SET_TOP_TRACKS_SHORT", res.data.tracks);
+          } else if (res.data.type === "artists") {
+            commit("SET_TOP_ARTISTS_SHORT", res.data.artists);
+          }
         }
       });
     },

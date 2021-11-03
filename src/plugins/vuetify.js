@@ -15,9 +15,9 @@ export default new Vuetify({
     themes: {
       dark: {
         primary: "#FF7028",
-        secondary: "#FFFFFD",
+        secondary: "#767676",
         accent: "693D2A",
-        background: "#2E2E2B",
+        background: "#181919",
         spotifyGreen: "#1DB954",
         spotifyBlack: "#191414",
       },

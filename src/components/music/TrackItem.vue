@@ -6,27 +6,57 @@
       color="rgb(0, 0, 0, 0.1)"
       tile
     >
-      <v-row>
+      <v-row v-if="!small">
+        <v-col cols="auto" sm="2" md="1" lg="1">
+          <v-img
+            class="image-link"
+            max-height="75"
+            max-width="75"
+            :src="getImage()"
+          ></v-img>
+        </v-col>
+        <v-col cols="12" sm="8" md="9">
+          <div>
+            <h4 class="link mb-2" @click="goToTrack(track.id)">
+              {{ track.name }}
+            </h4>
+          </div>
+          <div>
+            <h5 class="subtitle secondary--text">
+              {{ formatArtists(track.artists) }}&emsp;•&emsp;{{
+                track.album.name
+              }}
+            </h5>
+          </div>
+        </v-col>
+        <v-col class="text-right" cols="1">
+          {{ formatDuration(track.duration_ms) }}
+        </v-col>
+      </v-row>
+      <v-row v-else>
         <v-col cols="2">
-          <v-img class="image-link" :src="getImage()"></v-img>
+          <v-img
+            class="image-link"
+            max-height="75"
+            max-width="75"
+            :src="getImage()"
+          ></v-img>
         </v-col>
-        <v-col cols="9">
-          <v-list-item two-line>
-            <v-list-item-content>
-              <v-list-item-title>
-                <h3 class="link" @click="goToTrack(track.id)">
-                  {{ track.name }}
-                </h3></v-list-item-title
-              >
-              <v-list-item-subtitle
-                >{{ formatArtists(track.artists) }}&emsp;•&emsp;{{
-                  track.album.name
-                }}</v-list-item-subtitle
-              >
-            </v-list-item-content>
-          </v-list-item>
+        <v-col cols="8">
+          <div>
+            <h4 class="link mb-2" @click="goToTrack(track.id)">
+              {{ track.name }}
+            </h4>
+          </div>
+          <div>
+            <h5 class="subtitle secondary--text">
+              {{ formatArtists(track.artists) }}&emsp;•&emsp;{{
+                track.album.name
+              }}
+            </h5>
+          </div>
         </v-col>
-        <v-col cols="1">
+        <v-col class="text-right" cols="1">
           {{ formatDuration(track.duration_ms) }}
         </v-col>
       </v-row>
@@ -37,7 +67,7 @@
 <script>
 export default {
   name: "TrackItem",
-  props: ["track"],
+  props: ["track", "small"],
   data() {
     return {};
   },
