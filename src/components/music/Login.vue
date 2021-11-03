@@ -7,6 +7,9 @@
       v-if="spotifyId === null"
     >
       <v-col md="4" class="center" v-if="url !== null">
+        <div>
+          <h1 class="mb-5">go-spotify</h1>
+        </div>
         <v-btn
           v-show="spotifyId === null"
           :loading="loadingLogin"
