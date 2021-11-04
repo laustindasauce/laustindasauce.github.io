@@ -11,12 +11,6 @@
       <v-list-item-avatar>
         <v-img class="image-link" @click="goToHome" src="spotify.png"></v-img>
       </v-list-item-avatar>
-
-      <v-list-item-title>Spotify Profile</v-list-item-title>
-
-      <v-btn icon @click.stop="mini = !mini">
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
     </v-list-item>
 
     <v-divider></v-divider>
@@ -39,6 +33,12 @@
         </v-list-item-content>
       </v-list-item>
     </div>
+
+    <v-list-item color="spotifyGreen" link @click="goToGithub">
+      <v-list-item-icon>
+        <v-icon color="white">mdi-github</v-icon>
+      </v-list-item-icon>
+    </v-list-item>
   </v-navigation-drawer>
 </template>
 
@@ -63,6 +63,12 @@ export default {
   methods: {
     goToHome() {
       this.$router.push("/spotify");
+    },
+    goToGithub() {
+      window.open(
+        "https://github.com/austinbspencer/austinbspencer.github.io",
+        "_blank"
+      );
     },
   },
 };
