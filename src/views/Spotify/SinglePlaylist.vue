@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container class="mt-5">
     <div v-if="spotifyId === null">
       <login />
     </div>
@@ -8,7 +8,7 @@
         <playlist-formatter :playlist="playlist" />
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>

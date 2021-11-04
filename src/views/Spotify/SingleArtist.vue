@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="mt-5">
     <div v-if="spotifyId === null">
       <login />
     </div>

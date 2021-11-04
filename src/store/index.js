@@ -29,8 +29,8 @@ import workHistory from "./json/work-history.json";
 
 import spotifyActions from "./json/spotify-urls.json";
 
-// const BASE_URL = "http://localhost:8558";
-const BASE_URL = "https://austinbspencer.com";
+const BASE_URL = "http://localhost:8558";
+// const BASE_URL = "https://austinbspencer.com";
 const OATH_PATH = "/go-api/spotify/get-oath-url";
 const GET_PATH = "/go-api/spotify/user/get";
 
