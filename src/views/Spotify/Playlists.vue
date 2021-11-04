@@ -4,7 +4,7 @@
       <login />
     </div>
     <div v-else>
-      <h1 class="mt-5 mb-5">Your Playlists</h1>
+      <h1 class="mt-5 mb-5">your playlists</h1>
       <v-row class="mt-5" v-if="userPlaylists !== null">
         <v-col
           cols="12"
