@@ -9,7 +9,7 @@
   >
     <v-list-item class="px-2">
       <v-list-item-avatar>
-        <v-img src="spotify.png"></v-img>
+        <v-img class="image-link" @click="goToHome" src="spotify.png"></v-img>
       </v-list-item-avatar>
 
       <v-list-item-title>Spotify Profile</v-list-item-title>
@@ -60,6 +60,16 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    goToHome() {
+      this.$router.push("/spotify");
+    },
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.image-link:hover {
+  cursor: pointer;
+}
+</style>
