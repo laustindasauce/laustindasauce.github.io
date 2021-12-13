@@ -12,6 +12,7 @@
           <v-row>
             <v-col>
               <v-btn
+                class="text-none"
                 @click="setNewTracks('long_term')"
                 :color="checkColor(longTerm)"
                 text
@@ -20,6 +21,7 @@
             </v-col>
             <v-col>
               <v-btn
+                class="text-none"
                 @click="setNewTracks('medium_term')"
                 :color="checkColor(mediumTerm)"
                 text
@@ -28,6 +30,7 @@
             </v-col>
             <v-col
               ><v-btn
+                class="text-none"
                 @click="setNewTracks('short_term')"
                 :color="checkColor(shortTerm)"
                 text

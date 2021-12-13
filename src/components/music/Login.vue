@@ -17,7 +17,7 @@
           x-large
           rounded
           color="spotifyGreen"
-          class="ma-2 white--text"
+          class="ma-2 white--text text-none"
           @click="goToLoginPage"
         >
           Login
