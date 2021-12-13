@@ -24,7 +24,7 @@
           md="3"
           lg="3"
         >
-          <v-btn right>See More</v-btn>
+          <v-btn class="text-none" right>See More</v-btn>
         </v-col>
         <v-col v-if="topArtists !== null" cols="12" sm="6" md="3" lg="3">
           <h3>your top artists</h3>
@@ -38,7 +38,7 @@
           md="3"
           lg="3"
         >
-          <v-btn>See More</v-btn>
+          <v-btn class="text-none">See More</v-btn>
         </v-col>
       </v-row>
       <v-row v-if="topTracks !== null" class="mt-5">
