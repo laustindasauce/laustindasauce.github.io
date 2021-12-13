@@ -414,7 +414,7 @@ export default new Vuex.Store({
       });
     },
     getTracks({ commit, getters }, { ids, type }) {
-      if (getters.recentTracksConv !== null) {
+      if (type !== "recommendations" && getters.recentTracksConv !== null) {
         console.log("Already have recent tracks converted!");
         return;
       }
